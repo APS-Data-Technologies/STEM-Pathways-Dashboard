@@ -1,14 +1,14 @@
 # STEM Pathways Dashboard
 
-An interactive Illinois STEM degree-awards dashboard built for the **Fall 2026 APS Data Technologies × Judson University internship**. React + Vite + Recharts, with a reproducible Python/IPEDS data pipeline. Public aggregate data only; no student records or database.
+An interactive Illinois STEM degree-awards dashboard built for the **APS Data Technologies × Judson University internship**. React + Vite + Recharts, with a reproducible Python/IPEDS data pipeline. Public aggregate data only; no student records or database.
 
-**Status:** Week 1–3 implementation prepared locally for team review; being published through the lead’s signed-in GitHub browser session to `feature/weeks-1-3-dashboard`. This is AI-assisted work prepared on the lead's behalf, not four individuals' claimed work histories. The full task list is not signed off: Git auto-deployment, GitHub protection, CIP review, scope approvals and actual team meetings remain open.
+**Status:** Implementation implementation prepared locally for team review; published through the lead’s signed-in GitHub browser session to `feature/stem-dashboard`. This is AI-assisted work prepared on the lead's behalf, not four individuals' claimed work histories. The full task list is not signed off: Git auto-deployment, GitHub protection, CIP review, scope approvals and actual team meetings remain open.
 
 - [Start here: task-by-task progress and remaining actions](docs/progress.md)
-- [Four separate member reports](docs/reports/README.md)
+- [Four role reports](docs/reports/README.md)
 - [How each member contributes to GitHub](docs/github-team-guide.md)
 - [Editable Figma wireframes — 10 frames](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd)
-- [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/weeks-1-3-dashboard/notebooks/clean_ipeds.ipynb)
+- [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/stem-dashboard/notebooks/clean_ipeds.ipynb)
 - **Live public dashboard:** [https://stem-pathways-dashboard.vercel.app/](https://stem-pathways-dashboard.vercel.app/) - [deployment status and Git integration](docs/deployment.md)
 
 ![Dashboard desktop preview](docs/qa/desktop-1280.png)
@@ -22,7 +22,7 @@ An interactive Illinois STEM degree-awards dashboard built for the **Fall 2026 A
 - Responsive layout, chart tooltips and exact-value table alternatives.
 - Loading, validation, error and retry handling; small static JSON/CSV exports.
 
-No stretch features are included: filtered CSV download, maps and narrative findings require the Week 4 go/no-go.
+No stretch features are included: filtered CSV download, maps and narrative findings require the Validation go/no-go.
 
 ## Snapshot and limits
 | Item | Implemented choice | Approval status |
@@ -39,14 +39,14 @@ The snapshot contains **3,808 aggregate rows**, **187,386 awards**, and **328 hi
 See [data plan, contract, counting rules and formulas](docs/data-plan-and-contract.md). Archive URLs, selected CSV members, bytes and SHA-256 are recorded in [source-manifest.json](data/source-manifest.json).
 
 ## Run locally
-If you downloaded the handover ZIP, extract it and run `npm ci` / `npm run dev` inside its `project` folder. The GitHub branch commands below apply **after publishing the branch**; it does not yet exist remotely. See [START-HERE.md](START-HERE.md).
+If you downloaded the handover ZIP, extract it and run `npm ci` / `npm run dev` inside its `project` folder. The GitHub branch commands below apply on the integration branch. See [START-HERE.md](START-HERE.md).
 
 Node 24 recommended (minimum 22.12); npm and Python 3.11+ for data work.
 
 ```bash
 git clone https://github.com/APS-Data-Technologies/STEM-Pathways-Dashboard.git
 cd STEM-Pathways-Dashboard
-git switch feature/weeks-1-3-dashboard
+git switch feature/stem-dashboard
 npm ci
 npm run dev
 ```
@@ -85,15 +85,8 @@ Use individual accounts, feature branches and pull requests. Each PR requires at
 
 Every task needs one real owner and a due date in Asana. Stand-ups use Slack: completed / next / blockers. These external updates and meetings have not been fabricated by this implementation. Reports have personal-validation sections for members to complete after actual work. Do not share account credentials.
 
-## Original schedule
-| Phase | Dates / milestone |
-|---|---|
-| Week 1 | Oct 26–30: plan and design |
-| Week 2 | Nov 2–6: core build; original first-deploy deadline Nov 4 |
-| Week 3 | Nov 9–13: features and APS checkpoint |
-| Week 4 | Nov 16–20: integration/testing; feature complete Nov 20 |
-| Week 5 | Nov 23–27: light polish; freeze Nov 25 |
-| Demo prep | Nov 30–Dec 4 |
-| Demos / handover | Nov 30–Dec 11 |
+## Delivery stages
 
-This package was prepared Nov 6 UTC, with Week 3 artifacts early. It does not claim past deadlines, attendance or approvals were achieved. [Original repository brief](docs/original-project-brief.md) is preserved for traceability; actual status and corrected protection/deployment claims are above.
+Planning → Core Build → Feature Development → Validation → Polish → Demo and Handover.
+
+**Current stage: Feature Development / Validation.** Implemented features are live; team review, methodology approvals and Git deployment integration remain pending.
