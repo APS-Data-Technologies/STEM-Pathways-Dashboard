@@ -1,0 +1,36 @@
+Task ID,Name,Section,Owner role,Assignee,Status,Notes
+B-01,Kickoff and all members join tools,Planning,Lead,,Pending,Actual four-member Slack/Asana/GitHub membership unverified
+B-02,Asana board and task import,Planning,Lead,,Prepared,task-board.csv prepared; import and named assignments pending
+B-03,Team norms in Slack,Planning,Lead,,Prepared,"product-plan.md; post, pin and four reactions pending"
+B-04,Define dashboard questions,Planning,Lead,,Awaiting review,Five questions mapped to views; actual check-in approval pending
+B-05,User stories and acceptance criteria,Planning,Lead,,Implemented,product-plan.md; must-have and stretch separated
+B-06,Data plan,Planning,Data,,Implemented,data-plan-and-contract.md; open scope choices flagged
+B-07,Download IPEDS files,Planning,Data,,Implemented,16 unmodified source ZIPs cached; URLs and checksums recorded
+B-08,Shared Colab notebook and row counts,Planning,Data,,Awaiting review,Executed notebook committed; Colab-open link provided; shared ownership review pending
+B-09,Five responsive Figma wireframes,Planning,UX/Viz,,Awaiting review,10 editable frames; Slack sharing and review pending
+B-10,Chart choices and sketches,Planning,UX/Viz,,Implemented,design.md and Figma wireframes; charts implemented
+B-11,Repository protection and PR template,Planning,QA,,Blocked,Repo and template ready; APS administrator must protect main
+B-12,React/Vite/Recharts starter through PR,Planning,Lead,,Awaiting review,App implemented; teammate review and merge to main pending
+B-13,Test/number-check template,Planning,QA,,Prepared,docs/qa/test-template.csv ready; Asana link pending
+B-14,Agree data contract,Core Build,Data,,Awaiting review,Contract implemented; Frontend and Viz sign-off pending
+B-15,Vercel Git integration and deployment,Core Build,QA,,Partial,Public Vercel deployment READY; Git integration and auto-deploy unverified
+B-16,Join and filter region,Core Build,Data,,Implemented,"Annual UNITID joins, Illinois counts and sample in notebook"
+B-17,STEM programs and readable names,Core Build,Data,,Awaiting review,Six proposed families implemented; approved CIP list still needs APS
+B-18,Award/major rules and CIP transitions,Core Build,Data,,Partial,Counting rules verified; observed changes documented; harmonization review pending
+B-19,Export JSON and CSV under 2 MB,Core Build,Data,,Implemented,Six files; contract and checksum checks pass
+B-20,Responsive dashboard layout,Core Build,Lead,,Implemented,"React layout, mobile/desktop QA evidence in qa/results.md"
+B-21,"Load data, row count, loading/errors",Core Build,Lead,,Implemented,"Parallel fetch, validation, retry and matching count"
+B-22,Annual trend chart live on Vercel,Core Build,UX/Viz,,Implemented,Implemented and publicly deployed on Vercel; see deployment.md
+B-23,Summary helpers and definitions,Core Build,UX/Viz,,Implemented,Totals/change/CAGR; hand-case tests pass
+B-24,Three colleges times two years checks,Core Build,QA,,Implemented,Six independent standard-library raw-source comparisons pass
+B-25,Core Build check-in and replan,Core Build,Lead,,Prepared,Review agenda and task states prepared; actual meeting/board update pending
+B-26,Shared filters,Feature Development,Lead,,Implemented,"Field, inclusive years, award level and reset"
+B-27,Field breakdown,Feature Development,UX/Viz,,Implemented,Filter-aware horizontal bar and exact table
+B-28,Institution picker and page,Feature Development,Lead,,Implemented,Name/city search and UNITID selection
+B-29,Institution charts,Feature Development,UX/Viz,,Implemented,Selected institution annual/field charts
+B-30,Shared chart filters and empty states,Feature Development,UX/Viz,,Implemented,"No-records message, preserved zeros, all region combinations tested"
+B-31,About text and review,Feature Development,Data,,Awaiting review,Text authored; real QA and PO review pending
+B-32,About page live,Feature Development,Lead,,Implemented,Implemented and publicly deployed on Vercel; see deployment.md
+B-33,Document cleaning and reproducibility,Feature Development,Data,,Implemented,"Notebook narrative, stage audit and output hash comparison"
+B-34,Five-minute mid-project update,Feature Development,Lead,,Prepared,mid-project-update.md ready; insert approved live URL before meeting
+B-35,APS check-in and feedback tasks,Feature Development,Lead,,Pending,Future meeting date to confirm; no feedback or attendance invented
