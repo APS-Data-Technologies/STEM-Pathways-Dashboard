@@ -73,10 +73,10 @@ Raw ZIPs are cached in `data/raw` and ignored by Git. `python scripts/build_data
 ## Team of four
 | Person | Role | Main ownership |
 |---|---|---|
-| Sri Dhanush Reddy | Product Owner / Lead + Frontend | Questions, scope, coordination, pages and filters |
-| Name to confirm | UX/UI + Data Visualization | Figma, charts and measures |
-| Name to confirm | Data Engineer | Sources, notebook, cleaning and exports |
-| Name to confirm | QA & Documentation | Tests, source comparisons, docs, GitHub and Vercel |
+| Sri Dhanush Reddy Kondapalli | Product Owner / Lead + Frontend | Questions, scope, coordination, pages and filters |
+| Twinkle Mohan | UX/UI + Data Visualization | Figma, charts and measures |
+| Yoshna Bandi | Data Engineer | Sources, notebook, cleaning and exports |
+| Shraddha Patel | QA & Documentation | Tests, source comparisons, docs, GitHub and Vercel |
 
 This maps the original five roles into four; B-09 wireframes are allocated to UX/UI. Confirm names and allocation with APS. [Product plan and team norms](docs/product-plan.md) · [Asana import preparation](docs/task-board.csv) · [five-minute checkpoint script](docs/mid-project-update.md).
 
