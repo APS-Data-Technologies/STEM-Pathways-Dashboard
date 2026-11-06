@@ -642,7 +642,7 @@ function Dashboard({ data }) {
           <div>
             <span>APS Data Technologies × Judson University</span>
             <small>
-              Fall 2026 internship · Degrees awarded, not unique students.
+              internship · Degrees awarded, not unique students.
             </small>
             <a href="#about">Source & methodology →</a>
           </div>
