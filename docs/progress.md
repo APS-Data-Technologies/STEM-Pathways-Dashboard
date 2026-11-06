@@ -43,10 +43,10 @@ Stage-based acceptance ledger. AI-assisted deliverables are distinguished from a
 | B-35 | Feature Development | Lead | APS check-in and feedback tasks | Pending | Future meeting date to confirm; no feedback or attendance invented |
 
 ## Publishing status
-The GitHub app rejected branch creation (403: Resource not accessible by integration). The terminal has no GitHub authentication. Browser publication now uses the lead’s authorized account on `feature/stem-dashboard`; the app’s API permission error remains separate. See START-HERE.md for upload and review steps. Local commit and artifact preparation are not remote submission.
+The GitHub app rejected branch creation (403: Resource not accessible by integration). The terminal has no GitHub authentication. Browser publication now uses the lead’s authorized account on `feature/stem-dashboard`; the app’s API permission error remains separate. See START-HERE.md for upload and review steps. The browser-published branch contains the implementation; teammate approval and merge remain separate acceptance steps.
 
 ## Immediate recovery plan
-1. Lead: confirm four names, membership, questions and scope; import task-board.csv into Asana and assign one actual person per row. Blank assignees intentionally avoid inventing teammates. Assign new dates explicitly for slipped tasks rather than backdating.
+1. Lead: confirm four names, membership, questions and scope; import task-board.csv into Asana and assign one actual person per row. Blank assignees intentionally avoid inventing teammates. Prioritize open tasks by dependency and acceptance stage.
 2. QA + APS admin: protect main and connect Vercel/GitHub; test public access and deployment triggers.
 3. Data: validate CIP crosswalk/release-window decision; obtain contract approval from Lead and UX/Viz.
 4. Every member: review their role report and replace only the personal-validation placeholders with real evidence. One teammate reviews the integration PR before merge.

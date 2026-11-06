@@ -14,7 +14,7 @@ The README requires one teammate approval per PR. It does not require each perso
 | QA & Documentation | `tests/`, `docs/qa/`, README, workflow/templates, own report | Independently repeat six source checks, review PR, coordinate Vercel and branch protection |
 
 ## Before the initial integration PR is merged
-First publish the local package using START-HERE.md. Then review the integration branch `feature/stem-dashboard`. For review-only activity, open the PR → Files changed → Review changes → leave findings / approve only after checking. A PR author cannot approve their own PR. Do not manufacture an approval with another person's account.
+Review the integration branch `feature/stem-dashboard`. For review-only activity, open the PR → Files changed → Review changes → leave findings / approve only after checking. A PR author cannot approve their own PR. Do not manufacture an approval with another person's account.
 
 To run that branch:
 ```bash
