@@ -1,0 +1,74 @@
+[
+  {
+    "institution": "Judson University",
+    "unitid": 146339,
+    "year": 2016,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 6,
+    "export_total": 6,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip",
+    "member": "c2016_a_rv.csv"
+  },
+  {
+    "institution": "Northwestern University",
+    "unitid": 147767,
+    "year": 2016,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1276,
+    "export_total": 1276,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip",
+    "member": "c2016_a_rv.csv"
+  },
+  {
+    "institution": "University of Chicago",
+    "unitid": 144050,
+    "year": 2016,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 853,
+    "export_total": 853,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip",
+    "member": "c2016_a_rv.csv"
+  },
+  {
+    "institution": "Judson University",
+    "unitid": 146339,
+    "year": 2023,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 6,
+    "export_total": 6,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip",
+    "member": "C2023_a_RV.csv"
+  },
+  {
+    "institution": "Northwestern University",
+    "unitid": 147767,
+    "year": 2023,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1846,
+    "export_total": 1846,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip",
+    "member": "C2023_a_RV.csv"
+  },
+  {
+    "institution": "University of Chicago",
+    "unitid": 144050,
+    "year": 2023,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1480,
+    "export_total": 1480,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip",
+    "member": "C2023_a_RV.csv"
+  }
+]

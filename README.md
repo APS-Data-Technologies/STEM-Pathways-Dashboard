@@ -1,211 +1,92 @@
-# STEM-Pathways-Dashboard
-Team B
 # STEM Pathways Dashboard
 
-A public, interactive dashboard showing how students move into STEM college degrees, built from free federal IPEDS data.
+An interactive Illinois STEM degree-awards dashboard built for the **APS Data Technologies × Judson University internship**. React + Vite + Recharts, with a reproducible Python/IPEDS data pipeline. Public aggregate data only; no student records or database.
 
-Built by a Judson University student team as part of the **Fall 2026 APS Data Technologies Internship** (Oct 26 – Dec 11, 2026).
+**Status:** Implementation implementation prepared locally for team review; published through the lead’s signed-in GitHub browser session to `feature/stem-dashboard`. This is AI-assisted work prepared on the lead's behalf, not four individuals' claimed work histories. The full task list is not signed off: Git auto-deployment, GitHub protection, CIP review, scope approvals and actual team meetings remain open.
 
-🔗 **Live dashboard:** _coming soon (Vercel link)_
-📓 **Data cleaning notebook:** _Colab link coming soon_
+- [Start here: task-by-task progress and remaining actions](docs/progress.md)
+- [Four role reports](docs/reports/README.md)
+- [How each member contributes to GitHub](docs/github-team-guide.md)
+- [Editable Figma wireframes — 10 frames](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd)
+- [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/stem-dashboard/notebooks/clean_ipeds.ipynb)
+- **Live public dashboard:** [https://stem-pathways-dashboard.vercel.app/](https://stem-pathways-dashboard.vercel.app/) - [deployment status and Git integration](docs/deployment.md)
 
-> ℹ️ **Public data only.** IPEDS completions are counts of degrees awarded by college, program and award level. This project contains no individual student records.
+![Dashboard desktop preview](docs/qa/desktop-1280.png)
 
----
+## What works
+- Overview annual trend, STEM-family and degree-level comparisons, top-eight institution ranking.
+- Field comparison with endpoint change and compound annual growth rate.
+- Searchable institution picker, institution annual trend and field mix.
+- Shared field, inclusive year-range and degree-level filters; reset and clear empty states.
+- About page with sources, first-major counting rule, limitations and methodology.
+- Responsive layout, chart tooltips and exact-value table alternatives.
+- Loading, validation, error and retry handling; small static JSON/CSV exports.
 
-## Table of contents
+No stretch features are included: filtered CSV download, maps and narrative findings require the Validation go/no-go.
 
-- [The problem](#the-problem)
-- [Questions the dashboard answers](#questions-the-dashboard-answers)
-- [Features](#features)
-- [Tech stack](#tech-stack)
-- [How it works](#how-it-works)
-- [About the data](#about-the-data)
-- [Getting started](#getting-started)
-- [Rebuilding the data](#rebuilding-the-data)
-- [How we work](#how-we-work)
-- [Testing](#testing)
-- [Timeline](#timeline)
-- [Team](#team)
+## Snapshot and limits
+| Item | Implemented choice | Approval status |
+|---|---|---|
+| Region | Illinois; annual directory state | APS approval pending |
+| STEM | CIP families 11, 14, 15, 26, 27, 40 | APS approval pending |
+| Award years | 2016–2023; revised Completions members verified | Final-window approval pending; 2024 excluded because no revised member was present in downloaded archive |
+| Degrees | Associate, bachelor's, master's | Matches requested degree levels |
+| Counting | First majors, six-digit CIP detail, CTOTALT | Implemented and checked |
+| CIP transition | As reported within each year's family; 2020 warning | Crosswalk/method review still open |
 
----
+The snapshot contains **3,808 aggregate rows**, **187,386 awards**, and **328 historical directory institutions**; 123 institutions have positive selected STEM awards across the full period. Awards are not unique students. Missing records are not zeros. Data can include NCES imputations and later revisions. Institution/classification changes affect trends.
 
-## The problem
+See [data plan, contract, counting rules and formulas](docs/data-plan-and-contract.md). Archive URLs, selected CSV members, bytes and SHA-256 are recorded in [source-manifest.json](data/source-manifest.json).
 
-Counselors, advisors and education leaders want to know which STEM fields are growing, but the federal data that answers this is large and hard to read. This dashboard turns free IPEDS data into clear, interactive charts for one region.
+## Run locally
+If you downloaded the handover ZIP, extract it and run `npm ci` / `npm run dev` inside its `project` folder. The GitHub branch commands below apply on the integration branch. See [START-HERE.md](START-HERE.md).
 
-**Users:** K-12 counselors, college advisors and education leaders.
-
-## Questions the dashboard answers
-
-_The Product Owner sets the final 3–5 questions in Week 1. Examples:_
-
-1. Which STEM fields grew fastest in the region over the period?
-2. How do associate, bachelor's and master's trends differ?
-3. Which colleges award the most computer science or engineering degrees?
-
-## Features
-
-### Must-haves (v1.0)
-
-| # | Feature | What it does |
-|---|---------|--------------|
-| 1 | **Clean dataset** | STEM degree completions by field and year for one region, built by a documented, reproducible notebook. |
-| 2 | **Trend chart** | Total STEM degrees awarded per year. |
-| 3 | **Field breakdown** | Compare fields such as computer science, engineering, biology and math. |
-| 4 | **Institution view** | Pick a college and see its STEM completions by year and by field. |
-| 5 | **Filters** | Field, year (or year range) and degree level (associate, bachelor's, master's). Every chart updates. |
-| 6 | **Live with About page** | Public link that works on phone and laptop, plus an *About the data* page. |
-
-### Stretch (only if must-haves pass testing by Fri Nov 20)
-
-- [ ] Download the filtered data as a CSV file
-- [ ] Map view of colleges in the region
-- [ ] Short "key findings" summary written from the data
-
-### Out of scope
-
-Other regions or a national view, real-time data, individual student records, certificates and doctoral degrees, enrollment/cost/salary/job-outcome or demographic data, user accounts, a database server, and forecasting.
-
-## Tech stack
-
-| Layer | Tool |
-|-------|------|
-| Data cleaning | Python + [pandas](https://pandas.pydata.org/) in Google Colab |
-| Frontend | [React](https://react.dev/) + [Vite](https://vitejs.dev/) |
-| Charts | [Recharts](https://recharts.org/) |
-| Hosting | [Vercel](https://vercel.com/), auto-deploys from `main` |
-| Design | Figma |
-| Project management | Asana, Slack, GitHub |
-
-No database is needed. Every tool is free.
-
-## How it works
-
-```
- IPEDS raw files (downloaded once)
-            │
-            ▼
- Colab notebook (Python / pandas) ── filter region → keep STEM → clean → aggregate
-            │
-            ▼
- Small JSON + CSV files in /public/data (committed to this repo)
-            │
-            ▼
- React app (Vite + Recharts) ── loads the files in the browser, hosted on Vercel
-```
-
-## About the data
-
-**Source:** [IPEDS](https://nces.ed.gov/ipeds/) (Integrated Postsecondary Education Data System), U.S. Department of Education.
-
-- **Completions survey:** number of awards per college, by program (CIP code) and award level.
-- **Institution directory:** each college's name, state and location.
-- The two are joined on the college ID (`UNITID`).
-
-| Item | Choice | Status |
-|------|--------|--------|
-| Region | Illinois (all IPEDS colleges in the state) | Proposed, awaiting approval |
-| STEM definition | 2-digit CIP families: **11** Computer & Information Sciences, **14** Engineering, **15** Engineering Technologies, **26** Biological & Biomedical Sciences, **27** Mathematics & Statistics, **40** Physical Sciences | Proposed, awaiting approval |
-| Years | Most recent 8–10 final award years at download time | Proposed |
-| Award levels | Associate, bachelor's, master's | Confirmed |
-| Counting rule | First majors only (no double counting of double majors) | To confirm in Week 1 |
-
-**Important:** numbers are **degrees awarded**, not students enrolled.
-
-### Known limits
-
-- CIP codes were revised in 2020, so some program codes change between years (mappings are documented in the notebook).
-- Some colleges open, close or merge during the period.
-- The newest years may be provisional and later revised by IPEDS.
-- The dashboard uses a fixed snapshot; it does not update automatically.
-
-### Output files (`/public/data`)
-
-| File | Contents |
-|------|----------|
-| Completions | One row per `{year, unitid, institution, field_family, field_name, cip, award_level, completions}` |
-| Institutions | `{unitid, name, city, latitude, longitude}` |
-| Metadata | Source, years, download date, STEM list |
-
-Each file is JSON (for the app) plus a CSV copy, kept under about 2 MB. Exact file names are defined in the data contract in `/docs`.
-
-## Getting started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (LTS) and npm
-
-### Run the dashboard locally
+Node 24 recommended (minimum 22.12); npm and Python 3.11+ for data work.
 
 ```bash
-git clone <repo-url>
-cd <repo-folder>
-npm install
+git clone https://github.com/APS-Data-Technologies/STEM-Pathways-Dashboard.git
+cd STEM-Pathways-Dashboard
+git switch feature/stem-dashboard
+npm ci
 npm run dev
 ```
 
-Open the local URL Vite prints (usually http://localhost:5173). The cleaned data files are already in `/public/data`, so no extra setup is needed.
+Open the local URL Vite prints. The six cleaned JSON/CSV files in `public/data` are included in this handover; downloading raw data is unnecessary to use the app. After the integration PR merges, use `main` for new work.
 
-### Deploying
+```bash
+npm test
+npm run build
+```
 
-Merging a pull request into `main` redeploys the live dashboard on Vercel automatically. Every PR also gets a preview link.
+## Rebuild and verify data
+```bash
+python -m pip install -r requirements.txt
+python scripts/build_data.py
+python scripts/verify_data.py
+python scripts/run_notebook.py
+```
 
-## Rebuilding the data
+The notebook can also be opened in Colab and run top-to-bottom. On this build host, kernel sockets are restricted, so its six code cells were executed in-process with IPython and real outputs saved. A teammate's Colab UI run remains to verify. `run_notebook.py` verifies all source hashes before rebuilding and asserts exact equality against committed exports. If NCES changes a source, investigate and document the snapshot update rather than overriding the hash silently.
 
-You only need this if you want to change the region, years or STEM list, or refresh the data.
+Raw ZIPs are cached in `data/raw` and ignored by Git. `python scripts/build_data.py --offline` rebuilds from that cache. [Pipeline stage counts](docs/qa/pipeline-audit.json), [six independent checks](docs/qa/number-checks.json), [reproducibility hashes](docs/qa/reproducibility.json) and [QA results/limitations](docs/qa/results.md) are recorded.
 
-1. Open the cleaning notebook in Google Colab (link above, or the copy saved in this repo).
-2. Download the IPEDS Completions and Institution Directory files for the chosen years (source links are recorded in the notebook). Don't edit raw files by hand.
-3. Run the notebook **top to bottom**. Each step documents what it does, why, and row counts before and after.
-4. The notebook exports the JSON and CSV files. Commit them to `/public/data` through a pull request.
-5. Ask the QA & Documentation Lead to re-check the affected numbers against IPEDS.
+## Team of four
+| Person | Role | Main ownership |
+|---|---|---|
+| Sri Dhanush Reddy Kondapalli | Product Owner / Lead + Frontend | Questions, scope, coordination, pages and filters |
+| Twinkle Mohan | UX/UI + Data Visualization | Figma, charts and measures |
+| Yoshna Bandi | Data Engineer | Sources, notebook, cleaning and exports |
+| Shraddha Patel | QA & Documentation | Tests, source comparisons, docs, GitHub and Vercel |
 
-> 💾 Colab sessions reset. Save the notebook and its outputs to GitHub after every working session.
+This maps the original five roles into four; B-09 wireframes are allocated to UX/UI. Confirm names and allocation with APS. [Product plan and team norms](docs/product-plan.md) · [Asana import preparation](docs/task-board.csv) · [five-minute checkpoint script](docs/mid-project-update.md).
 
-## How we work
+## Contribution and review rules
+Use individual accounts, feature branches and pull requests. Each PR requires at least **one other teammate's approving review** before merge. No direct pushes to main. The initial repository inspection found main unprotected; an APS administrator must enable enforcement. The connected contributor cannot change repository administration. See [exact handover steps](docs/github-team-guide.md).
 
-- **Branches:** create a feature branch for every change, e.g. `feature/field-breakdown-chart`.
-- **Pull requests:** every PR needs **1 approving review** from a teammate. `main` is protected; no direct pushes.
-- **Reviews:** respond to review requests within one working day.
-- **Tasks and bugs:** tracked in Asana. Every task has one owner and a due date. Bugs include steps to reproduce and a priority (P1 blocks the demo, then P2, P3).
-- **Stand-ups:** async in Slack: what I did, what's next, anything blocking me.
-- **Secrets:** none should be needed, but if one is, it goes in `.env` and Vercel settings, never in code.
+Every task needs one real owner and a due date in Asana. Stand-ups use Slack: completed / next / blockers. These external updates and meetings have not been fabricated by this implementation. Reports have personal-validation sections for members to complete after actual work. Do not share account credentials.
 
-## Testing
+## Delivery stages
 
-The QA & Documentation Lead keeps the test and number-check template in `/docs` (view, filter, expected value, value shown, source, pass/fail).
+Planning → Core Build → Feature Development → Validation → Polish → Demo and Handover.
 
-- **Number checks:** dashboard totals are compared with IPEDS for at least 3 colleges × 2 years (Week 2), 10 numbers (Week 4), and a final re-check before code freeze.
-- **Filters:** every filter combination shows data or a clear "no data for this choice" message.
-- **Devices:** tested on phone and laptop.
-- **Reproducibility:** a fresh notebook run must reproduce the committed data files exactly.
-- **Readability:** every chart has a title, axis labels, units, tooltips and colorblind-safe colors.
-
-## Timeline
-
-| When | Phase | Key date |
-|------|-------|----------|
-| Mon Oct 26 | Kickoff | Teams and roles confirmed |
-| Oct 26 – 30 | Week 1: Plan and design | Questions, data plan, IPEDS downloads, wireframes |
-| Nov 2 – 6 | Week 2: Build the core | **First deploy by Wed Nov 4**; clean data exported |
-| Nov 9 – 13 | Week 3: Build features | Mid-project check-in with APS |
-| Nov 16 – 20 | Week 4: Connect and test | **Feature complete Fri Nov 20** |
-| Nov 23 – 27 | Week 5: Light polish (Thanksgiving) | **Code freeze Wed Nov 25** (tag `v1.0`) |
-| Nov 30 – Dec 4 | Demo prep | User guide, script, slides, backup video, dry run |
-| Nov 30 – Dec 11 | Demos | 15–20 min team demo |
-| Fri Dec 11 | Project ends | Reflections and hand-over |
-
-## Team
-
-| Role | Name | Owns |
-|------|------|------|
-| Product Owner (Project Lead) | _TBD_ | Dashboard questions, Asana board, wireframes, scope and demo |
-| Frontend Developer | _TBD_ | React pages, filters, institution view, About page |
-| Data Engineer | _TBD_ | Data plan, IPEDS download, cleaning notebook, exported files |
-| Data Visualization Developer | _TBD_ | Charts and summary numbers |
-| QA & Documentation Lead | _TBD_ | Testing, number checks, GitHub repo, Vercel deploys, README, user guide |
-
----
-
-**APS Data Technologies × Judson University** · Fall 2026 Internship Program
+**Current stage: Feature Development / Validation.** Implemented features are live; team review, methodology approvals and Git deployment integration remain pending.
