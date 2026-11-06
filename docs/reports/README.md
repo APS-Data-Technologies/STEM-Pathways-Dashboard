@@ -9,7 +9,7 @@ These role-based reports cover Planning, Core Build and Feature Development and 
 
 Read the [task acceptance ledger](../progress.md) and [GitHub submission guide](../github-team-guide.md) before submitting. Fill each personal-validation section only after actually doing the listed work. No attendance, work hours, peer approvals or APS feedback have been invented.
 
-The feature branch is being published through the lead’s authorized browser session. Teammate review and merge remain pending. These reports are included in the downloadable handover. See START-HERE.md before using branch or Colab links.
+The feature branch is published through the lead’s authorized browser session. Teammate review and merge remain pending. These reports are included in the downloadable handover. See START-HERE.md before using branch or Colab links.
 ## Delivery stages
 
 Planning → Core Build → Feature Development → Validation → Polish → Demo and Handover.
