@@ -39,7 +39,7 @@ To repeat responsive checks, run Vite and visit `/docs/qa/layout-harness.html?wi
 | Priority / task | Owner | Remaining action |
 |---|---|---|
 | P1 acceptance — B-15 | QA + project owner | Public deployment now passes; GitHub connection and auto-deploy verification remain |
-| P1 publishing | Lead + APS admin | Correct GitHub app repository write access or publish the ZIP with your own GitHub Desktop account; browser publication is in progress; teammate review and merge remain pending |
+| P1 publishing | Lead + APS admin | Correct GitHub app repository write access or publish the ZIP with your own GitHub Desktop account; browser publication is complete; teammate review and merge remain pending |
 | P1 workflow — B-11 | APS repository administrator | Protect main; required review/checks; current account lacks admin |
 | P2 methodology — B-18 | Data + APS | Validate CIP crosswalk and accept as-reported method or implement approved harmonization |
 | Scope/contract — B-04/B-14/B-17/B-31 | Lead, UX/Viz, QA, APS | Actual approvals, including latest eligible final-year selection |
