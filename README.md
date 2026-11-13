@@ -1,47 +1,44 @@
 # STEM Pathways Dashboard
 
-An interactive Illinois STEM degree-awards dashboard built for the **APS Data Technologies × Judson University internship**. React + Vite + Recharts, with a reproducible Python/IPEDS data pipeline. Public aggregate data only; no student records or database.
+An Illinois STEM degree explorer for counselors, college advisors and education leaders. It turns public NCES IPEDS completions into field trends, institution profiles and comparisons. The app uses React, Vite and Recharts with a reproducible Python pipeline. It has no accounts, student records or database.
 
-**Status:** Implementation implementation prepared locally for team review; published through the lead’s signed-in GitHub browser session to `feature/stem-dashboard`. This is AI-assisted work prepared on the lead's behalf, not four individuals' claimed work histories. The full task list is not signed off: Git auto-deployment, GitHub protection, CIP review, scope approvals and actual team meetings remain open.
+**Stage: Validation and Handover.** The release candidate is deployed. The code and deliverables are published on the integration branch `feature/stem-dashboard`. Teammate approval, sponsor scope acceptance and final ownership handover are tracked separately in the [acceptance ledger](docs/progress.md). A release candidate is not a claim that the team has held its demo or approved the release.
 
-- [Start here: task-by-task progress and remaining actions](docs/progress.md)
-- [Four role reports](docs/reports/README.md)
-- [How each member contributes to GitHub](docs/github-team-guide.md)
-- [Editable Figma wireframes — 10 frames](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd)
+- [Open the dashboard](https://stem-pathways-dashboard.vercel.app/)
+- [User guide](docs/user-guide.md) · [Five questions and checked answers](docs/demo-answers.md)
+- [Team and role reports](docs/reports/README.md) · [Deliverables index](docs/deliverables.md)
+- [Validation evidence](docs/qa/results.md) · [Data contract](docs/data-plan-and-contract.md)
 - [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/stem-dashboard/notebooks/clean_ipeds.ipynb)
-- **Live public dashboard:** [https://stem-pathways-dashboard.vercel.app/](https://stem-pathways-dashboard.vercel.app/) - [deployment status and Git integration](docs/deployment.md)
+- [Existing Figma wireframes](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd) · [Design and interaction notes](docs/design.md)
 
-![Dashboard desktop preview](docs/qa/desktop-1280.png)
+![Dashboard overview](docs/qa/stem-overview.jpg)
 
-## What works
-- Overview annual trend, STEM-family and degree-level comparisons, top-eight institution ranking.
-- Field comparison with endpoint change and compound annual growth rate.
-- Searchable institution picker, institution annual trend and field mix.
-- Shared field, inclusive year-range and degree-level filters; reset and clear empty states.
-- About page with sources, first-major counting rule, limitations and methodology.
-- Responsive layout, chart tooltips and exact-value table alternatives.
-- Loading, validation, error and retry handling; small static JSON/CSV exports.
+## What people can do
 
-No stretch features are included: filtered CSV download, maps and narrative findings require the Validation go/no-go.
+Use **Overview** for annual awards, field and degree-level totals, leading institutions and a short summary of the current selection. **STEM fields** ranks endpoint growth and lets users sort by growth, total or name. **Institutions** searches the historical directory and shows one college's profile. **Compare** puts up to three institutions beside one another. **Map** plots institutions with matching awards using their directory coordinates. **About the data** explains the counting rules and limits.
 
-## Snapshot and limits
-| Item | Implemented choice | Approval status |
-|---|---|---|
-| Region | Illinois; annual directory state | APS approval pending |
-| STEM | CIP families 11, 14, 15, 26, 27, 40 | APS approval pending |
-| Award years | 2016–2023; revised Completions members verified | Final-window approval pending; 2024 excluded because no revised member was present in downloaded archive |
-| Degrees | Associate, bachelor's, master's | Matches requested degree levels |
-| Counting | First majors, six-digit CIP detail, CTOTALT | Implemented and checked |
-| CIP transition | As reported within each year's family; 2020 warning | Crosswalk/method review still open |
+Field, degree level, start/end award years, city and institution control work together. Quick-start buttons show the latest computer science bachelor's awards or a period beginning with CIP 2020. Users can share the current selection, download its CSV, print an advising brief and open exact-value chart tables. Missing records remain distinct from reported zero counts.
 
-The snapshot contains **3,808 aggregate rows**, **187,386 awards**, and **328 historical directory institutions**; 123 institutions have positive selected STEM awards across the full period. Awards are not unique students. Missing records are not zeros. Data can include NCES imputations and later revisions. Institution/classification changes affect trends.
+City and control use each award year's directory. Map coordinates use the latest directory record in the snapshot. Institution comparisons describe award volume, not program quality or admission chances.
 
-See [data plan, contract, counting rules and formulas](docs/data-plan-and-contract.md). Archive URLs, selected CSV members, bytes and SHA-256 are recorded in [source-manifest.json](data/source-manifest.json).
+## Data snapshot
 
-## Run locally
-If you downloaded the handover ZIP, extract it and run `npm ci` / `npm run dev` inside its `project` folder. The GitHub branch commands below apply on the integration branch. See [START-HERE.md](START-HERE.md).
+| Item | Coverage |
+|---|---|
+| Region | Illinois |
+| Award years | 2016–2023, eight verified revised Completions members |
+| STEM families | 11, 14, 15, 26, 27, 40 |
+| Degrees | Associate, bachelor's, master's |
+| Aggregate records | 3,808 |
+| Degrees awarded | 187,386 |
+| Directory institutions | 328 historical institutions; 123 with positive scoped awards |
+| Counting | First majors, six-digit CIP detail, CTOTALT; no subtotal double counting |
 
-Node 24 recommended (minimum 22.12); npm and Python 3.11+ for data work.
+All six JSON/CSV exports are below 2 MB each. The official CIP crosswalk review found two moves within family 15 and none across the selected family boundaries. The app retains a classification-change warning. Region, STEM definition and final-release window still need the sponsor's acceptance. The current 2024 download contains no revised member; its absence alone does not prove provisional status. See the [release review](docs/data-release-review.md).
+
+## Local setup
+
+Node 24 and npm are recommended. Python 3.11 or newer is needed only to rebuild the data.
 
 ```bash
 git clone https://github.com/APS-Data-Technologies/STEM-Pathways-Dashboard.git
@@ -51,42 +48,46 @@ npm ci
 npm run dev
 ```
 
-Open the local URL Vite prints. The six cleaned JSON/CSV files in `public/data` are included in this handover; downloading raw data is unnecessary to use the app. After the integration PR merges, use `main` for new work.
+Open the URL Vite prints. The cleaned data ships with the app, so no raw download is needed for normal use. In the handover ZIP, run the commands from `project/`. After the reviewed PR merges, new work should branch from `main`.
 
 ```bash
 npm test
 npm run build
+npm run preview
 ```
 
-## Rebuild and verify data
+## Rebuild and validate data
+
 ```bash
+python -m venv .venv
+# macOS/Linux
+source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python scripts/build_data.py
 python scripts/verify_data.py
+python scripts/verify_questions.py
+python scripts/review_cip.py
 python scripts/run_notebook.py
 ```
 
-The notebook can also be opened in Colab and run top-to-bottom. On this build host, kernel sockets are restricted, so its six code cells were executed in-process with IPython and real outputs saved. A teammate's Colab UI run remains to verify. `run_notebook.py` verifies all source hashes before rebuilding and asserts exact equality against committed exports. If NCES changes a source, investigate and document the snapshot update rather than overriding the hash silently.
+The notebook verifies the source checksums and then reproduces the six committed exports byte for byte. The in-process IPython runner executes all seven code cells and saves real outputs. A teammate should also run the shared Colab link for acceptance. Raw ZIPs stay in ignored `data/raw/`; use `--offline` on the build command to reuse them. An upstream checksum change requires an explained snapshot update and new checks, not a silent override.
 
-Raw ZIPs are cached in `data/raw` and ignored by Git. `python scripts/build_data.py --offline` rebuilds from that cache. [Pipeline stage counts](docs/qa/pipeline-audit.json), [six independent checks](docs/qa/number-checks.json), [reproducibility hashes](docs/qa/reproducibility.json) and [QA results/limitations](docs/qa/results.md) are recorded.
+Validation includes 15 automated tests, 1,008 core filter combinations, city/control reconciliation, all 3,808 source cells, 12 source-to-live number checks and 78 live core-view filter checks. These are recorded checks, not a substitute for a counselor user test or teammate review. The build passes with a non-blocking bundle-size warning.
 
-## Team of four
-| Person | Role | Main ownership |
+## Team and ownership
+
+| Person | Role | Implemented area and evidence |
 |---|---|---|
-| Sri Dhanush Reddy Kondapalli | Product Owner / Lead + Frontend | Questions, scope, coordination, pages and filters |
-| Twinkle Mohan | UX/UI + Data Visualization | Figma, charts and measures |
-| Yoshna Bandi | Data Engineer | Sources, notebook, cleaning and exports |
-| Shraddha Patel | QA & Documentation | Tests, source comparisons, docs, GitHub and Vercel |
+| Sri Dhanush Reddy Kondapalli | Product Owner / Project Lead + Frontend | Product questions, React pages, shared filters, comparisons, export and saved selections in `src/App.jsx`, `src/data.js`, `docs/product-plan.md` |
+| Twinkle Mohan | UX/UI + Data Visualization | Charts, summaries, comparison presentation, location view and accessible tables in `src/components/`, `src/styles.css`, `docs/design.md` |
+| Yoshna Bandi | Data Engineer | Raw-source rules, annual joins, schema, crosswalk review, deterministic exports and notebook in `scripts/`, `data/`, `notebooks/` |
+| Shraddha Patel | QA & Documentation | Independent checks, browser evidence, bug ledger, user guide, demo and release documentation in `tests/`, `docs/qa/`, `docs/` |
 
-This maps the original five roles into four; B-09 wireframes are allocated to UX/UI. Confirm names and allocation with APS. [Product plan and team norms](docs/product-plan.md) · [Asana import preparation](docs/task-board.csv) · [five-minute checkpoint script](docs/mid-project-update.md).
+The lead combines Product Owner and Frontend. This implementation was prepared with AI assistance on the lead's behalf. The table assigns responsibility for reviewing and explaining the work; it does not claim that each person personally authored every listed change. Each role report explains the actual artifacts and the review still required.
 
-## Contribution and review rules
-Use individual accounts, feature branches and pull requests. Each PR requires at least **one other teammate's approving review** before merge. No direct pushes to main. The initial repository inspection found main unprotected; an APS administrator must enable enforcement. The connected contributor cannot change repository administration. See [exact handover steps](docs/github-team-guide.md).
+## GitHub and release process
 
-Every task needs one real owner and a due date in Asana. Stand-ups use Slack: completed / next / blockers. These external updates and meetings have not been fabricated by this implementation. Reports have personal-validation sections for members to complete after actual work. Do not share account credentials.
+Everyone uses their own account for genuine changes or reviews. There is no need to upload four copies of the project. Follow the [team GitHub guide](docs/github-team-guide.md). One other teammate must approve the integration PR before merge. An APS administrator must confirm branch protection and ownership. Tag `v1.0` on the reviewed `main` commit only after the acceptance gates pass.
 
-## Delivery stages
-
-Planning → Core Build → Feature Development → Validation → Polish → Demo and Handover.
-
-**Current stage: Feature Development / Validation.** Implemented features are live; team review, methodology approvals and Git deployment integration remain pending.
+The current production deployment uses source files submitted directly to the existing Vercel project. Git-triggered deployment is not yet verified. [Deployment and rollback instructions](docs/deployment.md) describe the remaining connection step and the tested production release.
