@@ -5,10 +5,10 @@ Proposal for review, not minutes of a meeting.
 ## Four-member ownership
 | Person | Role | Responsibility |
 |---|---|---|
-| Sri Dhanush Reddy | Product Owner / Project Lead + Frontend | Scope, backlog, coordination, React pages, shared filters and integration |
-| name to confirm | UX/UI + Data Visualization | Figma, chart selection, Recharts, accessible presentation, summary helpers |
-| name to confirm | Data Engineer | IPEDS sources, notebook, data contract, cleaning and exports |
-| name to confirm | QA & Documentation | Independent checks, test records, GitHub workflow, deployment and documentation |
+| Sri Dhanush Reddy Kondapalli | Product Owner / Project Lead + Frontend | Scope, backlog, coordination, React pages, shared filters and integration |
+| Twinkle Mohan | UX/UI + Data Visualization | Figma, chart selection, Recharts, accessible presentation, summary helpers |
+| Yoshna Bandi | Data Engineer | IPEDS sources, notebook, data contract, cleaning and exports |
+| Shraddha Patel | QA & Documentation | Independent checks, test records, GitHub workflow, deployment and documentation |
 
 The scope document lists five roles; this four-person allocation combines Product Owner with Frontend and assigns B-09 wireframes to UX/UI + Data Visualization. Each task still has one accountable owner. Confirm this allocation with APS. These reports organize AI-assisted deliverables by responsibility; they do not assert that four people authored the work.
 
@@ -31,13 +31,13 @@ Questions are drafted and mapped to views; B-04 remains awaiting actual check-in
 5. Filters: field, inclusive year range, degree level; reset restores defaults; reversed range changes are normalized.
 6. Hosting/About: phone and laptop layout; About accessible from every view; provenance/limits included; public Vercel link and Git auto-deployment verified before acceptance.
 
-Stretch items are separate and not implemented: filtered CSV download, map, narrative key findings. Decide on B-44 in Validation before adding scope.
+Stretch decision: the lead requested the useful additions. Filtered CSV, a geographic institution view and filter-aware findings are implemented alongside institution comparisons and local filters. The source and UI checks are recorded in qa/results.md. Posting the decision to Slack remains a team action.
 
 ## Proposed team norms — copy to Slack after agreement
 - Async daily update: Completed / Next / Blocked / task ID and link.
 - Stage check-in: agree the review with all four roles.
 - Each task has one owner; request help early and record blockers in Asana.
-- Every change uses a branch and pull request. At least one other teammate approves before merge. Respond to review requests within one working day.
+- Every change uses a branch and pull request. At least one other teammate approves before merge. Respond promptly to review requests.
 - Keep public-data credentials out of Git. No credentials are needed for this static app.
 - Record genuine work and AI assistance. Do not backdate reports or invent meetings, approvals, or work hours.
 

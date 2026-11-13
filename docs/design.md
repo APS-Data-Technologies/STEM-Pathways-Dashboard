@@ -1,18 +1,15 @@
-# Design handover — B-09 and B-10
+# Design and interaction record
 
-[Editable Figma wireframes](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd) contain five views at 375 px and 1280 px: Overview, Fields, Institutions, Filter states, About. Ten frames. These are wireframes for review, not approved final designs. Share their link in the team's Slack channel; posting has not been performed here.
+Design owner: Twinkle Mohan, UX/UI + Data Visualization. Frontend owner: Sri Dhanush Reddy Kondapalli.
 
-## Chart choices
-| Question | Chart / presentation | Axes / units |
-|---|---|---|
-| Annual direction | Line chart; do not bridge missing values | Award year / degrees awarded |
-| Fields and growth | Horizontal bar + endpoint comparison table | Degrees awarded / STEM field; table % and annualized % |
-| Degree levels | Horizontal bar | Degrees awarded / award level |
-| Largest institutions | Ranked top-eight list | Institution name / selected-period award total |
-| Institution profile | Line plus field bar | Same units as regional views, one UNITID only |
+The existing Figma file is https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd. Its ten frames document the earlier phone and desktop wireframes. The implemented app preserves the light background, dark green emphasis and chart-led layout. Comparisons, local filters and the location view extend those wireframes; the final Figma alignment and the lead's screen sign-off remain review actions.
 
-Figma's overview bars are schematic placeholders; production annual trends use a line. The implementation includes chart titles, tooltips, labeled axes, non-color cues and exact-value tables. Tables are the fallback for readers who cannot distinguish the colors. Formal accessibility and physical-device review remain Validation work.
+A line chart shows annual awards. Horizontal bars compare long field names. The growth table sorts by endpoint change and places unavailable rates last. Comparison tables use the same filters across institutions, while separate trend charts disclose their independent scales. The geographic view uses equal-size dots and an accessible institution list, so marker size cannot imply award volume.
 
-The UI uses sage backgrounds, deep green navigation and emphasis, restrained teal/orange chart colors, visible focus, generous spacing, and responsive chart stacking. Mobile keeps controls labeled rather than hiding their meaning. The data snapshot and counting unit remain visible.
+All charts have titles, labeled axes and units, hover details and exact-value table alternatives. Colors distinguish categories but labels carry the meaning. Controls have visible focus styles and semantic labels. The phone layout wraps navigation and filters without horizontal page overflow. Long comparison tables scroll within their container.
 
-UX/UI + Data Visualization should review designs, implement any agreed refinements in `src/components/Charts.jsx` / `src/styles.css`, and document actual review findings in their role report. Do not upload another copy of the whole React app.
+The advising flow is: choose a question, narrow the data, read exact values, compare institutions and save a CSV or selection link. The built-in guide explains each step. No student names, sign-in, admissions score, costs, salary or predicted outcomes are collected or implied.
+
+Observed corrections: the institution count now follows the selected college; field growth sorts by the requested measure; saved URLs validate unknown values; geographic filters use annual directory attributes; ranking labels use the latest name in the selected records; empty comparisons disable export. See qa/bugs.csv and qa/results.md.
+
+Remaining usability review: a counselor should try a real advising question, explain the units back to the team and confirm the controls are understandable. This has not been represented as completed user research.

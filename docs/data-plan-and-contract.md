@@ -1,6 +1,6 @@
 # Data plan and contract — B-06, B-14, B-18, B-23, B-31
 
-Schema version 1. Implemented consistently by pipeline and application; Project Lead + Frontend and UX/UI + Data Visualization sign-off is pending.
+Schema version 2. Implemented consistently by pipeline and application; Project Lead + Frontend and UX/UI + Data Visualization sign-off is pending.
 
 ## Decisions and open approvals
 - Region: Illinois, annual HD directory `STABBR=IL`. Working assumption; APS/Harish approval pending.
@@ -13,18 +13,18 @@ Schema version 1. Implemented consistently by pipeline and application; Project 
 - Preserve reported zeros. No matching source row means missing/no records, not a fabricated zero.
 - Sort output deterministically and use UTF-8 with newline endings. Raw ZIPs remain unmodified and uncommitted; checksums, selected archive member and URLs are recorded in `data/source-manifest.json`.
 
-## CIP transition decision — review still required
-2016–2019 uses CIP 2010; 2020–2023 uses CIP 2020. The pipeline aggregates within the family reported for each year, with observed code additions/removals in `docs/qa/cip-transition.json` and complete inventories by year. It does **not** claim a validated longitudinal crosswalk or silently move programs across families. The UI warns when a range crosses 2020. An observed new/absent code can also reflect a college's program activity, not solely a classification change.
+## CIP transition review
+2016–2019 uses CIP 2010; 2020–2023 uses CIP 2020. The pipeline aggregates within the family reported for each year, with observed code additions/removals in `docs/qa/cip-transition.json` and complete inventories by year. It does not invent one-to-one mappings for newly reported codes. The UI warns when a range crosses 2020. An observed new/absent code can also reflect a college's program activity, not solely a classification change.
 
-B-18 is partial until the Data Engineer verifies the official [NCES crosswalk](https://nces.ed.gov/ipeds/cipcode/crosswalk.aspx?y=56), documents whether any moves cross the six selected family boundaries, and APS accepts either an explicit as-reported series or a validated remapping. Do not interpret all observed growth as real program growth.
+The official [NCES crosswalk](https://nces.ed.gov/ipeds/cipcode/crosswalk.aspx?y=56) was retrieved and its 2,180 six-digit detail rows saved in `data/reference/cip-crosswalk.csv`. `scripts/review_cip.py` checks every observed code. The two moves are 15.0503 to 15.1701 and 15.0505 to 15.1703. Both remain in family 15; there are no cross-family moves affecting the selected definition. Family totals therefore require no code reassignment. The audit is `docs/qa/cip-crosswalk-review.json`. New codes and reporting changes still prevent treating this as a constant-program cohort. Sponsor acceptance of the methodology remains separate.
 
 ## Files and fields
 Every file is in `public/data`, with a JSON version for the app and CSV copy.
 
 | File | Grain / required fields |
 |---|---|
-| completions.json / .csv | One row per year × UNITID × family × award level: `year` integer; `unitid` integer; `institution` string; `field_family` two-character string; `field_name` string; `award_level` enum; `completions` nonnegative integer |
-| institutions.json / .csv | One row per UNITID: `unitid` integer, `name`/`city` strings, `latitude`/`longitude` number or null, `directory_year` integer, `years_present` integer array (CSV string serialization) |
+| completions.json / .csv | One row per year × UNITID × family × award level: `year` integer; `unitid` integer; `institution`, `city`, `control` strings; `field_family` two-character string; `field_name` string; `award_level` enum; `completions` nonnegative integer |
+| institutions.json / .csv | One row per UNITID: `unitid` integer, `name`/`city`/`control` strings, `latitude`/`longitude` number or null, `directory_year` integer, `years_present` integer array (CSV string serialization) |
 | metadata.json / .csv | Object with schema_version, region/state, years, award_levels, fields, source details, snapshot date, counting/missing/CIP rules, row and institution counts. CSV is `key,value`; nested values JSON encoded. |
 
 The scope's example includes `cip`; this compact contract intentionally aggregates to two-digit `field_family` and omits six-digit `cip` from the app export. Full six-digit detail is retained in the raw source and the notebook's cleaning stage. This aggregation is proposed under the scope's size-budget allowance and needs contract sign-off.
@@ -51,4 +51,12 @@ Calculation tests include this example and boundary cases. All display rounding 
 | APS / Harish — region, STEM, release window and CIP method | Pending | Link actual approval |
 
 ## Notebook execution evidence
-All six code cells ran in order using `python scripts/run_notebook.py` and saved real IPython outputs. This host blocks both TCP and IPC Jupyter kernel sockets, so execution used an in-process IPython runner. A Colab UI/kernel run by a teammate remains to verify; it is not claimed as already performed.
+All seven code cells ran in order using `python scripts/run_notebook.py` and saved real IPython outputs. Execution used the supplied in-process IPython runner. A Colab UI/kernel run by a teammate remains to verify; it is not claimed as already performed.
+
+## Added filter fields
+
+`city` is CITY and `control` maps CONTROL 1 to Public, 2 to Private nonprofit and 3 to Private for-profit. Completion rows use the directory for the same award year. Picker labels and coordinates use the latest snapshot directory for that UNITID. City names preserve source spelling; source typos are not silently corrected. City/control filters therefore describe institutions at the time of the award, not necessarily their present-day status.
+
+## Export behavior
+
+Overview and Fields export all records matching the shared filters. Institutions exports only the selected UNITID. Compare exports only the chosen institutions. Map exports records for institutions with positive matching awards, including their reported zero cells. Its list search does not change plotted/exported institutions. CSV fields match the completion contract. Empty views disable export. Text quoting and formula-prefix escaping protect spreadsheet users.

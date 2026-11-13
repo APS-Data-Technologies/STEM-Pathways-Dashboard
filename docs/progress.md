@@ -1,53 +1,73 @@
-# Implementation progress and acceptance ledger
+# Project acceptance ledger
 
-Stage-based acceptance ledger. AI-assisted deliverables are distinguished from actual team approvals and validation.
+Stage: Validation and Handover. This ledger covers every B-01 to B-61 requirement. Implemented means the stated technical artifact and check exist. It does not replace sponsor acceptance, individual review, a real meeting or release approval. Prepared means the material exists but its external action remains. The team has four people, with the lead also owning Frontend.
 
-**Implemented** means an artifact exists and has the verification stated below. It does not replace teammate review, sponsor approval or merge. Prepared = draft/material ready for an external action; Partial = unmet technical/acceptance element; Blocked = missing permission/account connection.
+The release source and deliverables are published on feature/stem-dashboard through the lead’s signed-in GitHub account. Vercel production is READY. The complete source and deliverables are also available in the handover package.
 
-| ID | Stage | Owner | Task | State | Evidence / remaining action |
+| ID | Stage | Owner | Task | State | Evidence or next action |
 |---|---|---|---|---|---|
-| B-01 | Planning | Lead | Kickoff and all members join tools | Pending | Actual four-member Slack/Asana/GitHub membership unverified |
-| B-02 | Planning | Lead | Asana board and task import | Prepared | task-board.csv prepared; import and named assignments pending |
-| B-03 | Planning | Lead | Team norms in Slack | Prepared | product-plan.md; post, pin and four reactions pending |
-| B-04 | Planning | Lead | Define dashboard questions | Awaiting review | Five questions mapped to views; actual check-in approval pending |
-| B-05 | Planning | Lead | User stories and acceptance criteria | Implemented | product-plan.md; must-have and stretch separated |
-| B-06 | Planning | Data | Data plan | Implemented | data-plan-and-contract.md; open scope choices flagged |
-| B-07 | Planning | Data | Download IPEDS files | Implemented | 16 unmodified source ZIPs cached; URLs and checksums recorded |
-| B-08 | Planning | Data | Shared Colab notebook and row counts | Awaiting review | Executed notebook committed; Colab-open link provided; shared ownership review pending |
-| B-09 | Planning | UX/Viz | Five responsive Figma wireframes | Awaiting review | 10 editable frames; Slack sharing and review pending |
-| B-10 | Planning | UX/Viz | Chart choices and sketches | Implemented | design.md and Figma wireframes; charts implemented |
-| B-11 | Planning | QA | Repository protection and PR template | Blocked | Repo and template ready; APS administrator must protect main |
-| B-12 | Planning | Lead | React/Vite/Recharts starter through PR | Awaiting review | App implemented; teammate review and merge to main pending |
-| B-13 | Planning | QA | Test/number-check template | Prepared | docs/qa/test-template.csv ready; Asana link pending |
-| B-14 | Core Build | Data | Agree data contract | Awaiting review | Contract implemented; Frontend and Viz sign-off pending |
-| B-15 | Core Build | QA | Vercel Git integration and deployment | Partial | Public deployment READY; GitHub connection / auto-deploy unverified |
-| B-16 | Core Build | Data | Join and filter region | Implemented | Annual UNITID joins, Illinois counts and sample in notebook |
-| B-17 | Core Build | Data | STEM programs and readable names | Awaiting review | Six proposed families implemented; approved CIP list still needs APS |
-| B-18 | Core Build | Data | Award/major rules and CIP transitions | Partial | Counting rules verified; observed changes documented; harmonization review pending |
-| B-19 | Core Build | Data | Export JSON and CSV under 2 MB | Implemented | Six files; contract and checksum checks pass |
-| B-20 | Core Build | Lead | Responsive dashboard layout | Implemented | React layout, mobile/desktop QA evidence in qa/results.md |
-| B-21 | Core Build | Lead | Load data, row count, loading/errors | Implemented | Parallel fetch, validation, retry and matching count |
-| B-22 | Core Build | UX/Viz | Annual trend chart live on Vercel | Implemented | Chart implemented and locally checked; public Vercel acceptance passed |
-| B-23 | Core Build | UX/Viz | Summary helpers and definitions | Implemented | Totals/change/CAGR; hand-case tests pass |
-| B-24 | Core Build | QA | Three colleges times two years checks | Implemented | Six independent standard-library raw-source comparisons pass |
-| B-25 | Core Build | Lead | Core Build check-in and replan | Prepared | Review agenda and task states prepared; actual meeting/board update pending |
-| B-26 | Feature Development | Lead | Shared filters | Implemented | Field, inclusive years, award level and reset |
-| B-27 | Feature Development | UX/Viz | Field breakdown | Implemented | Filter-aware horizontal bar and exact table |
-| B-28 | Feature Development | Lead | Institution picker and page | Implemented | Name/city search and UNITID selection |
-| B-29 | Feature Development | UX/Viz | Institution charts | Implemented | Selected institution annual/field charts |
-| B-30 | Feature Development | UX/Viz | Shared chart filters and empty states | Implemented | No-records message, preserved zeros, all region combinations tested |
-| B-31 | Feature Development | Data | About text and review | Awaiting review | Text authored; real QA and PO review pending |
-| B-32 | Feature Development | Lead | About page live | Implemented | Page implemented and linked; public Vercel acceptance passed |
-| B-33 | Feature Development | Data | Document cleaning and reproducibility | Implemented | Notebook narrative, stage audit and output hash comparison |
-| B-34 | Feature Development | Lead | Five-minute mid-project update | Prepared | mid-project-update.md ready; insert approved live URL before meeting |
-| B-35 | Feature Development | Lead | APS check-in and feedback tasks | Pending | Future meeting date to confirm; no feedback or attendance invented |
+| B-01 | Planning | Sri Dhanush Reddy Kondapalli | Confirm four-person access to team tools | Pending team action | Confirm four actual memberships in Slack, Asana and GitHub. |
+| B-02 | Planning | Sri Dhanush Reddy Kondapalli | Create the task board with named owners | Prepared | task-board.csv includes all 61 tasks and named owners; import and assign actual accounts in Asana. |
+| B-03 | Planning | Sri Dhanush Reddy Kondapalli | Agree and pin team working norms | Prepared | product-plan.md includes norms; actual Slack pin and reactions pending. |
+| B-04 | Planning | Sri Dhanush Reddy Kondapalli | Approve the five dashboard questions | Awaiting sponsor review | product-plan.md and demo-answers.md define and demonstrate all five questions. |
+| B-05 | Planning | Sri Dhanush Reddy Kondapalli | Write user stories and acceptance criteria | Implemented | product-plan.md |
+| B-06 | Planning | Yoshna Bandi | Define the data plan | Implemented | data-plan-and-contract.md |
+| B-07 | Planning | Yoshna Bandi | Download unchanged official sources | Implemented | data/source-manifest.json |
+| B-08 | Planning | Yoshna Bandi | Execute and share the cleaning notebook | Awaiting team review | Seven executed notebook cells and exact reproduction pass; shared Colab ownership and a teammate run pending. |
+| B-09 | Planning | Twinkle Mohan | Review responsive wireframes | Awaiting design review | Existing ten-frame Figma file; final added views need design review. |
+| B-10 | Planning | Twinkle Mohan | Choose chart types and labels | Implemented | docs/design.md and src/components/Charts.jsx |
+| B-11 | Planning | Shraddha Patel | Protect main and apply the PR template | Pending administrator | PR template exists; APS administrator must enforce one approving review on main. |
+| B-12 | Planning | Sri Dhanush Reddy Kondapalli | Build the React application and merge through review | Awaiting PR review | React build passes and source is published; another teammate approval and merge remain separate gates. |
+| B-13 | Planning | Shraddha Patel | Prepare the test and number-check template | Prepared | qa/test-template.csv and qa/results.md; link from the team board after import. |
+| B-14 | Core Build | Yoshna Bandi | Review the data contract | Awaiting team review | Schema 2 is implemented; Lead and UX/Viz must acknowledge the contract. |
+| B-15 | Core Build | Shraddha Patel | Connect Git deployment and verify triggers | Partial | Production is READY via source-file deployment; Git connection and automatic redeployment are unverified. |
+| B-16 | Core Build | Yoshna Bandi | Join and filter Illinois institutions | Implemented | qa/pipeline-audit.json |
+| B-17 | Core Build | Yoshna Bandi | Apply the STEM family definition | Awaiting sponsor review | Six families implemented and reconciled; APS must accept the definition. |
+| B-18 | Core Build | Yoshna Bandi | Validate awards, majors and CIP transitions | Implemented | Counting rules and official crosswalk review pass; two moves stay within family 15. |
+| B-19 | Core Build | Yoshna Bandi | Export JSON and CSV within the size budget | Implemented | public/data and qa/reproducibility.json |
+| B-20 | Core Build | Sri Dhanush Reddy Kondapalli | Build the responsive layout | Implemented | src/styles.css and qa/results.md |
+| B-21 | Core Build | Sri Dhanush Reddy Kondapalli | Load and validate data with retry handling | Implemented | src/data.js and src/App.jsx |
+| B-22 | Core Build | Twinkle Mohan | Build the annual trend chart | Implemented | src/components/Charts.jsx |
+| B-23 | Core Build | Twinkle Mohan | Define and test summary measures | Implemented | tests/data.test.js and data-plan-and-contract.md |
+| B-24 | Core Build | Shraddha Patel | Check source totals for selected colleges | Implemented | qa/number-checks.json |
+| B-25 | Core Build | Sri Dhanush Reddy Kondapalli | Hold the core-build review | Pending team action | Review agenda prepared; no meeting attendance or decisions invented. |
+| B-26 | Feature Development | Sri Dhanush Reddy Kondapalli | Connect shared filters | Implemented | src/App.jsx; 78 live core-view checks |
+| B-27 | Feature Development | Twinkle Mohan | Build the field comparison | Implemented | src/components/Charts.jsx |
+| B-28 | Feature Development | Sri Dhanush Reddy Kondapalli | Build institution search and selection | Implemented | src/App.jsx |
+| B-29 | Feature Development | Twinkle Mohan | Build institution charts | Implemented | src/App.jsx and src/components/Charts.jsx |
+| B-30 | Feature Development | Twinkle Mohan | Handle filters and empty results across charts | Implemented | tests/data.test.js and qa/ui-filter-checks.json |
+| B-31 | Feature Development | Yoshna Bandi | Review the methodology text | Awaiting team review | About text explains rules and limits; actual QA and lead sign-off pending. |
+| B-32 | Feature Development | Sri Dhanush Reddy Kondapalli | Publish About the data | Implemented | Live About view |
+| B-33 | Feature Development | Yoshna Bandi | Document and reproduce the pipeline | Implemented | notebooks/clean_ipeds.ipynb |
+| B-34 | Feature Development | Sri Dhanush Reddy Kondapalli | Prepare the project checkpoint update | Prepared | mid-project-update.md supplies a stage-based checkpoint agenda. |
+| B-35 | Feature Development | Sri Dhanush Reddy Kondapalli | Hold the APS review and log feedback | Pending sponsor action | Use feedback-template.csv to record actual review comments and ownership. |
+| B-36 | Validation | Sri Dhanush Reddy Kondapalli | Check all views and filter controls | Implemented | qa/results.md and qa/ui-filter-checks.json |
+| B-37 | Validation | Shraddha Patel | Run responsive checks and source-to-live checks | Implemented | qa/live-number-checks.json and responsive evidence |
+| B-38 | Validation | Shraddha Patel | Record and prioritize bugs | Prepared | qa/bugs.csv records defects and retests; import to Asana and agree priorities. |
+| B-39 | Validation | Twinkle Mohan | Fix chart defects and retest | Implemented | qa/bugs.csv and tests/ |
+| B-40 | Validation | Sri Dhanush Reddy Kondapalli | Fix page and filter defects and retest | Implemented | qa/bugs.csv and tests/ |
+| B-41 | Validation | Yoshna Bandi | Rebuild and recheck data after changes | Implemented | qa/full-source-check.json and qa/reproducibility.json |
+| B-42 | Validation | Twinkle Mohan | Review chart readability | Implemented | design.md and accessible data tables |
+| B-43 | Validation | Sri Dhanush Reddy Kondapalli | Prepare checked answers to the five questions | Implemented | demo-answers.md contains all five answers, exact views and filters, with source reconciliation. |
+| B-44 | Validation | Sri Dhanush Reddy Kondapalli | Record the stretch-feature decision | Prepared | Lead requested useful additions; features and evidence are documented. Slack decision post remains. |
+| B-45 | Validation | Sri Dhanush Reddy Kondapalli | Export filtered CSV | Implemented | src/data.js rowsToCsv and downloaded export validation |
+| B-46 | Validation | Twinkle Mohan | Plot institution locations | Implemented | src/components/Advising.jsx InstitutionMap |
+| B-47 | Validation | Sri Dhanush Reddy Kondapalli | Provide checked key findings | Implemented | demo-answers.md and qa/full-source-check.json |
+| B-48 | Polish | Sri Dhanush Reddy Kondapalli | Polish layout and obtain screen sign-off | Awaiting lead review | Layout and responsive checks recorded; lead must sign off screens and design alignment. |
+| B-49 | Polish | Twinkle Mohan | Polish charts and recheck summaries | Implemented | qa/live-number-checks.json and summary tests |
+| B-50 | Polish | Yoshna Bandi | Reproduce the exports from a fresh notebook run | Implemented | qa/reproducibility.json; seven executed cells |
+| B-51 | Polish | Shraddha Patel | Complete setup and maintenance instructions | Awaiting independent setup | README has setup, rebuild and deployment steps; a new teammate must confirm a fresh setup. |
+| B-52 | Demo and Handover | Shraddha Patel | Provide a one-page illustrated user guide | Implemented | reports/STEM-Pathways-User-Guide.docx |
+| B-53 | Polish | Shraddha Patel | Run production regression checks | Implemented | qa/results.md; production deployment READY and live checks pass |
+| B-54 | Polish | Shraddha Patel | Merge reviewed code and tag v1.0 on main | Awaiting release gates | No v1.0 tag on old main. Obtain teammate approval, merge the published source, verify production and tag reviewed main. |
+| B-55 | Demo and Handover | Sri Dhanush Reddy Kondapalli | Prepare the demo script and run order | Prepared | demo-script.md gives an 18-minute run order and role speaking slots. |
+| B-56 | Demo and Handover | Sri Dhanush Reddy Kondapalli | Prepare editable demo slides | Prepared | Editable presentation supplied in reports; team edits and rehearsal pending. |
+| B-57 | Demo and Handover | Shraddha Patel | Prepare a backup walkthrough | Prepared | Captioned app walkthrough supplied; full team rehearsal recording and shared-folder confirmation pending. |
+| B-58 | Demo and Handover | Sri Dhanush Reddy Kondapalli | Hold the full team dry run | Pending team action | dry-run-checklist.md provides timings and checks; actual team rehearsal not held. |
+| B-59 | Demo and Handover | Sri Dhanush Reddy Kondapalli | Deliver the team demo and record feedback | Pending team action | Deliver the real presentation and record feedback. |
+| B-60 | Demo and Handover | Shraddha Patel | Confirm APS ownership and archive the board | Pending APS action | Repository belongs to APS organization; Vercel is under the lead team. APS must confirm ownership/access and board archive. |
+| B-61 | Demo and Handover | Sri Dhanush Reddy Kondapalli | Collect four personal reflections | Pending individual action | Four reflection worksheets are prepared. Each person writes and submits their own experience. |
 
-## Publishing status
-The GitHub app rejected branch creation (403: Resource not accessible by integration). The terminal has no GitHub authentication. Browser publication now uses the lead’s authorized account on `feature/stem-dashboard`; the app’s API permission error remains separate. See START-HERE.md for upload and review steps. The browser-published branch contains the implementation; teammate approval and merge remain separate acceptance steps.
+## Release gates
 
-## Immediate recovery plan
-1. Lead: confirm four names, membership, questions and scope; import task-board.csv into Asana and assign one actual person per row. Blank assignees intentionally avoid inventing teammates. Prioritize open tasks by dependency and acceptance stage.
-2. QA + APS admin: protect main and connect Vercel/GitHub; test public access and deployment triggers.
-3. Data: validate CIP crosswalk/release-window decision; obtain contract approval from Lead and UX/Viz.
-4. Every member: review their role report and replace only the personal-validation placeholders with real evidence. One teammate reviews the integration PR before merge.
-5. Lead: hold Core Build review and book the APS mid-project check-in; log real feedback with owner and due date.
+Review the published source on feature/stem-dashboard, obtain one other teammate approval, merge to main, verify the matching production build and create v1.0 on that reviewed commit. APS confirms the scope and ownership. The team completes its rehearsal, demo, feedback and personal reflections. No release tag is created against the old brief-only main branch.
