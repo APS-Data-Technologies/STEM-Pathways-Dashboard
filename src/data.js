@@ -68,7 +68,112 @@ export function filterRows(rows, filters, institution = null) {
       r.year <= filters.end &&
       (filters.field === "all" || r.field_family === filters.field) &&
       (filters.level === "all" || r.award_level === filters.level) &&
+      (!filters.city || filters.city === "all" || r.city === filters.city) &&
+      (!filters.control ||
+        filters.control === "all" ||
+        r.control === filters.control) &&
       (institution == null || r.unitid === Number(institution)),
+  );
+}
+
+export function defaultFilters(metadata) {
+  return {
+    field: "all",
+    level: "all",
+    start: metadata.years[0],
+    end: metadata.years.at(-1),
+    city: "all",
+    control: "all",
+  };
+}
+
+export function readSelection(search, data) {
+  const p = new URLSearchParams(search),
+    f = defaultFilters(data.metadata);
+  for (const [key, allowed] of Object.entries({
+    field: data.metadata.fields.map((x) => x.code),
+    level: data.metadata.award_levels,
+    city: data.metadata.cities || [],
+    control: data.metadata.controls || [],
+  })) {
+    if (allowed.includes(p.get(key))) f[key] = p.get(key);
+  }
+  for (const key of ["start", "end"])
+    if (data.metadata.years.includes(Number(p.get(key))))
+      f[key] = Number(p.get(key));
+  if (f.start > f.end) [f.start, f.end] = [f.end, f.start];
+  const ids = new Set(data.institutions.map((x) => String(x.unitid)));
+  const fallback = String(
+    data.institutions.find((x) => x.name.includes("Judson"))?.unitid ||
+      data.institutions[0].unitid,
+  );
+  return {
+    filters: f,
+    selected: ids.has(p.get("institution")) ? p.get("institution") : fallback,
+    compare: [
+      ...new Set((p.get("compare") || "").split(",").filter((x) => ids.has(x))),
+    ].slice(0, 3),
+  };
+}
+
+export function selectionSearch(filters, selected, compare) {
+  const p = new URLSearchParams({ ...filters, institution: selected });
+  if (compare.length) p.set("compare", compare.join(","));
+  return "?" + p.toString();
+}
+
+export function fieldGrowth(rows, filters, sort = "change") {
+  return groupTotals(rows, "field_family", "field_name")
+    .map((f) => {
+      const series = byYear(
+        rows.filter((r) => r.field_family === f.key),
+        filters.start,
+        filters.end,
+      );
+      return {
+        ...f,
+        start: series[0].completions,
+        end: series.at(-1).completions,
+        ...growth(
+          series[0].completions,
+          series.at(-1).completions,
+          filters.end - filters.start,
+        ),
+      };
+    })
+    .sort((a, b) =>
+      sort === "name"
+        ? a.name.localeCompare(b.name)
+        : (b[sort] ?? -Infinity) - (a[sort] ?? -Infinity) ||
+          a.name.localeCompare(b.name),
+    );
+}
+
+export function rowsToCsv(rows) {
+  const columns = [
+    "year",
+    "unitid",
+    "institution",
+    "city",
+    "control",
+    "field_family",
+    "field_name",
+    "award_level",
+    "completions",
+  ];
+  const quote = (value) => {
+    let s = String(value ?? "");
+    // Prevent spreadsheet formula execution when opening exported text cells.
+    if (/^[=+@\-\t\r]/.test(s)) s = "'" + s;
+    return '"' + s.replaceAll('"', '""') + '"';
+  };
+  return (
+    "\uFEFF" +
+    [
+      columns.map(quote).join(","),
+      ...rows.map((r) => columns.map((c) => quote(r[c])).join(",")),
+    ].join("\r\n") +
+    "\r\n"
   );
 }
 
@@ -86,10 +191,15 @@ export function byYear(rows, start, end) {
 
 export function groupTotals(rows, key, label = key) {
   const groups = new Map();
+  const labelYears = new Map();
   rows.forEach((r) => {
     if (!groups.has(r[key]))
       groups.set(r[key], { key: r[key], name: r[label], completions: 0 });
     groups.get(r[key]).completions += r.completions;
+    if (r.year != null && r.year >= (labelYears.get(r[key]) ?? -Infinity)) {
+      groups.get(r[key]).name = r[label];
+      labelYears.set(r[key], r.year);
+    }
   });
   return [...groups.values()].sort(
     (a, b) =>

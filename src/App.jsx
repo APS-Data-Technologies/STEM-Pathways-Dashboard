@@ -8,6 +8,11 @@ import {
   formatNumber,
   formatPercent,
   growth,
+  defaultFilters,
+  readSelection,
+  selectionSearch,
+  rowsToCsv,
+  fieldGrowth,
 } from "./data.js";
 import {
   TrendChart,
@@ -15,10 +20,14 @@ import {
   EmptyState,
 } from "./components/Charts.jsx";
 
+import { Findings, Compare, InstitutionMap } from "./components/Advising.jsx";
+
 const pages = [
   ["overview", "Overview"],
   ["fields", "STEM fields"],
   ["institutions", "Institutions"],
+  ["compare", "Compare"],
+  ["map", "Map"],
   ["about", "About the data"],
 ];
 function currentPage() {
@@ -99,16 +108,33 @@ function Filters({ metadata, filters, setFilters }) {
           ))}
         </select>
       </label>
+      <label>
+        City
+        <select
+          value={filters.city}
+          onChange={(e) => change("city", e.target.value)}
+        >
+          <option value="all">All cities</option>
+          {metadata.cities.map((city) => (
+            <option key={city}>{city}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Institution control
+        <select
+          value={filters.control}
+          onChange={(e) => change("control", e.target.value)}
+        >
+          <option value="all">All institution types</option>
+          {metadata.controls.map((control) => (
+            <option key={control}>{control}</option>
+          ))}
+        </select>
+      </label>
       <button
         className="reset"
-        onClick={() =>
-          setFilters({
-            field: "all",
-            level: "all",
-            start: metadata.years[0],
-            end: metadata.years.at(-1),
-          })
-        }
+        onClick={() => setFilters(defaultFilters(metadata))}
       >
         Reset
       </button>
@@ -151,8 +177,14 @@ function Metrics({ rows, filters }) {
 
 function Institutions({ data, filters, selected, setSelected }) {
   const [search, setSearch] = useState("");
-  const choices = data.institutions.filter((i) =>
-    `${i.name} ${i.city}`.toLowerCase().includes(search.toLowerCase()),
+  const [matchingOnly, setMatchingOnly] = useState(true);
+  const matchingIds = new Set(
+    filterRows(data.rows, filters).map((r) => r.unitid),
+  );
+  const choices = data.institutions.filter(
+    (i) =>
+      (!matchingOnly || matchingIds.has(i.unitid)) &&
+      `${i.name} ${i.city}`.toLowerCase().includes(search.toLowerCase()),
   );
   const institution = data.institutions.find(
     (i) => i.unitid === Number(selected),
@@ -168,8 +200,8 @@ function Institutions({ data, filters, selected, setSelected }) {
           <p className="eyebrow">TAKE A CLOSER LOOK</p>
           <h2>Explore an institution</h2>
           <p>
-            Includes all Illinois institutions in the source directories, even
-            those without matching awards.
+            Start with institutions that have records matching your filters. You
+            can also search the full historical directory.
           </p>
         </div>
         <div className="picker-fields">
@@ -202,6 +234,14 @@ function Institutions({ data, filters, selected, setSelected }) {
             </select>
           </label>
         </div>
+        <label className="check-label">
+          <input
+            type="checkbox"
+            checked={matchingOnly}
+            onChange={(e) => setMatchingOnly(e.target.checked)}
+          />
+          Only institutions with matching records
+        </label>
         <p role="status">{choices.length} institutions match your search.</p>
       </section>
       {institution && (
@@ -212,8 +252,9 @@ function Institutions({ data, filters, selected, setSelected }) {
           <div>
             <h2>{institution.name}</h2>
             <p>
-              {institution.city}, Illinois · IPEDS ID {institution.unitid} ·
-              Latest directory record: {institution.directory_year}
+              {institution.city}, Illinois · {institution.control} · IPEDS ID{" "}
+              {institution.unitid} · Latest directory record:{" "}
+              {institution.directory_year}
             </p>
           </div>
         </div>
@@ -223,7 +264,8 @@ function Institutions({ data, filters, selected, setSelected }) {
         <section className="panel">
           <EmptyState>
             This institution has no matching records for the selected period,
-            field, and degree level.
+            field, degree level, city and institution control. Try resetting the
+            filters.
           </EmptyState>
         </section>
       ) : (
@@ -245,7 +287,8 @@ function Institutions({ data, filters, selected, setSelected }) {
 }
 
 function Fields({ rows, filters }) {
-  const fields = groupTotals(rows, "field_family", "field_name");
+  const [sort, setSort] = useState("change");
+  const fields = fieldGrowth(rows, filters, sort);
   return (
     <>
       <BreakdownChart
@@ -260,6 +303,14 @@ function Fields({ rows, filters }) {
           Percent change uses the first and last selected years. A missing or
           zero baseline is not ranked.
         </p>
+        <label className="sort-control">
+          Sort fields by
+          <select value={sort} onChange={(e) => setSort(e.target.value)}>
+            <option value="change">Percent change (highest first)</option>
+            <option value="completions">Total awards (highest first)</option>
+            <option value="name">Field name</option>
+          </select>
+        </label>
         {fields.length ? (
           <div className="table-scroll">
             <table>
@@ -333,6 +384,8 @@ function About({ metadata }) {
           </dd>
           <dt>Region</dt>
           <dd>Illinois, determined using each year's institution directory.</dd>
+          <dt>Location and institution type</dt>
+          <dd>{metadata.location_rule}</dd>
           <dt>Degree levels</dt>
           <dd>
             Associate, bachelor's, and master's. Certificates and doctoral
@@ -437,27 +490,80 @@ function About({ metadata }) {
 
 function Dashboard({ data }) {
   const [page, setPage] = useState(currentPage);
-  const [filters, setFilters] = useState({
-    field: "all",
-    level: "all",
-    start: data.metadata.years[0],
-    end: data.metadata.years.at(-1),
-  });
-  const [selected, setSelected] = useState(
-    String(
-      data.institutions.find((i) => i.name.includes("Judson"))?.unitid ||
-        data.institutions[0].unitid,
-    ),
-  );
+  const [initial] = useState(() => readSelection(window.location.search, data));
+  const [filters, setFilters] = useState(initial.filters);
+  const [selected, setSelected] = useState(initial.selected);
+  const [compare, setCompare] = useState(initial.compare);
+  const [notice, setNotice] = useState("");
+  const [showGuide, setShowGuide] = useState(false);
   useEffect(() => {
-    const handler = () => setPage(currentPage());
-    window.addEventListener("hashchange", handler);
-    return () => window.removeEventListener("hashchange", handler);
-  }, []);
+    const hash = () => setPage(currentPage());
+    const pop = () => {
+      const next = readSelection(window.location.search, data);
+      setFilters(next.filters);
+      setSelected(next.selected);
+      setCompare(next.compare);
+      setPage(currentPage());
+    };
+    window.addEventListener("hashchange", hash);
+    window.addEventListener("popstate", pop);
+    return () => {
+      window.removeEventListener("hashchange", hash);
+      window.removeEventListener("popstate", pop);
+    };
+  }, [data]);
+  useEffect(() => {
+    window.history.replaceState(
+      null,
+      "",
+      selectionSearch(filters, selected, compare) + "#" + page,
+    );
+    setNotice("");
+  }, [filters, selected, compare, page]);
   const rows = useMemo(
     () => filterRows(data.rows, filters),
     [data.rows, filters],
   );
+  const mapIds = new Set(
+    rows.filter((r) => r.completions > 0).map((r) => r.unitid),
+  );
+  const visibleRows =
+    page === "institutions"
+      ? rows.filter((r) => r.unitid === Number(selected))
+      : page === "compare"
+        ? rows.filter((r) => compare.includes(String(r.unitid)))
+        : page === "map"
+          ? rows.filter((r) => mapIds.has(r.unitid))
+          : rows;
+  const context = `${filters.start}–${filters.end} · ${filters.field === "all" ? "All STEM fields" : data.metadata.fields.find((f) => f.code === filters.field)?.name} · ${filters.level === "all" ? "All degree levels" : filters.level} · ${filters.city === "all" ? "All cities" : filters.city} · ${filters.control === "all" ? "All institution types" : filters.control}`;
+  function download() {
+    const blob = new Blob([rowsToCsv(visibleRows)], {
+      type: "text/csv;charset=utf-8;",
+    });
+    const url = URL.createObjectURL(blob),
+      a = document.createElement("a");
+    a.href = url;
+    a.download = `stem-pathways-${page}-${filters.start}-${filters.end}.csv`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setNotice(
+      `Downloaded ${visibleRows.length} matching rows. Units: degrees awarded. Source: NCES IPEDS.`,
+    );
+  }
+  async function share() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setNotice(
+        "Link copied with your view, filters and comparison selection.",
+      );
+    } catch {
+      setNotice("Copy the address from your browser to share this selection.");
+    }
+  }
+  function openInstitution(id) {
+    setSelected(String(id));
+    window.location.hash = "institutions";
+  }
   const titles = {
     overview: [
       "See where STEM is heading.",
@@ -470,6 +576,14 @@ function Dashboard({ data }) {
     institutions: [
       "Find the story behind a college.",
       "Explore degree completions at an individual Illinois institution.",
+    ],
+    compare: [
+      "Compare your shortlist.",
+      "Put institutions side by side using the same fields, degree levels and years.",
+    ],
+    map: [
+      "Find STEM degrees near you.",
+      "Explore the Illinois institutions behind the totals, then open a college for more detail.",
     ],
     about: [
       "Good decisions start with clear data.",
@@ -544,6 +658,63 @@ function Dashboard({ data }) {
             <small>NCES IPEDS · {data.metadata.region}</small>
           </div>
         </section>
+        <div className="utility-bar">
+          <button
+            onClick={() => setShowGuide(!showGuide)}
+            aria-expanded={showGuide}
+          >
+            How to use this dashboard
+          </button>
+          {page !== "about" && (
+            <>
+              <button onClick={share}>Copy selection link</button>
+              <button onClick={download} disabled={!visibleRows.length}>
+                Download matching CSV
+              </button>
+              <button onClick={() => window.print()}>
+                Print advising brief
+              </button>
+            </>
+          )}
+        </div>
+        <p className="action-status" role="status">
+          {notice}
+        </p>
+        {showGuide && (
+          <section className="panel guide">
+            <h2>A quick guide for counselors and advisors</h2>
+            <ol>
+              <li>
+                Choose a STEM field, degree level and award-year range. Narrow
+                the results by city or institution control if useful.
+              </li>
+              <li>
+                Use Overview for regional totals and STEM fields for growth. A
+                single year has no growth rate.
+              </li>
+              <li>
+                Open Institutions for one college, Compare for up to three, or
+                Map to explore locations.
+              </li>
+              <li>
+                Open the accessible data tables for exact values. Download
+                matching CSV saves the records behind this view; Compare exports
+                only selected institutions.
+              </li>
+              <li>
+                Copy a selection link to return to the same view. Print an
+                advising brief for a meeting.
+              </li>
+            </ol>
+            <p>
+              Degrees awarded are not unique students, admission chances or
+              employment outcomes. City and control refer to each award year's
+              directory; map locations use the latest record. Check current
+              programs directly with each institution.
+            </p>
+            <a href="#about">Read sources and limitations</a>
+          </section>
+        )}
         {page !== "about" && (
           <>
             <Filters
@@ -552,12 +723,32 @@ function Dashboard({ data }) {
               setFilters={setFilters}
             />
             <div className="context-line">
+              <span>Illinois · {context}</span>
               <span>
-                {data.metadata.region} <b>·</b> {filters.start}–{filters.end}{" "}
-                <b>·</b>{" "}
-                {filters.level === "all" ? "All degree levels" : filters.level}
+                {formatNumber(visibleRows.length)} matching data records
               </span>
-              <span>{formatNumber(rows.length)} matching data records</span>
+            </div>
+            <div className="presets">
+              <span>Quick start:</span>
+              <button
+                onClick={() =>
+                  setFilters({
+                    ...defaultFilters(data.metadata),
+                    field: "11",
+                    level: "Bachelor's",
+                    start: data.metadata.years.at(-1),
+                  })
+                }
+              >
+                Latest computer science bachelor's
+              </button>
+              <button
+                onClick={() =>
+                  setFilters({ ...defaultFilters(data.metadata), start: 2020 })
+                }
+              >
+                Explore 2020 onward
+              </button>
             </div>
             {filters.start < 2020 && filters.end >= 2020 && (
               <p className="classification-note">
@@ -570,6 +761,7 @@ function Dashboard({ data }) {
         {page === "overview" && (
           <>
             <Metrics rows={rows} filters={filters} />
+            <Findings rows={rows} filters={filters} />
             <div className="chart-grid">
               <TrendChart
                 data={byYear(rows, filters.start, filters.end)}
@@ -633,6 +825,18 @@ function Dashboard({ data }) {
             setSelected={setSelected}
           />
         )}{" "}
+        {page === "compare" && (
+          <Compare
+            data={data}
+            rows={rows}
+            filters={filters}
+            selected={compare}
+            setSelected={setCompare}
+          />
+        )}
+        {page === "map" && (
+          <InstitutionMap data={data} rows={rows} onSelect={openInstitution} />
+        )}
         {page === "about" && <About metadata={data.metadata} />}
         <footer>
           <div>
@@ -641,9 +845,7 @@ function Dashboard({ data }) {
           </div>
           <div>
             <span>APS Data Technologies × Judson University</span>
-            <small>
-              internship · Degrees awarded, not unique students.
-            </small>
+            <small>internship · Degrees awarded, not unique students.</small>
             <a href="#about">Source & methodology →</a>
           </div>
         </footer>
