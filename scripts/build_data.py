@@ -20,6 +20,7 @@ BASE = "https://nces.ed.gov/ipeds/datacenter/data/"
 YEARS = list(range(2016, 2024))
 FIELDS = {"11": "Computer & information sciences", "14": "Engineering", "15": "Engineering technologies", "26": "Biological & biomedical sciences", "27": "Mathematics & statistics", "40": "Physical sciences"}
 AWARDS = {3: "Associate", 5: "Bachelor's", 7: "Master's"}
+CONTROLS = {'1': 'Public', '2': 'Private nonprofit', '3': 'Private for-profit'}
 
 def save_json(path, value):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -69,7 +70,7 @@ def read_zip(path, columns):
     return frame
 
 def clean_year(year):
-    hd = read_zip(ROOT / f'data/raw/HD{year}.zip', ['UNITID','INSTNM','STABBR','CITY','LATITUDE','LONGITUD'])
+    hd = read_zip(ROOT / f'data/raw/HD{year}.zip', ['UNITID','INSTNM','STABBR','CITY','LATITUDE','LONGITUD','CONTROL'])
     raw = read_zip(ROOT / f'data/raw/C{year}_A.zip', ['UNITID','CIPCODE','AWLEVEL','MAJORNUM','CTOTALT'])
     assert not hd.UNITID.duplicated().any(), f"Duplicate directory UNITID in {year}"
     directory = hd.loc[hd.STABBR.eq('IL')].copy()
@@ -93,8 +94,10 @@ def clean_year(year):
     selected['award_level'] = selected.AWLEVEL.astype(int).map(AWARDS)
     selected['field_name'] = selected.field_family.map(FIELDS)
     selected['institution'] = selected.INSTNM
+    selected['city'] = selected.CITY
+    selected['control'] = selected.CONTROL.map(CONTROLS).fillna('Unknown')
     # Family-level export is deliberately compact; CIP detail remains in source files.
-    keys = ['year','unitid','institution','field_family','field_name','award_level']
+    keys = ['year','unitid','institution','city','control','field_family','field_name','award_level']
     output = selected.groupby(keys, as_index=False, sort=True).completions.sum()
     # Zero rows are retained when the institution reported a zero. Missing rows remain missing.
     assert len(output) > 0, f"No output for {year}; check column coding"
@@ -122,7 +125,7 @@ def build(download_sources=True):
         def coordinate(v):
             try: return float(v) if v and float(v) != -999 else None
             except ValueError: return None
-        institutions.append({'unitid':int(r.UNITID),'name':r.INSTNM,'city':r.CITY,'latitude':coordinate(r.LATITUDE),'longitude':coordinate(r.LONGITUD),'directory_year':int(r.year),'years_present':history.loc[history.UNITID.eq(r.UNITID),'year'].astype(int).tolist()})
+        institutions.append({'unitid':int(r.UNITID),'name':r.INSTNM,'city':r.CITY,'control':CONTROLS.get(r.CONTROL,'Unknown'),'latitude':coordinate(r.LATITUDE),'longitude':coordinate(r.LONGITUD),'directory_year':int(r.year),'years_present':history.loc[history.UNITID.eq(r.UNITID),'year'].astype(int).tolist()})
     dest = ROOT / 'public/data'
     dest.mkdir(parents=True, exist_ok=True)
     save_json(dest / 'completions.json', records.to_dict('records'))
@@ -134,12 +137,16 @@ def build(download_sources=True):
         with zipfile.ZipFile(ROOT/'data/raw'/source['filename']) as archive:
             members = [n for n in archive.namelist() if n.lower().endswith('.csv')]
             source['csv_member'] = next((n for n in members if '_rv.' in n.lower()), members[0])
-    metadata = {'schema_version':1,'region':'Illinois','state':'IL','years':YEARS,'award_levels':list(AWARDS.values()),'fields':[{'code':k,'name':v} for k,v in FIELDS.items()],'source_name':'NCES IPEDS Completions and Institutional Characteristics','source_url':'https://nces.ed.gov/ipeds/use-the-data/download-access-database','download_date':'2026-11-06','scope_status':'Working assumptions; sponsor approval pending','release_status':'Revised Completions CSV members verified for 2016–2023. Downloaded 2024 archive had no revised member, so it is excluded pending release review.','counting_rule':'First majors only (MAJORNUM=1); six-digit CIP detail; AWLEVEL 3, 5, 7; CTOTALT only','cip_handling':'Aggregate each year under its reported two-digit CIP family. CIP 2010 is used before 2020; CIP 2020 thereafter. No unsupported longitudinal code remapping. The 2020 classification break can affect trends.','missing_data_rule':'Reported zero values are retained. No matching records are shown as no data, never imputed to zero.','unit':'Degrees awarded, not unique people or enrollments','rows':len(records),'institutions':len(institutions),'sources':sources}
+    metadata = {'schema_version':2,'region':'Illinois','state':'IL','years':YEARS,'award_levels':list(AWARDS.values()),'fields':[{'code':k,'name':v} for k,v in FIELDS.items()],'source_name':'NCES IPEDS Completions and Institutional Characteristics','source_url':'https://nces.ed.gov/ipeds/use-the-data/download-access-database','download_date':'2026-11-06','scope_status':'Working assumptions; sponsor approval pending','release_status':'Revised Completions CSV members verified for 2016–2023. Downloaded 2024 archive had no revised member, so it is excluded pending release review.','counting_rule':'First majors only (MAJORNUM=1); six-digit CIP detail; AWLEVEL 3, 5, 7; CTOTALT only','cip_handling':'Aggregate each year under its reported two-digit CIP family. CIP 2010 is used before 2020; CIP 2020 thereafter. Official NCES crosswalk review found two moves within family 15 and no moves across the six selected family boundaries. Family totals need no recoding; new programs and reporting changes can still affect trends.','missing_data_rule':'Reported zero values are retained. No matching records are shown as no data, never imputed to zero.','unit':'Degrees awarded, not unique people or enrollments','rows':len(records),'institutions':len(institutions),'sources':sources}
+    metadata['schema_version'] = 2
+    metadata['cities'] = sorted(records.city.unique().tolist())
+    metadata['controls'] = sorted(records.control.unique().tolist())
+    metadata['location_rule'] = 'City and institution control filters use the directory for each award year. Map coordinates and picker labels use the latest directory record in the snapshot.'
     save_json(dest / 'metadata.json', metadata)
     pd.DataFrame([{'key':k,'value':json.dumps(v,ensure_ascii=False) if isinstance(v,(list,dict)) else v} for k,v in metadata.items()]).to_csv(dest/'metadata.csv',index=False,lineterminator='\n')
     save_json(ROOT/'docs/qa/pipeline-audit.json',audits)
     save_json(ROOT/'docs/qa/cip-code-inventory.json',codes)
-    save_json(ROOT/'docs/qa/cip-transition.json',{'note':'Observed additions/removals are not asserted to be one-to-one mappings. A sponsor-approved harmonized crosswalk is a remaining methodology review.','added_2020':sorted(set(codes['2020'])-set(codes['2019'])),'absent_2020':sorted(set(codes['2019'])-set(codes['2020']))})
+    save_json(ROOT/'docs/qa/cip-transition.json',{'note':'Observed additions/removals are not asserted to be one-to-one mappings. The official crosswalk review is in cip-crosswalk-review.json; observed additions alone are not mappings.','added_2020':sorted(set(codes['2020'])-set(codes['2019'])),'absent_2020':sorted(set(codes['2019'])-set(codes['2020']))})
     save_json(ROOT/'data/source-manifest.json',sources)
     for path in dest.iterdir():
         assert path.stat().st_size < 2_000_000, f"File exceeds 2 MB budget: {path}"

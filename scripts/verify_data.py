@@ -27,7 +27,7 @@ def verify(exports_only=False):
     selected={i['unitid']:i['name'] for i in institutions if i['name'] in ['Judson University','Northwestern University','University of Chicago']}
     assert len(selected)==3
     checks=[]
-    for year in [2016,2023]:
+    for year in [2016,2019,2020,2023]:
         with zipfile.ZipFile(ROOT/f'data/raw/C{year}_A.zip') as z:
             member=next(n for n in z.namelist() if '_rv.csv' in n.lower())
             payload=z.read(member)
