@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source": "Actual browser Download matching CSV result",
+  "selection": {
+    "view": "compare",
+    "year": 2023,
+    "field": "11",
+    "degree": "Bachelor's",
+    "city": "Chicago",
+    "control": "Public"
+  },
+  "rows": [
+    {
+      "year": "2023",
+      "unitid": "144005",
+      "institution": "Chicago State University",
+      "city": "Chicago",
+      "control": "Public",
+      "field_family": "11",
+      "field_name": "Computer & information sciences",
+      "award_level": "Bachelor's",
+      "completions": "9"
+    },
+    {
+      "year": "2023",
+      "unitid": "145600",
+      "institution": "University of Illinois Chicago",
+      "city": "Chicago",
+      "control": "Public",
+      "field_family": "11",
+      "field_name": "Computer & information sciences",
+      "award_level": "Bachelor's",
+      "completions": "454"
+    }
+  ],
+  "total_awards": 463
+}

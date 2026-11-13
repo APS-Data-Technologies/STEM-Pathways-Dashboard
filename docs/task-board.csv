@@ -1,0 +1,62 @@
+ID,Stage,Owner,Role,Task,Status,Evidence or next action
+B-01,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Confirm four-person access to team tools,Pending team action,"Confirm four actual memberships in Slack, Asana and GitHub."
+B-02,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Create the task board with named owners,Prepared,task-board.csv includes all 61 tasks and named owners; import and assign actual accounts in Asana.
+B-03,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Agree and pin team working norms,Prepared,product-plan.md includes norms; actual Slack pin and reactions pending.
+B-04,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Approve the five dashboard questions,Awaiting sponsor review,product-plan.md and demo-answers.md define and demonstrate all five questions.
+B-05,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Write user stories and acceptance criteria,Implemented,product-plan.md
+B-06,Planning,Yoshna Bandi,Data Engineer,Define the data plan,Implemented,data-plan-and-contract.md
+B-07,Planning,Yoshna Bandi,Data Engineer,Download unchanged official sources,Implemented,data/source-manifest.json
+B-08,Planning,Yoshna Bandi,Data Engineer,Execute and share the cleaning notebook,Awaiting team review,Seven executed notebook cells and exact reproduction pass; shared Colab ownership and a teammate run pending.
+B-09,Planning,Twinkle Mohan,UX/UI + Data Visualization,Review responsive wireframes,Awaiting design review,Existing ten-frame Figma file; final added views need design review.
+B-10,Planning,Twinkle Mohan,UX/UI + Data Visualization,Choose chart types and labels,Implemented,docs/design.md and src/components/Charts.jsx
+B-11,Planning,Shraddha Patel,QA & Documentation,Protect main and apply the PR template,Pending administrator,PR template exists; APS administrator must enforce one approving review on main.
+B-12,Planning,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Build the React application and merge through review,Awaiting PR review,"React build passes and source is published; another teammate approval and merge remain separate gates."
+B-13,Planning,Shraddha Patel,QA & Documentation,Prepare the test and number-check template,Prepared,qa/test-template.csv and qa/results.md; link from the team board after import.
+B-14,Core Build,Yoshna Bandi,Data Engineer,Review the data contract,Awaiting team review,Schema 2 is implemented; Lead and UX/Viz must acknowledge the contract.
+B-15,Core Build,Shraddha Patel,QA & Documentation,Connect Git deployment and verify triggers,Partial,Production is READY via source-file deployment; Git connection and automatic redeployment are unverified.
+B-16,Core Build,Yoshna Bandi,Data Engineer,Join and filter Illinois institutions,Implemented,qa/pipeline-audit.json
+B-17,Core Build,Yoshna Bandi,Data Engineer,Apply the STEM family definition,Awaiting sponsor review,Six families implemented and reconciled; APS must accept the definition.
+B-18,Core Build,Yoshna Bandi,Data Engineer,"Validate awards, majors and CIP transitions",Implemented,Counting rules and official crosswalk review pass; two moves stay within family 15.
+B-19,Core Build,Yoshna Bandi,Data Engineer,Export JSON and CSV within the size budget,Implemented,public/data and qa/reproducibility.json
+B-20,Core Build,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Build the responsive layout,Implemented,src/styles.css and qa/results.md
+B-21,Core Build,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Load and validate data with retry handling,Implemented,src/data.js and src/App.jsx
+B-22,Core Build,Twinkle Mohan,UX/UI + Data Visualization,Build the annual trend chart,Implemented,src/components/Charts.jsx
+B-23,Core Build,Twinkle Mohan,UX/UI + Data Visualization,Define and test summary measures,Implemented,tests/data.test.js and data-plan-and-contract.md
+B-24,Core Build,Shraddha Patel,QA & Documentation,Check source totals for selected colleges,Implemented,qa/number-checks.json
+B-25,Core Build,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Hold the core-build review,Pending team action,Review agenda prepared; no meeting attendance or decisions invented.
+B-26,Feature Development,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Connect shared filters,Implemented,src/App.jsx; 78 live core-view checks
+B-27,Feature Development,Twinkle Mohan,UX/UI + Data Visualization,Build the field comparison,Implemented,src/components/Charts.jsx
+B-28,Feature Development,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Build institution search and selection,Implemented,src/App.jsx
+B-29,Feature Development,Twinkle Mohan,UX/UI + Data Visualization,Build institution charts,Implemented,src/App.jsx and src/components/Charts.jsx
+B-30,Feature Development,Twinkle Mohan,UX/UI + Data Visualization,Handle filters and empty results across charts,Implemented,tests/data.test.js and qa/ui-filter-checks.json
+B-31,Feature Development,Yoshna Bandi,Data Engineer,Review the methodology text,Awaiting team review,About text explains rules and limits; actual QA and lead sign-off pending.
+B-32,Feature Development,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Publish About the data,Implemented,Live About view
+B-33,Feature Development,Yoshna Bandi,Data Engineer,Document and reproduce the pipeline,Implemented,notebooks/clean_ipeds.ipynb
+B-34,Feature Development,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Prepare the project checkpoint update,Prepared,mid-project-update.md supplies a stage-based checkpoint agenda.
+B-35,Feature Development,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Hold the APS review and log feedback,Pending sponsor action,Use feedback-template.csv to record actual review comments and ownership.
+B-36,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Check all views and filter controls,Implemented,qa/results.md and qa/ui-filter-checks.json
+B-37,Validation,Shraddha Patel,QA & Documentation,Run responsive checks and source-to-live checks,Implemented,qa/live-number-checks.json and responsive evidence
+B-38,Validation,Shraddha Patel,QA & Documentation,Record and prioritize bugs,Prepared,qa/bugs.csv records defects and retests; import to Asana and agree priorities.
+B-39,Validation,Twinkle Mohan,UX/UI + Data Visualization,Fix chart defects and retest,Implemented,qa/bugs.csv and tests/
+B-40,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Fix page and filter defects and retest,Implemented,qa/bugs.csv and tests/
+B-41,Validation,Yoshna Bandi,Data Engineer,Rebuild and recheck data after changes,Implemented,qa/full-source-check.json and qa/reproducibility.json
+B-42,Validation,Twinkle Mohan,UX/UI + Data Visualization,Review chart readability,Implemented,design.md and accessible data tables
+B-43,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Prepare checked answers to the five questions,Implemented,"demo-answers.md contains all five answers, exact views and filters, with source reconciliation."
+B-44,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Record the stretch-feature decision,Prepared,Lead requested useful additions; features and evidence are documented. Slack decision post remains.
+B-45,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Export filtered CSV,Implemented,src/data.js rowsToCsv and downloaded export validation
+B-46,Validation,Twinkle Mohan,UX/UI + Data Visualization,Plot institution locations,Implemented,src/components/Advising.jsx InstitutionMap
+B-47,Validation,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Provide checked key findings,Implemented,demo-answers.md and qa/full-source-check.json
+B-48,Polish,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Polish layout and obtain screen sign-off,Awaiting lead review,Layout and responsive checks recorded; lead must sign off screens and design alignment.
+B-49,Polish,Twinkle Mohan,UX/UI + Data Visualization,Polish charts and recheck summaries,Implemented,qa/live-number-checks.json and summary tests
+B-50,Polish,Yoshna Bandi,Data Engineer,Reproduce the exports from a fresh notebook run,Implemented,qa/reproducibility.json; seven executed cells
+B-51,Polish,Shraddha Patel,QA & Documentation,Complete setup and maintenance instructions,Awaiting independent setup,"README has setup, rebuild and deployment steps; a new teammate must confirm a fresh setup."
+B-52,Demo and Handover,Shraddha Patel,QA & Documentation,Provide a one-page illustrated user guide,Implemented,reports/STEM-Pathways-User-Guide.docx
+B-53,Polish,Shraddha Patel,QA & Documentation,Run production regression checks,Implemented,qa/results.md; production deployment READY and live checks pass
+B-54,Polish,Shraddha Patel,QA & Documentation,Merge reviewed code and tag v1.0 on main,Awaiting release gates,"No v1.0 tag on old main. Obtain teammate approval, merge the published source, verify production and tag reviewed main."
+B-55,Demo and Handover,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Prepare the demo script and run order,Prepared,demo-script.md gives an 18-minute run order and role speaking slots.
+B-56,Demo and Handover,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Prepare editable demo slides,Prepared,Editable presentation supplied in reports; team edits and rehearsal pending.
+B-57,Demo and Handover,Shraddha Patel,QA & Documentation,Prepare a backup walkthrough,Prepared,Captioned app walkthrough supplied; full team rehearsal recording and shared-folder confirmation pending.
+B-58,Demo and Handover,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Hold the full team dry run,Pending team action,dry-run-checklist.md provides timings and checks; actual team rehearsal not held.
+B-59,Demo and Handover,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Deliver the team demo and record feedback,Pending team action,Deliver the real presentation and record feedback.
+B-60,Demo and Handover,Shraddha Patel,QA & Documentation,Confirm APS ownership and archive the board,Pending APS action,Repository belongs to APS organization; Vercel is under the lead team. APS must confirm ownership/access and board archive.
+B-61,Demo and Handover,Sri Dhanush Reddy Kondapalli,Product Owner / Project Lead + Frontend,Collect four personal reflections,Pending individual action,Four reflection worksheets are prepared. Each person writes and submits their own experience.

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "files": {
+    "metadata.csv": "3c046a729f2a3a4be6a14230ae9ea9096d0dfdf1bc30fe0e870ef9fb1717bd2c",
+    "metadata.json": "419c6e2b8cfe1f59237a52ff8a82858c66938e4cb62698f06b6fdf87bc423927",
+    "institutions.json": "21f3f05040d419231a64881082355ea6546be1b8b660c223a9d520b0d484ae0a",
+    "completions.csv": "8e82bf786e71b201eabcfe8b8f4bd01e17907810b98b8bed89c154135c98780d",
+    "institutions.csv": "f228dd032c45972ec6b811c6856a31c31d96dd66833c6f13b07283999fcceed5",
+    "completions.json": "c9bbc6c81073d447868dd337a42dcbb6e7249805bb2857ad43a1f962615569e5"
+  },
+  "rows": 3808,
+  "total_awards": 187386,
+  "source_hashes_checked": 16
+}

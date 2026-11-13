@@ -1,0 +1,27 @@
+{
+  "documents": {
+    "docx_files": 6,
+    "rendered_pages": 12,
+    "visual_review": "All pages inspected; one-page illustrated guide confirmed"
+  },
+  "presentation": {
+    "slides": 8,
+    "editable_charts": 3,
+    "embedded_workbooks": 3,
+    "package_and_layout_checks": "PASS",
+    "visual_review": "All slides inspected; negative chart labels and straight annual trend corrected",
+    "application_limit": "Not opened or edited in native PowerPoint or Google Slides"
+  },
+  "backup": {
+    "duration_seconds": 150,
+    "width": 1280,
+    "height": 720,
+    "audio": false,
+    "kind": "Captioned compilation of actual application screens and presentation slides",
+    "frame_checks": [
+      5,
+      65,
+      140
+    ]
+  }
+}

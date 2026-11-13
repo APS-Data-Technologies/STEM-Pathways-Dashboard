@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "method": "Independent standard-library raw ZIP/CSV aggregation. No pipeline functions or pandas imported. Every year/institution/field/degree cell reconciles exactly, including reported zero cells.",
+  "source_cells_checked": 3808,
+  "total_awards": 187386,
+  "annual_totals": {
+    "2016": 22744,
+    "2017": 23942,
+    "2018": 23969,
+    "2019": 23323,
+    "2020": 22270,
+    "2021": 23228,
+    "2022": 22667,
+    "2023": 25243
+  },
+  "fields_by_endpoint_growth": [
+    {
+      "field_family": "11",
+      "start": 7107,
+      "end": 9841,
+      "change_percent": 38.46911495708456
+    },
+    {
+      "field_family": "27",
+      "start": 1594,
+      "end": 2034,
+      "change_percent": 27.603513174404014
+    },
+    {
+      "field_family": "15",
+      "start": 1700,
+      "end": 1800,
+      "change_percent": 5.882352941176472
+    },
+    {
+      "field_family": "14",
+      "start": 6313,
+      "end": 6101,
+      "change_percent": -3.358149849516867
+    },
+    {
+      "field_family": "26",
+      "start": 4561,
+      "end": 4255,
+      "change_percent": -6.709055031791278
+    },
+    {
+      "field_family": "40",
+      "start": 1469,
+      "end": 1212,
+      "change_percent": -17.49489448604493
+    }
+  ],
+  "degree_level_totals": {
+    "Bachelor's": 108418,
+    "Master's": 63197,
+    "Associate": 15771
+  },
+  "latest_computer_science_bachelors_top_institutions": [
+    {
+      "unitid": 145637,
+      "institution": "University of Illinois Urbana-Champaign",
+      "awards": 583
+    },
+    {
+      "unitid": 145600,
+      "institution": "University of Illinois Chicago",
+      "awards": 454
+    },
+    {
+      "unitid": 482477,
+      "institution": "DeVry University-Illinois",
+      "awards": 329
+    },
+    {
+      "unitid": 144740,
+      "institution": "DePaul University",
+      "awards": 292
+    },
+    {
+      "unitid": 145813,
+      "institution": "Illinois State University",
+      "awards": 199
+    },
+    {
+      "unitid": 147767,
+      "institution": "Northwestern University",
+      "awards": 192
+    },
+    {
+      "unitid": 145725,
+      "institution": "Illinois Institute of Technology",
+      "awards": 152
+    },
+    {
+      "unitid": 146612,
+      "institution": "Lewis University",
+      "awards": 142
+    }
+  ],
+  "judson_total": 66,
+  "judson_endpoints": {
+    "2016": 6,
+    "2023": 6
+  },
+  "chicago_public_computer_science_bachelors_2023": 566
+}

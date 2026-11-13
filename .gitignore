@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.vercel/
+data/raw/*
+!data/raw/README.md
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/

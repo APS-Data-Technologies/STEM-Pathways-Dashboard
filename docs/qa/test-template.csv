@@ -1,0 +1,7 @@
+ID,View,Filters,Expected value,Value shown,Source,Status,Tester,Date,Notes
+TC-01,Overview,All filters default,187386,,public/data/completions.json,Not run by teammate,,,
+TC-02,Institutions,Judson; 2023; all fields and levels,6,,C2023_A.zip revised member,Not run by teammate,,,
+TC-03,Overview,Same start and end year,Growth unavailable,,docs/data-plan-and-contract.md,Not run by teammate,,,
+TC-04,Institutions,Institution with no matching awards,Clear no-records message,,Source rows,Not run by teammate,,,
+TC-05,All views,375px and 1280px,No clipped content or page overflow,,docs/design.md,Not run by teammate,,,
+TC-06,Data loading,Unavailable JSON file,Error with retry button,,Network failure,Not run by teammate,,,
