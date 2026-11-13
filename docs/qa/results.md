@@ -1,52 +1,35 @@
-# QA evidence — Implementation implementation
+# Validation results
 
-Operator: AI-assisted execution on the project lead's behalf. Independent teammate review remains pending. This is a scoped implementation check, not the full Validation device/accessibility acceptance suite.
+Stage: Validation and Handover. Evidence applies to the release candidate deployed as `dpl_9VKsE1nDJDRU8VAGJrstHckoCKKQ`.
 
-## Executed checks
-| Check | Result | Evidence / limits |
+## Recorded checks
+
+| Check | Result | Evidence |
 |---|---|---|
-| Production compilation | PASS | `npm run build`; React/Vite production output generated. One non-blocking bundle-size warning (~629 KB JS, ~185 KB gzip). |
-| Calculation and data-contract tests | PASS | `npm test`: 9 tests, 0 failures. Includes missing vs zero, invalid records, zero baseline, CAGR hand calculation and institution filtering. |
-| Regional filter consistency | PASS | 1,008 combinations (7 field choices × 4 award choices × 36 year ranges) preserve totals / explicit missing series. Algorithmic test, not 1,008 manual browser interactions. |
-| Independent raw-source checks | PASS | `python scripts/verify_data.py`: 3 colleges × 2 years, direct CSV/ZIP sums without pandas/build functions. See number-checks.json. |
-| Export schema/size/parity | PASS | 3,808 valid aggregate rows; all six files below 2 MB; completions CSV matches JSON. |
-| Source identity | PASS | All 16 source archive SHA-256 hashes match manifest. |
-| Notebook code execution | PASS, scoped | All 6 code cells run top-to-bottom with real outputs via in-process IPython runner; TCP and IPC Jupyter kernel sockets unavailable on this host. Colab UI execution not yet verified. |
-| Exact reproducibility | PASS | Rebuilding all six exports preserves every byte/hash; reproducibility.json. |
-| Default overview in browser | PASS | 187,386 total; +11.0% endpoint change; +1.5% CAGR; 3,808 rows; 123 institutions with positive awards. |
-| Filter persistence | PASS | Computer science + bachelor's + 2023 produced 3,617; navigating to Fields retained selection and value. |
-| Institution search/selection | PASS | 2023 all-fields/levels: Judson 6, Northwestern 1,846, University of Chicago 1,480, matching raw-source checks. |
-| Empty result | PASS | Adler University, 2023 selection showed explicit no-records message, not zero awards. |
-| Accessible exact table | PASS | Expanded annual table showed all eight source-checked annual totals. Table works independently of color. |
-| Error and retry | PASS | Temporarily removed metadata JSON, reloaded: clear data-read error + Try again. Restored original file, clicked retry: 187,386 restored without page reload. Test file restored before build/commit. |
-| Navigation / About | PASS | Four views opened; About includes sources, award-year definition, scope and CIP caveat. |
-| 375 px layout | PASS, emulated | Fixed-width iframe harness; usable width 360 with desktop scrollbar. All four views had scrollWidth equal to clientWidth; screenshot attached. Not physical-phone testing. |
-| 1280 px layout | PASS, emulated | Fixed-width iframe harness; usable width 1265 with scrollbar. Overview has no horizontal overflow; charts rendered. |
+| JavaScript unit tests | 15 passed | tests/data.test.js; tests/advising.test.js |
+| Core field/degree/year combinations | 1,008 reconcile or show missing series | tests/data.test.js |
+| City/control partitions | All eight annual totals reconcile | tests/advising.test.js |
+| Full source reconciliation | All 3,808 exported cells match raw ZIP/CSV totals | full-source-check.json |
+| Selected raw-source checks | 12 passed across three colleges and four award years | number-checks.json |
+| Live number checks | All 12 displayed values match independent source totals | live-number-checks.json |
+| Live core-view filters | 78 checks passed across Overview, Fields and Institutions | ui-filter-checks.json |
+| Notebook | Seven cells execute in order and reproduce all six exports exactly | clean_ipeds.ipynb; reproducibility.json |
+| CIP crosswalk | All observed codes match the appropriate version; two moves remain in family 15 | cip-crosswalk-review.json |
+| Build and production | Build succeeds; deployment READY | deployment.md |
+| Responsive layout | Desktop and 375-pixel iframe inspected; no horizontal main-content overflow in checked phone view | stem-overview.jpg; phone evidence |
+| Comparison and export | Two Chicago public institutions show 9 and 454 awards; selected CSV totals 463 | Browser inspection and export reconciliation |
+| Saved selection | View, filters and selected institutions survive reload | Browser reload and URL unit tests |
 
-## Source check table
-| Institution | 2016 raw = export | 2023 raw = export |
-|---|---:|---:|
-| Judson University | 6 | 6 |
-| Northwestern University | 1,276 | 1,846 |
-| University of Chicago | 853 | 1,480 |
+## Interpretation and limits
 
-## Visual evidence
-[Desktop, 1280 px frame](desktop-1280.png) · [Mobile, 375 px frame](mobile-375.png) · [Editable Figma](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd) · [Figma mobile export](figma-mobile.png).
+These checks are not a complete Cartesian browser test of every city, institution and filter combination. The automated helpers cover all 1,008 core region combinations; browser checks exercise every field, degree level and award year across the three core data views, plus representative cities and all institution controls. Comparison, map, About, guide and export receive scenario checks. The phone test uses an iframe viewport, not a physical phone or a full cross-browser certification.
 
-To repeat responsive checks, run Vite and visit `/docs/qa/layout-harness.html?width=375` or `?width=1280`. This developer harness is not part of the production app build.
+Browser console messages from the browser extension were excluded from application findings. No application console error was observed in the checked flows. The build has a non-blocking bundle-size warning. Map points can overlap, and the list remains the reliable way to access every institution.
 
-## Unresolved items, with owners
-| Priority / task | Owner | Remaining action |
-|---|---|---|
-| P1 acceptance — B-15 | QA + project owner | Public deployment now passes; GitHub connection and auto-deploy verification remain |
-| P1 publishing | Lead + APS admin | Correct GitHub app repository write access or publish the ZIP with your own GitHub Desktop account; browser publication is complete; teammate review and merge remain pending |
-| P1 workflow — B-11 | APS repository administrator | Protect main; required review/checks; current account lacks admin |
-| P2 methodology — B-18 | Data + APS | Validate CIP crosswalk and accept as-reported method or implement approved harmonization |
-| Scope/contract — B-04/B-14/B-17/B-31 | Lead, UX/Viz, QA, APS | Actual approvals, including latest eligible final-year selection |
-| P3 performance | Frontend | Assess bundle splitting / mobile performance in Validation; build warning is recorded, not hidden |
+The source checker uses independent standard-library CSV aggregation rather than calling the cleaning functions. It checks counts, not the truth of every institution's original submission. NCES imputations and later revisions remain possible.
 
-Not yet verified: real physical phone browsers, full keyboard/screen-reader audit, slow-network loading-state timing, all institution filter combinations in-browser, Colab UI run, external sponsor approvals, protected-main enforcement or deployment triggers. Browser extension metadata errors were observed; they are separate from application defects. Do not claim zero browser-console errors universally.
+## Human acceptance still needed
 
-## Live deployment verification
-Production URL: https://stem-pathways-dashboard.vercel.app/
-Public HTML and metadata JSON return HTTP 200. In-browser totals verified: default 187,386; computer science / bachelor / 2023 = 3,617; reset restores 187,386. Deployment READY. Git-triggered deployment remains unverified.
+A teammate should repeat the setup from README, run Colab, review chart readability and test a real counselor question. The lead signs off the screens and obtains sponsor scope decisions. The integration PR needs another teammate's approval. A real team rehearsal, demo, feedback and personal reflections are not completed by these automated checks.
+
+Additional release checks: the actual downloaded comparison CSV contains exactly two records (Chicago State 9, UIC 454), totaling 463. See export-check.json. All six views have no horizontal overflow in the 375 px frame; see stem-narrow-checks.json. No production-origin console errors were observed in the captured browser log.

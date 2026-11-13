@@ -1,0 +1,28 @@
+{
+  "source_url": "https://nces.ed.gov/ipeds/cipcode/crosswalk.aspx?y=56",
+  "source_selection": "All codes, Show Results; six-digit detail rows extracted from returned table",
+  "crosswalk_sha256": "9da13868d77ba1904f84dbb637d737cb838365a3ffc038ba99933a970b83c647",
+  "crosswalk_detail_rows": 2180,
+  "observed_pre2020_codes": 173,
+  "observed_from2020_codes": 189,
+  "unmatched_observed_codes": [],
+  "within_family_code_moves": [
+    {
+      "cip2010": "15.0503",
+      "title2010": "Energy Management and Systems Technology/Technician.",
+      "action": "Moved to",
+      "cip2020": "15.1701",
+      "title2020": "Energy Systems Technology/Technician."
+    },
+    {
+      "cip2010": "15.0505",
+      "title2010": "Solar Energy Technology/Technician.",
+      "action": "Moved to",
+      "cip2020": "15.1703",
+      "title2020": "Solar Energy Technology/Technician."
+    }
+  ],
+  "cross_family_moves_affecting_scope": [],
+  "result": "PASS: every observed code is represented; the two code moves stay within family 15, so family totals need no remapping.",
+  "limitation": "New programs and title/definition changes still affect interpretation. This does not create a constant-program cohort or eliminate all classification effects."
+}

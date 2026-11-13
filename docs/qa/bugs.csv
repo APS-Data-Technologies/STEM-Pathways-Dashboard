@@ -1,0 +1,8 @@
+ID,Priority,Area,Reproduction,Correction,Retest,Owner,State
+QA-01,P2,Institution context,Open one institution and compare record count to its rows,Count uses selected institution rows,12 source-to-live totals and scoped UI checks pass,Sri Dhanush Reddy Kondapalli,Fixed
+QA-02,P2,Field growth,Open fastest-growing fields table,Sort by endpoint growth and put unavailable values last,Known growth order and boundary test pass,Twinkle Mohan,Fixed
+QA-03,P2,Institution names,Compare renamed institution across award years,Use UNITID and latest label in selected rows,Current ranking labels inspected,Twinkle Mohan,Fixed
+QA-04,P2,Saved selection,Open a link with unknown filters and duplicate comparison IDs,Validate values normalize years and cap unique IDs,Round-trip and malformed-link tests pass,Sri Dhanush Reddy Kondapalli,Fixed
+QA-05,P2,Export scope,Download from an institution or comparison view,Export only view-specific rows and escape formula prefixes,CSV and two-institution download checks pass,Sri Dhanush Reddy Kondapalli,Fixed
+QA-06,P3,Map density,View institutions around Chicago,Equal-size overlapping dots retain an accessible complete list,List search and institution links verified,Twinkle Mohan,Known limitation
+QA-07,P3,Build size,Run npm run build,Build succeeds with bundle warning; no paid services or extra map dependency added,Production build READY,Sri Dhanush Reddy Kondapalli,Known limitation

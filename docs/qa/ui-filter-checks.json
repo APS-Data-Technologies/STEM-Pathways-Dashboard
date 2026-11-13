@@ -1,0 +1,633 @@
+[
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "11",
+    "expected": 61306,
+    "shown": "61,306",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "14",
+    "expected": 50605,
+    "shown": "50,605",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "15",
+    "expected": 13319,
+    "shown": "13,319",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "26",
+    "expected": 35866,
+    "shown": "35,866",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "27",
+    "expected": 15376,
+    "shown": "15,376",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "field",
+    "value": "40",
+    "expected": 10914,
+    "shown": "10,914",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "11",
+    "expected": 61306,
+    "shown": "61,306",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "14",
+    "expected": 50605,
+    "shown": "50,605",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "15",
+    "expected": 13319,
+    "shown": "13,319",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "26",
+    "expected": 35866,
+    "shown": "35,866",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "27",
+    "expected": 15376,
+    "shown": "15,376",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "field",
+    "value": "40",
+    "expected": 10914,
+    "shown": "10,914",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "all",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "11",
+    "expected": 2406,
+    "shown": "2,406",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "14",
+    "expected": 176,
+    "shown": "176",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "15",
+    "expected": null,
+    "shown": "—",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "26",
+    "expected": 1850,
+    "shown": "1,850",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "27",
+    "expected": 3871,
+    "shown": "3,871",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "institution": 144050,
+    "filter": "field",
+    "value": "40",
+    "expected": 1605,
+    "shown": "1,605",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Degree level",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Degree level",
+    "value": "Associate",
+    "expected": 15771,
+    "shown": "15,771",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Degree level",
+    "value": "Bachelor's",
+    "expected": 108418,
+    "shown": "108,418",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Degree level",
+    "value": "Master's",
+    "expected": 63197,
+    "shown": "63,197",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "City",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "City",
+    "value": "Chicago",
+    "expected": 64308,
+    "shown": "64,308",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "City",
+    "value": "Elgin",
+    "expected": 492,
+    "shown": "492",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Institution control",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Institution control",
+    "value": "Public",
+    "expected": 107998,
+    "shown": "107,998",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Institution control",
+    "value": "Private nonprofit",
+    "expected": 70009,
+    "shown": "70,009",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "Institution control",
+    "value": "Private for-profit",
+    "expected": 9379,
+    "shown": "9,379",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Degree level",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Degree level",
+    "value": "Associate",
+    "expected": 15771,
+    "shown": "15,771",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Degree level",
+    "value": "Bachelor's",
+    "expected": 108418,
+    "shown": "108,418",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Degree level",
+    "value": "Master's",
+    "expected": 63197,
+    "shown": "63,197",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "City",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "City",
+    "value": "Chicago",
+    "expected": 64308,
+    "shown": "64,308",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "City",
+    "value": "Elgin",
+    "expected": 492,
+    "shown": "492",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Institution control",
+    "value": "all",
+    "expected": 187386,
+    "shown": "187,386",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Institution control",
+    "value": "Public",
+    "expected": 107998,
+    "shown": "107,998",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Institution control",
+    "value": "Private nonprofit",
+    "expected": 70009,
+    "shown": "70,009",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "Institution control",
+    "value": "Private for-profit",
+    "expected": 9379,
+    "shown": "9,379",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Degree level",
+    "value": "all",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Degree level",
+    "value": "Associate",
+    "expected": null,
+    "shown": "—",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Degree level",
+    "value": "Bachelor's",
+    "expected": 4220,
+    "shown": "4,220",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Degree level",
+    "value": "Master's",
+    "expected": 5688,
+    "shown": "5,688",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "City",
+    "value": "all",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "City",
+    "value": "Chicago",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "City",
+    "value": "Elgin",
+    "expected": null,
+    "shown": "—",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Institution control",
+    "value": "all",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Institution control",
+    "value": "Public",
+    "expected": null,
+    "shown": "—",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Institution control",
+    "value": "Private nonprofit",
+    "expected": 9908,
+    "shown": "9,908",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "Institution control",
+    "value": "Private for-profit",
+    "expected": null,
+    "shown": "—",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2016",
+    "expected": 22744,
+    "shown": "22,744",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2017",
+    "expected": 23942,
+    "shown": "23,942",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2018",
+    "expected": 23969,
+    "shown": "23,969",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2019",
+    "expected": 23323,
+    "shown": "23,323",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2020",
+    "expected": 22270,
+    "shown": "22,270",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2021",
+    "expected": 23228,
+    "shown": "23,228",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2022",
+    "expected": 22667,
+    "shown": "22,667",
+    "status": "PASS"
+  },
+  {
+    "view": "Overview",
+    "filter": "single year",
+    "value": "2023",
+    "expected": 25243,
+    "shown": "25,243",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2016",
+    "expected": 22744,
+    "shown": "22,744",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2017",
+    "expected": 23942,
+    "shown": "23,942",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2018",
+    "expected": 23969,
+    "shown": "23,969",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2019",
+    "expected": 23323,
+    "shown": "23,323",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2020",
+    "expected": 22270,
+    "shown": "22,270",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2021",
+    "expected": 23228,
+    "shown": "23,228",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2022",
+    "expected": 22667,
+    "shown": "22,667",
+    "status": "PASS"
+  },
+  {
+    "view": "STEM fields",
+    "filter": "single year",
+    "value": "2023",
+    "expected": 25243,
+    "shown": "25,243",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2016",
+    "expected": 853,
+    "shown": "853",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2017",
+    "expected": 943,
+    "shown": "943",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2018",
+    "expected": 1024,
+    "shown": "1,024",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2019",
+    "expected": 1117,
+    "shown": "1,117",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2020",
+    "expected": 1268,
+    "shown": "1,268",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2021",
+    "expected": 1579,
+    "shown": "1,579",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2022",
+    "expected": 1644,
+    "shown": "1,644",
+    "status": "PASS"
+  },
+  {
+    "view": "Institutions",
+    "filter": "single year",
+    "value": "2023",
+    "expected": 1480,
+    "shown": "1,480",
+    "status": "PASS"
+  }
+]
