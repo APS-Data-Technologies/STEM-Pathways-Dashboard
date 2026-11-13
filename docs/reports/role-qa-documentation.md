@@ -1,32 +1,35 @@
-# Role: QA & Documentation — Implementation
+# Shraddha Patel
 
-Accountable person: Name and GitHub handle to fill
+Role: QA and Documentation
 
-**AI-assisted implementation prepared on the project lead’s behalf.** This report allocates deliverables to a role; it does not certify personal completion, attendance or work hours.
+Stage: Validation and Handover. AI-assisted implementation prepared on the lead’s behalf; ownership is not a claim of individual authorship.
 
-Task scope: B-11, B-13, B-15, B-24; support B-31 and cross-role verification. Exact acceptance status for every task is in [the ledger](../progress.md).
+## Role and current position
 
-| Stage | Prepared / implemented work | Status interpretation |
-|---|---|---|
-| Planning | PR and bug templates, testing template, workflow and contribution guidance. | Review artifacts against original acceptance conditions; actual team review remains pending. |
-| Core Build | Six independent raw-source comparisons, export validation, nine JavaScript tests including 1008 regional selections, verified public deployment. | See actual tests and remaining Git integration tasks; not a claim of all external sign-offs. |
-| Feature Development | Filter and navigation smoke checks, separate reports, acceptance ledger and handover instructions. | Implementation prepared; APS meeting has not occurred. |
+Shraddha owns validation, release evidence and clear documentation. The role is to check that the dashboard answers its questions correctly and that someone outside the build process can use and maintain it. The recorded checks and handover materials are ready for her independent review.
 
-## Evidence and files
-`scripts/verify_data.py`, `tests/`, `docs/qa/`, `.github/`, `README.md`, `docs/github-team-guide.md`
+## What has been checked
 
-[QA evidence](../qa/results.md), [data checks](../qa/number-checks.json), [team submission guide](../github-team-guide.md).
+Fifteen automated tests pass, including growth edge cases, missing data, invalid URLs, CSV escaping and city/control reconciliation. The data helpers cover 1,008 core region filter combinations. The independent raw-source checker matches every exported cell, while the live browser checks match 12 displayed values across Judson, Northwestern and the University of Chicago.
 
-## Next actions owned by this role
-Ask APS admin to protect main; connect GitHub in Vercel and verify auto-deploy/public access; independently rerun checks; review integration PR; obtain real mobile-device and About-text review. No self-approval or invented teammate sign-off.
+Seventy-eight live checks cover every field, degree level and award year across the three core data views, plus representative cities and all institution controls. Comparison totals, saved selections and a filtered CSV were checked as user scenarios. The layout was inspected at desktop size and in a 375-pixel frame. These checks are not a complete physical-device or cross-browser certification.
 
-## Personal validation — member completes after doing the work
-- My actual name / GitHub handle:
-- Date I reviewed or changed this work:
-- What I personally ran, reviewed or changed:
-- Result and evidence / PR link:
-- What I learned and can explain:
-- Remaining blocker and next commitment:
-- AI assistance acknowledged:
+## What the documentation includes
 
-Submit only your actual changes and evidence in a branch/PR from your own account. Do not re-upload all project files or claim the initial AI-assisted package as four separate authored contributions.
+The repository now has the complete B-01 to B-61 acceptance ledger with one named owner per task, setup and rebuild instructions, data definitions, a user guide, five checked question answers, a demo script, editable slides and role reports. The bug ledger records the institution count, growth sorting, renamed-institution labels, invalid saved selection and export-scope corrections.
+
+The release instructions explain deployment, rollback and ownership. A captioned backup walkthrough supports the live demonstration. Individual reflection worksheets ask each person to describe genuine work and learning rather than supplying invented experiences.
+
+## Evidence to discuss
+
+The production deployment is READY at stem-pathways-dashboard.vercel.app. docs/qa/live-number-checks.json and ui-filter-checks.json contain the observed results. The notebook reproduction and crosswalk reports provide data evidence. The build still emits a non-blocking bundle-size warning, and map points can overlap in dense areas; both limitations are documented.
+
+## Review and next actions
+
+Shraddha should repeat the setup from README and review the live checklist herself, then record a genuine review in GitHub. An APS administrator must confirm main protection. Git-triggered preview and production deployment still need a verified connection. The Vercel project is currently under the lead’s team, so APS must confirm the ownership arrangement.
+
+The team must still hold its rehearsal and demo, record real feedback and submit four personal reflections. The final release tag should follow teammate approval and merge. This report does not treat prepared documents as evidence that those events occurred.
+
+## Files to present
+
+tests/; scripts/verify_data.py; scripts/verify_questions.py; docs/qa/; docs/progress.md; docs/user-guide.md; docs/demo-script.md; docs/deployment.md; docs/github-team-guide.md.
