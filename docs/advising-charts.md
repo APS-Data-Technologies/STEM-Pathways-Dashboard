@@ -7,7 +7,7 @@ The most recent five complete award years open by default (2021–2025). Show fu
 - The annual trend fits its vertical scale to the displayed counts. The axis uses whole awards and prints its bounds. Choose **Start at zero** for context. A caption shows the first and last reported counts, years, and net change. Missing years leave gaps. A single observation has its own explanation.
 - The Overview institution ranking now shows a doughnut chart. The center gives the total for the active selection. The legend lists counts and percentages, and a college name opens its detail page. Four leading institutions are named when the rest are grouped. If only five qualify, all five are named. Every positive award contributes to the denominator.
 - Institution field comparisons retain horizontal bars. Exact tables, filters, exports and saved links remain available. Compare shows degree awards for up to three colleges. The data contract covers degree awards only.
-- Checkbox multi-select remains a future enhancement. Ana’s additional reference can be reviewed when supplied.
+- STEM field, degree level, city and institution control now accept multiple choices. The Institutions page shows a table of awards by field and degree level for one college. Shared links, CSV exports and printed briefs follow these selections.
 
 ## Source and verification
 
