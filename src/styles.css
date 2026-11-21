@@ -1194,3 +1194,72 @@ label {
     font-size: 11px;
   }
 }
+
+.trend-reading {
+  margin: 0.5rem 0;
+  color: #174d48;
+  font-weight: 600;
+}
+.axis-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  color: #425852;
+}
+.axis-controls select {
+  padding: 0.4rem;
+  border: 1px solid #9eafa9;
+  background: white;
+  border-radius: 0.35rem;
+  color: inherit;
+}
+.share-figure {
+  height: 190px;
+  position: relative;
+}
+.share-total {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+  font-size: 0.8rem;
+}
+.share-total strong {
+  font-size: 1.25rem;
+}
+.share-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.share-list li {
+  display: grid;
+  grid-template-columns: 0.7rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid #e1e9e6;
+}
+.share-list i {
+  height: 0.65rem;
+  width: 0.65rem;
+  border-radius: 50%;
+}
+.share-list button {
+  font: inherit;
+  text-align: left;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #11635e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.share-list li > span:last-child {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

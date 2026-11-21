@@ -17,6 +17,7 @@ import {
 import {
   TrendChart,
   BreakdownChart,
+  InstitutionShare,
   EmptyState,
 } from "./components/Charts.jsx";
 
@@ -398,8 +399,8 @@ function About({ metadata }) {
           </dd>
           <dt>Snapshot</dt>
           <dd>
-            Downloaded {metadata.download_date}. Static files; no automatic
-            refresh. {metadata.release_status}.
+            Snapshot updated {metadata.download_date}. Static files; no
+            automatic refresh. {metadata.release_status}
           </dd>
         </dl>
         <h3>Our working STEM definition</h3>
@@ -420,7 +421,10 @@ function About({ metadata }) {
             Download unmodified annual Completions and institution-directory
             ZIPs.
           </li>
-          <li>Select the revised Completions member and join on UNITID.</li>
+          <li>
+            Use revised Completions through 2024 and the provisional 2025
+            release. Join each year to its directory by institution ID.
+          </li>
           <li>
             Keep Illinois institutions, first majors, eligible degrees, and
             six-digit STEM detail rows.
@@ -562,7 +566,13 @@ function Dashboard({ data }) {
   }
   function openInstitution(id) {
     setSelected(String(id));
-    window.location.hash = "institutions";
+    window.history.pushState(
+      null,
+      "",
+      selectionSearch(filters, String(id), compare) + "#institutions",
+    );
+    setPage("institutions");
+    window.scrollTo(0, 0);
   }
   const titles = {
     overview: [
@@ -590,7 +600,7 @@ function Dashboard({ data }) {
       "Sources, definitions, and limitations behind every number in this dashboard.",
     ],
   };
-  const ranked = groupTotals(rows, "unitid", "institution").slice(0, 8);
+  const ranked = groupTotals(rows, "unitid", "institution");
   return (
     <>
       <a
@@ -655,7 +665,11 @@ function Dashboard({ data }) {
               <span>—</span>
               {data.metadata.years.at(-1)}
             </strong>
-            <small>NCES IPEDS · {data.metadata.region}</small>
+            <small>
+              NCES IPEDS · {data.metadata.region}
+              <br />
+              2025 awards are provisional
+            </small>
           </div>
         </section>
         <div className="utility-bar">
@@ -744,10 +758,14 @@ function Dashboard({ data }) {
               </button>
               <button
                 onClick={() =>
-                  setFilters({ ...defaultFilters(data.metadata), start: 2020 })
+                  setFilters({
+                    ...filters,
+                    start: data.metadata.years[0],
+                    end: data.metadata.years.at(-1),
+                  })
                 }
               >
-                Explore 2020 onward
+                Show full history
               </button>
             </div>
             {filters.start < 2020 && filters.end >= 2020 && (
@@ -773,36 +791,7 @@ function Dashboard({ data }) {
               />
             </div>
             <div className="chart-grid lower">
-              <section className="panel">
-                <div className="panel-heading">
-                  <div>
-                    <p className="eyebrow">INSTITUTION SPOTLIGHT</p>
-                    <h2>Largest award totals</h2>
-                    <p>Across your selected years and degree levels</p>
-                  </div>
-                  <a href="#institutions">Explore all →</a>
-                </div>
-                {ranked.length ? (
-                  <ol className="ranking">
-                    {ranked.map((i, index) => (
-                      <li key={i.key}>
-                        <span className="rank-number">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <a
-                          href="#institutions"
-                          onClick={() => setSelected(String(i.key))}
-                        >
-                          {i.name}
-                        </a>
-                        <strong>{formatNumber(i.completions)}</strong>
-                      </li>
-                    ))}
-                  </ol>
-                ) : (
-                  <EmptyState />
-                )}
-              </section>
+              <InstitutionShare ranked={ranked} onSelect={openInstitution} />
               <BreakdownChart
                 data={groupTotals(rows, "award_level")}
                 title="Compare degree levels"

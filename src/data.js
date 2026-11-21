@@ -80,7 +80,7 @@ export function defaultFilters(metadata) {
   return {
     field: "all",
     level: "all",
-    start: metadata.years[0],
+    start: metadata.years[Math.max(0, metadata.years.length - 5)],
     end: metadata.years.at(-1),
     city: "all",
     control: "all",
