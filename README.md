@@ -1,5 +1,8 @@
 # STEM Pathways Dashboard
 
+On **Institutions**, select a college and compare awards across multiple STEM fields and degree levels. Field, level, city and institution type support checkbox selection throughout the dashboard. [Counselor guide](docs/user-guide.md)
+
+
 An Illinois STEM degree explorer for counselors, college advisors and education leaders. It turns public NCES IPEDS completions into field trends, institution profiles and comparisons. The app uses React, Vite and Recharts with a reproducible Python pipeline. It has no accounts, student records or database.
 
 **Version 2 · Advising charts and current data.** Start with the most recent five award years, change the chart scale or open a college directly from its share of awards. The [version 2 release notes](docs/advising-charts.md) cover the feedback, data refresh and checks. The existing team reports, original five answers, screenshots and demo materials document version 1.
