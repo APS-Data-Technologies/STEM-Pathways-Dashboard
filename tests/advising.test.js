@@ -25,6 +25,7 @@ test("city and control filters reproduce a known local advising selection", () =
     field: "11",
     level: "Bachelor's",
     start: 2023,
+    end: 2023,
     city: "Chicago",
     control: "Public",
   };

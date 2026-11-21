@@ -18,7 +18,7 @@ const rows = read("completions"),
   institutions = read("institutions"),
   metadata = read("metadata");
 test("committed data satisfies contract", () =>
-  assert.equal(validateData(rows, institutions, metadata).rows.length, 3808));
+  assert.equal(validateData(rows, institutions, metadata).rows.length, 4746));
 test("rejects duplicate, negative and orphan records", () => {
   for (const bad of [
     [...rows, rows[0]],
@@ -91,7 +91,7 @@ test("category groups preserve total", () =>
     sum(groupTotals(rows, "field_family", "field_name")),
     sum(rows),
   ));
-test("all 1008 region filter combinations have consistent totals or explicit empty series", () => {
+test("all 1540 region filter combinations have consistent totals or explicit empty series", () => {
   let count = 0;
   for (const field of ["all", ...metadata.fields.map((f) => f.code)])
     for (const level of ["all", ...metadata.award_levels])
@@ -107,5 +107,5 @@ test("all 1008 region filter combinations have consistent totals or explicit emp
             assert.ok(series.every((s) => s.completions === null));
           count++;
         }
-  assert.equal(count, 1008);
+  assert.equal(count, 1540);
 });
