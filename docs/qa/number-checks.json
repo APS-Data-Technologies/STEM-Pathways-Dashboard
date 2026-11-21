@@ -142,5 +142,77 @@
     "status": "PASS",
     "source": "https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip",
     "member": "C2023_a_RV.csv"
+  },
+  {
+    "institution": "Judson University",
+    "unitid": 146339,
+    "year": 2024,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 18,
+    "export_total": 18,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2024_A.zip",
+    "member": "c2024_a_rv.csv"
+  },
+  {
+    "institution": "Northwestern University",
+    "unitid": 147767,
+    "year": 2024,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1781,
+    "export_total": 1781,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2024_A.zip",
+    "member": "c2024_a_rv.csv"
+  },
+  {
+    "institution": "University of Chicago",
+    "unitid": 144050,
+    "year": 2024,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1427,
+    "export_total": 1427,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2024_A.zip",
+    "member": "c2024_a_rv.csv"
+  },
+  {
+    "institution": "Judson University",
+    "unitid": 146339,
+    "year": 2025,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 99,
+    "export_total": 99,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2025_A.zip",
+    "member": "c2025_a.csv"
+  },
+  {
+    "institution": "Northwestern University",
+    "unitid": 147767,
+    "year": 2025,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1930,
+    "export_total": 1930,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2025_A.zip",
+    "member": "c2025_a.csv"
+  },
+  {
+    "institution": "University of Chicago",
+    "unitid": 144050,
+    "year": 2025,
+    "field": "All six STEM families",
+    "award_level": "Associate + bachelor + master",
+    "expected_source_total": 1647,
+    "export_total": 1647,
+    "status": "PASS",
+    "source": "https://nces.ed.gov/ipeds/complete-data-files/C2025_A.zip",
+    "member": "c2025_a.csv"
   }
 ]

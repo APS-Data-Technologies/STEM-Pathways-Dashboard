@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "method": "Independent standard-library raw ZIP/CSV aggregation. No pipeline functions or pandas imported. Every year/institution/field/degree cell reconciles exactly, including reported zero cells.",
-  "source_cells_checked": 3808,
-  "total_awards": 187386,
+  "source_cells_checked": 4746,
+  "total_awards": 243002,
   "annual_totals": {
     "2016": 22744,
     "2017": 23942,
@@ -11,97 +11,99 @@
     "2020": 22270,
     "2021": 23228,
     "2022": 22667,
-    "2023": 25243
+    "2023": 25243,
+    "2024": 26598,
+    "2025": 29018
   },
   "fields_by_endpoint_growth": [
     {
       "field_family": "11",
       "start": 7107,
-      "end": 9841,
-      "change_percent": 38.46911495708456
-    },
-    {
-      "field_family": "27",
-      "start": 1594,
-      "end": 2034,
-      "change_percent": 27.603513174404014
+      "end": 12748,
+      "change_percent": 79.37244969748136
     },
     {
       "field_family": "15",
       "start": 1700,
-      "end": 1800,
-      "change_percent": 5.882352941176472
+      "end": 2197,
+      "change_percent": 29.235294117647047
+    },
+    {
+      "field_family": "27",
+      "start": 1594,
+      "end": 2017,
+      "change_percent": 26.537013801756594
     },
     {
       "field_family": "14",
       "start": 6313,
-      "end": 6101,
-      "change_percent": -3.358149849516867
+      "end": 6454,
+      "change_percent": 2.2334864565182855
     },
     {
       "field_family": "26",
       "start": 4561,
-      "end": 4255,
-      "change_percent": -6.709055031791278
+      "end": 4319,
+      "change_percent": -5.305853979390484
     },
     {
       "field_family": "40",
       "start": 1469,
-      "end": 1212,
-      "change_percent": -17.49489448604493
+      "end": 1283,
+      "change_percent": -12.661674608577266
     }
   ],
   "degree_level_totals": {
-    "Bachelor's": 108418,
-    "Master's": 63197,
-    "Associate": 15771
+    "Bachelor's": 136860,
+    "Master's": 83802,
+    "Associate": 22340
   },
   "latest_computer_science_bachelors_top_institutions": [
     {
       "unitid": 145637,
       "institution": "University of Illinois Urbana-Champaign",
-      "awards": 583
+      "awards": 896
     },
     {
       "unitid": 145600,
       "institution": "University of Illinois Chicago",
-      "awards": 454
+      "awards": 601
     },
     {
       "unitid": 482477,
       "institution": "DeVry University-Illinois",
-      "awards": 329
+      "awards": 461
     },
     {
       "unitid": 144740,
       "institution": "DePaul University",
-      "awards": 292
-    },
-    {
-      "unitid": 145813,
-      "institution": "Illinois State University",
-      "awards": 199
+      "awards": 362
     },
     {
       "unitid": 147767,
       "institution": "Northwestern University",
-      "awards": 192
+      "awards": 263
+    },
+    {
+      "unitid": 145813,
+      "institution": "Illinois State University",
+      "awards": 212
     },
     {
       "unitid": 145725,
       "institution": "Illinois Institute of Technology",
-      "awards": 152
+      "awards": 176
     },
     {
-      "unitid": 146612,
-      "institution": "Lewis University",
-      "awards": 142
+      "unitid": 144050,
+      "institution": "University of Chicago",
+      "awards": 174
     }
   ],
-  "judson_total": 66,
+  "judson_total": 183,
   "judson_endpoints": {
     "2016": 6,
-    "2023": 6
+    "2025": 99
   },
   "chicago_public_computer_science_bachelors_2023": 566
 }
