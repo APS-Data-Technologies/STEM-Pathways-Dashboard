@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def source_rows(path,revised=False):
     with zipfile.ZipFile(path) as z:
         names=[n for n in z.namelist() if n.lower().endswith('.csv')]
-        name=next(n for n in names if '_rv.' in n.lower()) if revised else names[0]
+        name=next(n for n in names if '_rv.' in n.lower()) if revised else next((n for n in names if '_rv.' in n.lower()), names[0])
         b=z.read(name)
     try:t=b.decode('utf-8-sig')
     except UnicodeDecodeError:t=b.decode('cp1252')
@@ -17,7 +17,7 @@ def verify():
     expected=defaultdict(int);names={};local=0;annual=defaultdict(int)
     for year in metadata['years']:
         hd={int(r['UNITID']):r for r in source_rows(ROOT/f'data/raw/HD{year}.zip') if r['STABBR']=='IL'}
-        for r in source_rows(ROOT/f'data/raw/C{year}_A.zip',True):
+        for r in source_rows(ROOT/f'data/raw/C{year}_A.zip',year != 2025):
             uid=int(r['UNITID']);cip=r['CIPCODE'];level=int(r['AWLEVEL'])
             if uid in hd and r['MAJORNUM']=='1' and re.fullmatch(r'\d{2}\.\d{4}',cip) and cip[:2] in {'11','14','15','26','27','40'} and level in {3,5,7}:
                 value=int(r['CTOTALT']);expected[(year,uid,cip[:2],{3:'Associate',5:"Bachelor's",7:"Master's"}[level])]+=value;annual[year]+=value;names[uid]=hd[uid]['INSTNM']
@@ -27,7 +27,7 @@ def verify():
     families=defaultdict(lambda:defaultdict(int));levels=defaultdict(int);institutions=defaultdict(int)
     for (y,uid,f,l),v in expected.items():
         families[f][y]+=v;levels[l]+=v
-        if y==2023 and f=='11' and l=="Bachelor's":institutions[uid]+=v
+        if y==metadata['years'][-1] and f=='11' and l=="Bachelor's":institutions[uid]+=v
     first,last=metadata['years'][0],metadata['years'][-1]
     field_answer=[{'field_family':f,'start':a[first],'end':a[last],'change_percent':(a[last]/a[first]-1)*100} for f,a in families.items()]
     field_answer.sort(key=lambda x:-x['change_percent'])

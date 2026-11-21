@@ -8,6 +8,7 @@ import {
   selectionSearch,
   rowsToCsv,
   fieldGrowth,
+  degreeComparison,
   sum,
 } from "../src/data.js";
 const read = (n) =>
@@ -25,6 +26,7 @@ test("city and control filters reproduce a known local advising selection", () =
     field: "11",
     level: "Bachelor's",
     start: 2023,
+    end: 2023,
     city: "Chicago",
     control: "Public",
   };
@@ -59,10 +61,10 @@ test("city and control partitions reconcile to full annual totals", () => {
 test("saved selection survives round trip including comparison IDs", () => {
   const filters = {
     ...defaultFilters(data.metadata),
-    field: "11",
-    level: "Bachelor's",
-    city: "Chicago",
-    control: "Public",
+    field: ["11"],
+    level: ["Bachelor's"],
+    city: ["Chicago"],
+    control: ["Public"],
     start: 2023,
   };
   const selected = "145600",
@@ -111,4 +113,73 @@ test("growth sorting excludes unavailable baselines from the top", () => {
   assert.equal(result[0].key, "11");
   assert.equal(result[0].change, 100);
   assert.equal(result[1].change, null);
+});
+
+test("multiple filters select alternatives within groups and intersect groups without duplicate awards", () => {
+  const f = {
+    ...defaultFilters(data.metadata),
+    field: ["11", "14"],
+    level: ["Bachelor's", "Master's"],
+    city: ["Chicago", "Evanston"],
+    control: ["Public", "Private nonprofit"],
+  };
+  const rows = filterRows(data.rows, f);
+  const independentlySelected = data.rows.filter(
+    (r) =>
+      r.year >= f.start &&
+      r.year <= f.end &&
+      f.field.includes(r.field_family) &&
+      f.level.includes(r.award_level) &&
+      f.city.includes(r.city) &&
+      f.control.includes(r.control),
+  );
+  assert.deepEqual(rows, independentlySelected);
+  assert.ok(rows.length);
+  assert.deepEqual(
+    readSelection(selectionSearch(f, "145600", []), data).filters,
+    f,
+  );
+  const legacy = readSelection(
+    "?field=11&level=Bachelor%27s&city=Chicago",
+    data,
+  );
+  assert.deepEqual(legacy.filters.level, ["Bachelor's"]);
+  assert.deepEqual(
+    readSelection("?field=11&field=11&field=bad&field=14", data).filters.field,
+    ["11", "14"],
+  );
+});
+
+test("college degree matrix separates levels, sums years and keeps zero distinct from no record", () => {
+  const fields = [
+    { code: "11", name: "Computing" },
+    { code: "14", name: "Engineering" },
+  ];
+  const levels = ["Bachelor's", "Master's"];
+  const rows = [
+    { field_family: "11", award_level: levels[0], completions: 3 },
+    { field_family: "11", award_level: levels[0], completions: 4 },
+    { field_family: "14", award_level: levels[1], completions: 0 },
+  ];
+  assert.deepEqual(
+    degreeComparison(rows, fields, levels).map((r) => r.counts),
+    [
+      [7, null],
+      [null, 0],
+    ],
+  );
+  const filters = {
+    ...defaultFilters(data.metadata),
+    field: ["11", "14"],
+    level: levels,
+  };
+  const institutionRows = filterRows(data.rows, filters, "145600");
+  const counts = degreeComparison(institutionRows, fields, levels).flatMap(
+    (r) => r.counts,
+  );
+  assert.ok(counts.every((n) => n > 0));
+  assert.equal(
+    counts.reduce((a, b) => a + b, 0),
+    sum(institutionRows),
+  );
 });

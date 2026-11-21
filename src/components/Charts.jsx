@@ -10,7 +10,10 @@ import {
   CartesianGrid,
   Tooltip,
   Cell,
+  PieChart,
+  Pie,
 } from "recharts";
+import { trendAxis, institutionShares } from "../chartData.js";
 import { formatNumber } from "../data.js";
 
 const colors = [
@@ -84,7 +87,13 @@ export function TrendChart({
   title = "Degrees awarded over time",
   subtitle,
 }) {
-  const hasData = data.some((d) => d.completions != null);
+  const [fromZero, setFromZero] = React.useState(false);
+  const reported = data.filter((d) => d.completions != null);
+  const hasData = reported.length > 0;
+  const axis = trendAxis(data, fromZero);
+  const first = reported[0],
+    last = reported.at(-1);
+  const delta = hasData ? last.completions - first.completions : 0;
   return (
     <section className="panel">
       <div className="panel-heading">
@@ -100,6 +109,27 @@ export function TrendChart({
       </div>
       {hasData ? (
         <>
+          <p className="trend-reading">
+            {reported.length === 1
+              ? `${first.year}: ${formatNumber(first.completions)} awards. One year has reported data.`
+              : `${first.year}: ${formatNumber(first.completions)} → ${last.year}: ${formatNumber(last.completions)} awards. ${delta === 0 ? "No net change" : (delta > 0 ? "Up " : "Down ") + formatNumber(Math.abs(delta)) + " awards"}${first.completions > 0 && delta !== 0 ? " (" + ((Math.abs(delta) / first.completions) * 100).toFixed(1) + "%)" : ""}.`}
+          </p>
+          <div className="axis-controls">
+            <label>
+              Vertical scale{" "}
+              <select
+                value={fromZero ? "zero" : "fit"}
+                onChange={(e) => setFromZero(e.target.value === "zero")}
+              >
+                <option value="fit">Fit to selected values</option>
+                <option value="zero">Start at zero</option>
+              </select>
+            </label>
+            <small>
+              {formatNumber(axis.domain[0])}–{formatNumber(axis.domain[1])}{" "}
+              awards
+            </small>
+          </div>
           <div
             className="chart-wrap"
             role="img"
@@ -128,7 +158,10 @@ export function TrendChart({
                   minTickGap={12}
                 />
                 <YAxis
-                  tickFormatter={shortNumber}
+                  domain={axis.domain}
+                  ticks={axis.ticks}
+                  tickFormatter={formatNumber}
+                  allowDecimals={false}
                   tickLine={false}
                   axisLine={false}
                   width={52}
@@ -246,6 +279,87 @@ export function BreakdownChart({
         </>
       ) : (
         <EmptyState />
+      )}
+    </section>
+  );
+}
+
+export function InstitutionShare({ ranked, onSelect }) {
+  const slices = institutionShares(ranked);
+  const total = slices.reduce((n, item) => n + item.completions, 0);
+  const percent = (n) =>
+    new Intl.NumberFormat("en-US", {
+      style: "percent",
+      maximumFractionDigits: 1,
+    }).format(n / total);
+  return (
+    <section className="panel">
+      <div className="panel-heading">
+        <div>
+          <p className="eyebrow">INSTITUTIONS</p>
+          <h2>Share of degrees awarded</h2>
+          <p>
+            Each slice shows an institution’s share of all awards matching your
+            filters.
+          </p>
+        </div>
+      </div>
+      {total > 0 ? (
+        <>
+          <div className="share-figure" aria-hidden="true">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={slices}
+                  dataKey="completions"
+                  nameKey="name"
+                  innerRadius="64%"
+                  outerRadius="90%"
+                  startAngle={90}
+                  endAngle={-270}
+                  isAnimationActive={false}
+                >
+                  {slices.map((s, i) => (
+                    <Cell key={s.key} fill={colors[i]} />
+                  ))}
+                </Pie>
+                <Tooltip
+                  formatter={(value) => [
+                    formatNumber(value) + " awards",
+                    "Total",
+                  ]}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+            <span className="share-total">
+              <strong>{formatNumber(total)}</strong>awards
+            </span>
+          </div>
+          <ul className="share-list">
+            {slices.map((item, i) => (
+              <li key={item.key}>
+                <i aria-hidden="true" style={{ background: colors[i] }} />
+                {item.key === "other" ? (
+                  <span>{item.name}</span>
+                ) : (
+                  <button onClick={() => onSelect(item.key)}>
+                    {item.name}
+                  </button>
+                )}
+                <span>
+                  {formatNumber(item.completions)} ·{" "}
+                  <strong>{percent(item.completions)}</strong>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>
+          {ranked.length
+            ? "The selected institutions reported zero awards."
+            : "No institutions match these filters."}
+        </p>
       )}
     </section>
   );

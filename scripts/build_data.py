@@ -17,7 +17,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://nces.ed.gov/ipeds/datacenter/data/"
-YEARS = list(range(2016, 2024))
+YEARS = list(range(2016, 2026))
 FIELDS = {"11": "Computer & information sciences", "14": "Engineering", "15": "Engineering technologies", "26": "Biological & biomedical sciences", "27": "Mathematics & statistics", "40": "Physical sciences"}
 AWARDS = {3: "Associate", 5: "Bachelor's", 7: "Master's"}
 CONTROLS = {'1': 'Public', '2': 'Private nonprofit', '3': 'Private for-profit'}
@@ -26,13 +26,18 @@ def save_json(path, value):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n", encoding="utf-8")
 
+def source_url(name):
+    year = int(name.upper().removeprefix("HD").removeprefix("C")[:4])
+    base = BASE if year < 2024 else "https://nces.ed.gov/ipeds/complete-data-files/"
+    return base + name
+
 def download(name):
     path = ROOT / "data/raw" / name
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.exists():
         for attempt in range(3):
             try:
-                with urllib.request.urlopen(BASE + name, timeout=60) as response:
+                with urllib.request.urlopen(source_url(name), timeout=60) as response:
                     payload = response.read()
                 with zipfile.ZipFile(io.BytesIO(payload)) as archive:
                     assert any(n.lower().endswith('.csv') for n in archive.namelist())
@@ -51,7 +56,7 @@ def read_zip(path, columns):
     with zipfile.ZipFile(path) as z:
         csvs = [n for n in z.namelist() if n.lower().endswith('.csv')]
         revised = [n for n in csvs if '_rv.' in n.lower()]
-        if path.name.upper().startswith('C') and not revised:
+        if path.name.upper().startswith('C') and path.name.upper() != "C2025_A.ZIP" and not revised:
             raise ValueError(f"Revised Completions member required: {path.name}")
         name = (revised or csvs)[0]
         # Older IPEDS files use Windows-1252; newer files may be UTF-8.
@@ -132,12 +137,12 @@ def build(download_sources=True):
     records.to_csv(dest / 'completions.csv', index=False, lineterminator='\n')
     save_json(dest / 'institutions.json', institutions)
     pd.DataFrame(institutions).to_csv(dest / 'institutions.csv', index=False, lineterminator='\n')
-    sources = [{'filename':n,'url':BASE+n,'sha256':hashlib.sha256((ROOT/'data/raw'/n).read_bytes()).hexdigest(),'bytes':(ROOT/'data/raw'/n).stat().st_size} for n in names]
+    sources = [{'filename':n,'url':source_url(n),'sha256':hashlib.sha256((ROOT/'data/raw'/n).read_bytes()).hexdigest(),'bytes':(ROOT/'data/raw'/n).stat().st_size} for n in names]
     for source in sources:
         with zipfile.ZipFile(ROOT/'data/raw'/source['filename']) as archive:
             members = [n for n in archive.namelist() if n.lower().endswith('.csv')]
             source['csv_member'] = next((n for n in members if '_rv.' in n.lower()), members[0])
-    metadata = {'schema_version':2,'region':'Illinois','state':'IL','years':YEARS,'award_levels':list(AWARDS.values()),'fields':[{'code':k,'name':v} for k,v in FIELDS.items()],'source_name':'NCES IPEDS Completions and Institutional Characteristics','source_url':'https://nces.ed.gov/ipeds/use-the-data/download-access-database','download_date':'2026-11-06','scope_status':'Working assumptions; sponsor approval pending','release_status':'Revised Completions CSV members verified for 2016–2023. Downloaded 2024 archive had no revised member, so it is excluded pending release review.','counting_rule':'First majors only (MAJORNUM=1); six-digit CIP detail; AWLEVEL 3, 5, 7; CTOTALT only','cip_handling':'Aggregate each year under its reported two-digit CIP family. CIP 2010 is used before 2020; CIP 2020 thereafter. Official NCES crosswalk review found two moves within family 15 and no moves across the six selected family boundaries. Family totals need no recoding; new programs and reporting changes can still affect trends.','missing_data_rule':'Reported zero values are retained. No matching records are shown as no data, never imputed to zero.','unit':'Degrees awarded, not unique people or enrollments','rows':len(records),'institutions':len(institutions),'sources':sources}
+    metadata = {'schema_version':2,'region':'Illinois','state':'IL','years':YEARS,'award_levels':list(AWARDS.values()),'fields':[{'code':k,'name':v} for k,v in FIELDS.items()],'source_name':'NCES IPEDS Completions and Institutional Characteristics','source_url':'https://nces.ed.gov/ipeds/use-the-data/download-access-database','download_date':'2026-11-21','scope_status':'Version 2 advising snapshot','release_status':'Award years 2016–2024 use revised Completions files. Award year 2025 (July 2024 to June 2025) uses the NCES provisional release and may be revised.','counting_rule':'First majors only (MAJORNUM=1); six-digit CIP detail; AWLEVEL 3, 5, 7; CTOTALT only','cip_handling':'Aggregate each year under its reported two-digit CIP family. CIP 2010 is used before 2020; CIP 2020 thereafter. Official NCES crosswalk review found two moves within family 15 and no moves across the six selected family boundaries. Family totals need no recoding; new programs and reporting changes can still affect trends.','missing_data_rule':'Reported zero values are retained. No matching records are shown as no data, never imputed to zero.','unit':'Degrees awarded, not unique people or enrollments','rows':len(records),'institutions':len(institutions),'sources':sources}
     metadata['schema_version'] = 2
     metadata['cities'] = sorted(records.city.unique().tolist())
     metadata['controls'] = sorted(records.control.unique().tolist())

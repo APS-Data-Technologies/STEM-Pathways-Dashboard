@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
   loadData,
   filterRows,
@@ -13,10 +13,12 @@ import {
   selectionSearch,
   rowsToCsv,
   fieldGrowth,
+  degreeComparison,
 } from "./data.js";
 import {
   TrendChart,
   BreakdownChart,
+  InstitutionShare,
   EmptyState,
 } from "./components/Charts.jsx";
 
@@ -35,6 +37,110 @@ function currentPage() {
   return pages.some(([p]) => p === hash) ? hash : "overview";
 }
 
+function MultiFilter({
+  label,
+  allLabel,
+  options,
+  value,
+  onChange,
+  searchable = false,
+}) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const root = useRef(null);
+  const trigger = useRef(null);
+  const id = useId();
+  const selected = value === "all" ? [] : value;
+  const active = options.filter((option) => selected.includes(option.value));
+  const displayed = options.filter((option) =>
+    option.label.toLowerCase().includes(query.trim().toLowerCase()),
+  );
+  useEffect(() => {
+    if (!open) return;
+    const outside = (event) => {
+      if (!root.current?.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", outside);
+    return () => document.removeEventListener("pointerdown", outside);
+  }, [open]);
+  function toggle(option) {
+    const next = selected.includes(option)
+      ? selected.filter((v) => v !== option)
+      : [...selected, option];
+    onChange(next.length ? next : "all");
+  }
+  return (
+    <div
+      className="multi-filter"
+      ref={root}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          event.preventDefault();
+          setOpen(false);
+          trigger.current.focus();
+        }
+      }}
+    >
+      <span id={id + "-label"}>{label}</span>
+      <button
+        type="button"
+        className="filter-trigger"
+        ref={trigger}
+        aria-labelledby={id + "-label " + id + "-value"}
+        aria-expanded={open}
+        aria-controls={open ? id : undefined}
+        onClick={() => {
+          setQuery("");
+          setOpen(!open);
+        }}
+      >
+        <span id={id + "-value"}>
+          {active.length > 1
+            ? active.length + " selected"
+            : active[0]?.label || allLabel}
+        </span>
+        <span aria-hidden="true">▾</span>
+      </button>
+      {open && (
+        <div className="filter-popup" role="group" aria-label={label} id={id}>
+          {searchable && (
+            <input
+              type="search"
+              aria-label={"Search " + label.toLowerCase()}
+              placeholder="Find a city"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          )}
+          <label>
+            <input
+              type="checkbox"
+              checked={value === "all"}
+              onChange={() => onChange("all")}
+            />
+            {allLabel}
+          </label>
+          {displayed.map((option) => (
+            <label key={option.value}>
+              <input
+                type="checkbox"
+                checked={selected.includes(option.value)}
+                onChange={() => toggle(option.value)}
+              />
+              {option.label}
+            </label>
+          ))}
+          {!displayed.length && <p>No matching options.</p>}
+        </div>
+      )}
+    </div>
+  );
+}
+const choicesFor = (values) => values.map((value) => ({ value, label: value }));
+
 function Filters({ metadata, filters, setFilters }) {
   function change(key, value) {
     setFilters((f) => ({ ...f, [key]: value }));
@@ -48,32 +154,20 @@ function Filters({ metadata, filters, setFilters }) {
         <strong>Explore the data</strong>
         <small>All charts follow your selections</small>
       </div>
-      <label>
-        STEM field
-        <select
-          value={filters.field}
-          onChange={(e) => change("field", e.target.value)}
-        >
-          <option value="all">All STEM fields</option>
-          {metadata.fields.map((f) => (
-            <option key={f.code} value={f.code}>
-              {f.name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label>
-        Degree level
-        <select
-          value={filters.level}
-          onChange={(e) => change("level", e.target.value)}
-        >
-          <option value="all">All degree levels</option>
-          {metadata.award_levels.map((a) => (
-            <option key={a}>{a}</option>
-          ))}
-        </select>
-      </label>
+      <MultiFilter
+        label="STEM field"
+        allLabel="All STEM fields"
+        options={metadata.fields.map((f) => ({ value: f.code, label: f.name }))}
+        value={filters.field}
+        onChange={(value) => change("field", value)}
+      />
+      <MultiFilter
+        label="Degree level"
+        allLabel="All degree levels"
+        options={choicesFor(metadata.award_levels)}
+        value={filters.level}
+        onChange={(value) => change("level", value)}
+      />
       <label>
         From year
         <select
@@ -108,30 +202,21 @@ function Filters({ metadata, filters, setFilters }) {
           ))}
         </select>
       </label>
-      <label>
-        City
-        <select
-          value={filters.city}
-          onChange={(e) => change("city", e.target.value)}
-        >
-          <option value="all">All cities</option>
-          {metadata.cities.map((city) => (
-            <option key={city}>{city}</option>
-          ))}
-        </select>
-      </label>
-      <label>
-        Institution control
-        <select
-          value={filters.control}
-          onChange={(e) => change("control", e.target.value)}
-        >
-          <option value="all">All institution types</option>
-          {metadata.controls.map((control) => (
-            <option key={control}>{control}</option>
-          ))}
-        </select>
-      </label>
+      <MultiFilter
+        label="City"
+        allLabel="All cities"
+        searchable
+        options={choicesFor(metadata.cities)}
+        value={filters.city}
+        onChange={(value) => change("city", value)}
+      />
+      <MultiFilter
+        label="Institution control"
+        allLabel="All institution types"
+        options={choicesFor(metadata.controls)}
+        value={filters.control}
+        onChange={(value) => change("control", value)}
+      />
       <button
         className="reset"
         onClick={() => setFilters(defaultFilters(metadata))}
@@ -172,6 +257,52 @@ function Metrics({ rows, filters }) {
         </section>
       ))}
     </div>
+  );
+}
+
+function DegreeTable({ rows, filters, metadata, name }) {
+  const fields = metadata.fields.filter(
+    (f) => filters.field === "all" || filters.field.includes(f.code),
+  );
+  const levels = metadata.award_levels.filter(
+    (level) => filters.level === "all" || filters.level.includes(level),
+  );
+  return (
+    <section className="panel degree-table">
+      <h2>Compare degrees at {name}</h2>
+      <p>
+        Choose STEM fields and degree levels above to compare awards at this
+        institution. A dash means no matching record. A zero means the
+        institution reported zero awards.
+      </p>
+      <div className="table-scroll">
+        <table>
+          <caption>
+            Degrees awarded by field and level, {filters.start}–{filters.end}
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">STEM field</th>
+              {levels.map((level) => (
+                <th scope="col" key={level}>
+                  {level}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {degreeComparison(rows, fields, levels).map((field) => (
+              <tr key={field.code}>
+                <th scope="row">{field.name}</th>
+                {field.counts.map((count, i) => (
+                  <td key={levels[i]}>{formatNumber(count)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }
 
@@ -260,6 +391,14 @@ function Institutions({ data, filters, selected, setSelected }) {
         </div>
       )}
       <Metrics rows={rows} filters={filters} />
+      {institution && (
+        <DegreeTable
+          rows={rows}
+          filters={filters}
+          metadata={data.metadata}
+          name={institution.name}
+        />
+      )}
       {!rows.length ? (
         <section className="panel">
           <EmptyState>
@@ -398,8 +537,8 @@ function About({ metadata }) {
           </dd>
           <dt>Snapshot</dt>
           <dd>
-            Downloaded {metadata.download_date}. Static files; no automatic
-            refresh. {metadata.release_status}.
+            Snapshot updated {metadata.download_date}. Static files; no
+            automatic refresh. {metadata.release_status}
           </dd>
         </dl>
         <h3>Our working STEM definition</h3>
@@ -420,7 +559,10 @@ function About({ metadata }) {
             Download unmodified annual Completions and institution-directory
             ZIPs.
           </li>
-          <li>Select the revised Completions member and join on UNITID.</li>
+          <li>
+            Use revised Completions through 2024 and the provisional 2025
+            release. Join each year to its directory by institution ID.
+          </li>
           <li>
             Keep Illinois institutions, first majors, eligible degrees, and
             six-digit STEM detail rows.
@@ -535,7 +677,20 @@ function Dashboard({ data }) {
         : page === "map"
           ? rows.filter((r) => mapIds.has(r.unitid))
           : rows;
-  const context = `${filters.start}–${filters.end} · ${filters.field === "all" ? "All STEM fields" : data.metadata.fields.find((f) => f.code === filters.field)?.name} · ${filters.level === "all" ? "All degree levels" : filters.level} · ${filters.city === "all" ? "All cities" : filters.city} · ${filters.control === "all" ? "All institution types" : filters.control}`;
+  const context = [
+    `${filters.start}–${filters.end}`,
+    filters.field === "all"
+      ? "All STEM fields"
+      : data.metadata.fields
+          .filter((field) => filters.field.includes(field.code))
+          .map((field) => field.name)
+          .join(", "),
+    filters.level === "all" ? "All degree levels" : filters.level.join(", "),
+    filters.city === "all" ? "All cities" : filters.city.join(", "),
+    filters.control === "all"
+      ? "All institution types"
+      : filters.control.join(", "),
+  ].join(" · ");
   function download() {
     const blob = new Blob([rowsToCsv(visibleRows)], {
       type: "text/csv;charset=utf-8;",
@@ -562,7 +717,13 @@ function Dashboard({ data }) {
   }
   function openInstitution(id) {
     setSelected(String(id));
-    window.location.hash = "institutions";
+    window.history.pushState(
+      null,
+      "",
+      selectionSearch(filters, String(id), compare) + "#institutions",
+    );
+    setPage("institutions");
+    window.scrollTo(0, 0);
   }
   const titles = {
     overview: [
@@ -590,7 +751,7 @@ function Dashboard({ data }) {
       "Sources, definitions, and limitations behind every number in this dashboard.",
     ],
   };
-  const ranked = groupTotals(rows, "unitid", "institution").slice(0, 8);
+  const ranked = groupTotals(rows, "unitid", "institution");
   return (
     <>
       <a
@@ -655,7 +816,11 @@ function Dashboard({ data }) {
               <span>—</span>
               {data.metadata.years.at(-1)}
             </strong>
-            <small>NCES IPEDS · {data.metadata.region}</small>
+            <small>
+              NCES IPEDS · {data.metadata.region}
+              <br />
+              2025 awards are provisional
+            </small>
           </div>
         </section>
         <div className="utility-bar">
@@ -685,16 +850,18 @@ function Dashboard({ data }) {
             <h2>A quick guide for counselors and advisors</h2>
             <ol>
               <li>
-                Choose a STEM field, degree level and award-year range. Narrow
-                the results by city or institution control if useful.
+                Choose one or more STEM fields, degree levels, cities or
+                institution types. The year selectors set a continuous
+                award-year range.
               </li>
               <li>
                 Use Overview for regional totals and STEM fields for growth. A
                 single year has no growth rate.
               </li>
               <li>
-                Open Institutions for one college, Compare for up to three, or
-                Map to explore locations.
+                Open Institutions to compare fields and degree levels at one
+                college. Use Compare for up to three colleges, or Map to explore
+                locations.
               </li>
               <li>
                 Open the accessible data tables for exact values. Download
@@ -734,8 +901,8 @@ function Dashboard({ data }) {
                 onClick={() =>
                   setFilters({
                     ...defaultFilters(data.metadata),
-                    field: "11",
-                    level: "Bachelor's",
+                    field: ["11"],
+                    level: ["Bachelor's"],
                     start: data.metadata.years.at(-1),
                   })
                 }
@@ -744,10 +911,14 @@ function Dashboard({ data }) {
               </button>
               <button
                 onClick={() =>
-                  setFilters({ ...defaultFilters(data.metadata), start: 2020 })
+                  setFilters({
+                    ...filters,
+                    start: data.metadata.years[0],
+                    end: data.metadata.years.at(-1),
+                  })
                 }
               >
-                Explore 2020 onward
+                Show full history
               </button>
             </div>
             {filters.start < 2020 && filters.end >= 2020 && (
@@ -773,36 +944,7 @@ function Dashboard({ data }) {
               />
             </div>
             <div className="chart-grid lower">
-              <section className="panel">
-                <div className="panel-heading">
-                  <div>
-                    <p className="eyebrow">INSTITUTION SPOTLIGHT</p>
-                    <h2>Largest award totals</h2>
-                    <p>Across your selected years and degree levels</p>
-                  </div>
-                  <a href="#institutions">Explore all →</a>
-                </div>
-                {ranked.length ? (
-                  <ol className="ranking">
-                    {ranked.map((i, index) => (
-                      <li key={i.key}>
-                        <span className="rank-number">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <a
-                          href="#institutions"
-                          onClick={() => setSelected(String(i.key))}
-                        >
-                          {i.name}
-                        </a>
-                        <strong>{formatNumber(i.completions)}</strong>
-                      </li>
-                    ))}
-                  </ol>
-                ) : (
-                  <EmptyState />
-                )}
-              </section>
+              <InstitutionShare ranked={ranked} onSelect={openInstitution} />
               <BreakdownChart
                 data={groupTotals(rows, "award_level")}
                 title="Compare degree levels"

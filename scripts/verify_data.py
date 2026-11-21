@@ -27,9 +27,9 @@ def verify(exports_only=False):
     selected={i['unitid']:i['name'] for i in institutions if i['name'] in ['Judson University','Northwestern University','University of Chicago']}
     assert len(selected)==3
     checks=[]
-    for year in [2016,2019,2020,2023]:
+    for year in [2016,2019,2020,2023,2024,2025]:
         with zipfile.ZipFile(ROOT/f'data/raw/C{year}_A.zip') as z:
-            member=next(n for n in z.namelist() if '_rv.csv' in n.lower())
+            member=next((n for n in z.namelist() if '_rv.csv' in n.lower()), f'c{year}_a.csv')
             payload=z.read(member)
         try: decoded=payload.decode('utf-8-sig')
         except UnicodeDecodeError: decoded=payload.decode('cp1252')
@@ -42,7 +42,7 @@ def verify(exports_only=False):
         for uid,name in selected.items():
             actual=sum(r['completions'] for r in rows if r['year']==year and r['unitid']==uid)
             assert totals[uid]==actual
-            checks.append({'institution':name,'unitid':uid,'year':year,'field':'All six STEM families','award_level':'Associate + bachelor + master','expected_source_total':totals[uid],'export_total':actual,'status':'PASS','source':f'https://nces.ed.gov/ipeds/datacenter/data/C{year}_A.zip','member':member})
+            checks.append({'institution':name,'unitid':uid,'year':year,'field':'All six STEM families','award_level':'Associate + bachelor + master','expected_source_total':totals[uid],'export_total':actual,'status':'PASS','source':next(s['url'] for s in meta['sources'] if s['filename']==f'C{year}_A.zip'),'member':member})
     (ROOT/'docs/qa/number-checks.json').write_text(json.dumps(checks,indent=2)+'\n')
     print(json.dumps(checks,indent=2)); return checks
 if __name__=='__main__':

@@ -62,16 +62,20 @@ export async function loadData(signal) {
 }
 
 export function filterRows(rows, filters, institution = null) {
+  const allows = (selection, value) =>
+    !selection ||
+    selection === "all" ||
+    (Array.isArray(selection)
+      ? selection.includes(value)
+      : selection === value);
   return rows.filter(
     (r) =>
       r.year >= filters.start &&
       r.year <= filters.end &&
-      (filters.field === "all" || r.field_family === filters.field) &&
-      (filters.level === "all" || r.award_level === filters.level) &&
-      (!filters.city || filters.city === "all" || r.city === filters.city) &&
-      (!filters.control ||
-        filters.control === "all" ||
-        r.control === filters.control) &&
+      allows(filters.field, r.field_family) &&
+      allows(filters.level, r.award_level) &&
+      allows(filters.city, r.city) &&
+      allows(filters.control, r.control) &&
       (institution == null || r.unitid === Number(institution)),
   );
 }
@@ -80,7 +84,7 @@ export function defaultFilters(metadata) {
   return {
     field: "all",
     level: "all",
-    start: metadata.years[0],
+    start: metadata.years[Math.max(0, metadata.years.length - 5)],
     end: metadata.years.at(-1),
     city: "all",
     control: "all",
@@ -96,7 +100,10 @@ export function readSelection(search, data) {
     city: data.metadata.cities || [],
     control: data.metadata.controls || [],
   })) {
-    if (allowed.includes(p.get(key))) f[key] = p.get(key);
+    const values = [
+      ...new Set(p.getAll(key).filter((value) => allowed.includes(value))),
+    ];
+    if (values.length) f[key] = values;
   }
   for (const key of ["start", "end"])
     if (data.metadata.years.includes(Number(p.get(key))))
@@ -117,7 +124,11 @@ export function readSelection(search, data) {
 }
 
 export function selectionSearch(filters, selected, compare) {
-  const p = new URLSearchParams({ ...filters, institution: selected });
+  const p = new URLSearchParams({ institution: selected });
+  for (const [key, value] of Object.entries(filters)) {
+    for (const item of Array.isArray(value) ? value : [value])
+      p.append(key, item);
+  }
   if (compare.length) p.set("compare", compare.join(","));
   return "?" + p.toString();
 }
@@ -231,4 +242,17 @@ export function summary(rows, start, end) {
     ).size,
     ...growth(series[0]?.completions, series.at(-1)?.completions, end - start),
   };
+}
+
+// Keep the full selected grid so an absent record stays distinct from a reported zero.
+export function degreeComparison(rows, fields, levels) {
+  const cells = new Map();
+  for (const row of rows) {
+    const key = row.field_family + "|" + row.award_level;
+    cells.set(key, (cells.get(key) ?? 0) + row.completions);
+  }
+  return fields.map((field) => ({
+    ...field,
+    counts: levels.map((level) => cells.get(field.code + "|" + level) ?? null),
+  }));
 }
