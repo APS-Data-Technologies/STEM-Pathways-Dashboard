@@ -3807,3 +3807,941 @@ year,unitid,institution,city,control,field_family,field_name,award_level,complet
 2023,482477,DeVry University-Illinois,Lisle,Private for-profit,14,Engineering,Master's,0
 2023,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Associate,152
 2023,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Bachelor's,172
+2024,143084,Augustana College,Rock Island,Private nonprofit,11,Computer & information sciences,Bachelor's,14
+2024,143084,Augustana College,Rock Island,Private nonprofit,14,Engineering,Bachelor's,10
+2024,143084,Augustana College,Rock Island,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,88
+2024,143084,Augustana College,Rock Island,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2024,143084,Augustana College,Rock Island,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,143118,Aurora University,Aurora,Private nonprofit,11,Computer & information sciences,Bachelor's,34
+2024,143118,Aurora University,Aurora,Private nonprofit,14,Engineering,Bachelor's,0
+2024,143118,Aurora University,Aurora,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,21
+2024,143118,Aurora University,Aurora,Private nonprofit,27,Mathematics & statistics,Bachelor's,10
+2024,143118,Aurora University,Aurora,Private nonprofit,40,Physical sciences,Bachelor's,0
+2024,143215,Southwestern Illinois College,Belleville,Public,11,Computer & information sciences,Associate,38
+2024,143215,Southwestern Illinois College,Belleville,Public,14,Engineering,Associate,3
+2024,143215,Southwestern Illinois College,Belleville,Public,15,Engineering technologies,Associate,5
+2024,143279,Black Hawk College,Moline,Public,11,Computer & information sciences,Associate,3
+2024,143279,Black Hawk College,Moline,Public,15,Engineering technologies,Associate,3
+2024,143288,Blackburn College,Carlinville,Private nonprofit,11,Computer & information sciences,Bachelor's,2
+2024,143288,Blackburn College,Carlinville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,17
+2024,143288,Blackburn College,Carlinville,Private nonprofit,27,Mathematics & statistics,Bachelor's,0
+2024,143288,Blackburn College,Carlinville,Private nonprofit,40,Physical sciences,Bachelor's,0
+2024,143358,Bradley University,Peoria,Private nonprofit,11,Computer & information sciences,Bachelor's,108
+2024,143358,Bradley University,Peoria,Private nonprofit,11,Computer & information sciences,Master's,49
+2024,143358,Bradley University,Peoria,Private nonprofit,14,Engineering,Bachelor's,158
+2024,143358,Bradley University,Peoria,Private nonprofit,14,Engineering,Master's,46
+2024,143358,Bradley University,Peoria,Private nonprofit,15,Engineering technologies,Bachelor's,0
+2024,143358,Bradley University,Peoria,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,41
+2024,143358,Bradley University,Peoria,Private nonprofit,26,Biological & biomedical sciences,Master's,4
+2024,143358,Bradley University,Peoria,Private nonprofit,27,Mathematics & statistics,Bachelor's,6
+2024,143358,Bradley University,Peoria,Private nonprofit,40,Physical sciences,Bachelor's,13
+2024,143358,Bradley University,Peoria,Private nonprofit,40,Physical sciences,Master's,1
+2024,143613,Carl Sandburg College,Galesburg,Public,11,Computer & information sciences,Associate,6
+2024,143853,Midwestern University-Downers Grove,Downers Grove,Private nonprofit,26,Biological & biomedical sciences,Master's,75
+2024,144005,Chicago State University,Chicago,Public,11,Computer & information sciences,Bachelor's,2
+2024,144005,Chicago State University,Chicago,Public,11,Computer & information sciences,Master's,62
+2024,144005,Chicago State University,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,12
+2024,144005,Chicago State University,Chicago,Public,26,Biological & biomedical sciences,Master's,5
+2024,144005,Chicago State University,Chicago,Public,27,Mathematics & statistics,Bachelor's,3
+2024,144005,Chicago State University,Chicago,Public,27,Mathematics & statistics,Master's,3
+2024,144005,Chicago State University,Chicago,Public,40,Physical sciences,Bachelor's,9
+2024,144050,University of Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,178
+2024,144050,University of Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Master's,278
+2024,144050,University of Chicago,Chicago,Private nonprofit,14,Engineering,Bachelor's,52
+2024,144050,University of Chicago,Chicago,Private nonprofit,14,Engineering,Master's,20
+2024,144050,University of Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,189
+2024,144050,University of Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,146
+2024,144050,University of Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,161
+2024,144050,University of Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,196
+2024,144050,University of Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,135
+2024,144050,University of Chicago,Chicago,Private nonprofit,40,Physical sciences,Master's,72
+2024,144157,City Colleges of Chicago-Kennedy-King College,Chicago,Public,11,Computer & information sciences,Associate,0
+2024,144166,City Colleges of Chicago-Malcolm X College,Chicago,Public,11,Computer & information sciences,Associate,0
+2024,144175,City Colleges of Chicago-Olive-Harvey College,Chicago,Public,11,Computer & information sciences,Associate,5
+2024,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,11,Computer & information sciences,Associate,2
+2024,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,14,Engineering,Associate,7
+2024,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,15,Engineering technologies,Associate,0
+2024,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,11,Computer & information sciences,Associate,7
+2024,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,14,Engineering,Associate,7
+2024,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,15,Engineering technologies,Associate,7
+2024,144209,City Colleges of Chicago-Harold Washington College,Chicago,Public,11,Computer & information sciences,Associate,2
+2024,144209,City Colleges of Chicago-Harold Washington College,Chicago,Public,14,Engineering,Associate,8
+2024,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,11,Computer & information sciences,Associate,25
+2024,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,14,Engineering,Associate,75
+2024,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,15,Engineering technologies,Associate,0
+2024,144281,Columbia College Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,8
+2024,144281,Columbia College Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,51
+2024,144351,Concordia University-Chicago,River Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,4
+2024,144351,Concordia University-Chicago,River Forest,Private nonprofit,11,Computer & information sciences,Master's,1
+2024,144351,Concordia University-Chicago,River Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,7
+2024,144351,Concordia University-Chicago,River Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2024,144564,Danville Area Community College,Danville,Public,11,Computer & information sciences,Associate,10
+2024,144564,Danville Area Community College,Danville,Public,14,Engineering,Associate,4
+2024,144564,Danville Area Community College,Danville,Public,15,Engineering technologies,Associate,8
+2024,144740,DePaul University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,339
+2024,144740,DePaul University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,454
+2024,144740,DePaul University,Chicago,Private nonprofit,14,Engineering,Bachelor's,1
+2024,144740,DePaul University,Chicago,Private nonprofit,14,Engineering,Master's,26
+2024,144740,DePaul University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,86
+2024,144740,DePaul University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,8
+2024,144740,DePaul University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,18
+2024,144740,DePaul University,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,94
+2024,144740,DePaul University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,5
+2024,144740,DePaul University,Chicago,Private nonprofit,40,Physical sciences,Master's,5
+2024,144865,College of DuPage,Glen Ellyn,Public,11,Computer & information sciences,Associate,116
+2024,144865,College of DuPage,Glen Ellyn,Public,14,Engineering,Associate,20
+2024,144865,College of DuPage,Glen Ellyn,Public,15,Engineering technologies,Associate,27
+2024,144883,East-West University,Chicago,Private nonprofit,11,Computer & information sciences,Associate,0
+2024,144883,East-West University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,11
+2024,144883,East-West University,Chicago,Private nonprofit,15,Engineering technologies,Associate,1
+2024,144883,East-West University,Chicago,Private nonprofit,15,Engineering technologies,Bachelor's,6
+2024,144883,East-West University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,10
+2024,144883,East-West University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,0
+2024,144892,Eastern Illinois University,Charleston,Public,11,Computer & information sciences,Bachelor's,28
+2024,144892,Eastern Illinois University,Charleston,Public,14,Engineering,Bachelor's,7
+2024,144892,Eastern Illinois University,Charleston,Public,15,Engineering technologies,Bachelor's,7
+2024,144892,Eastern Illinois University,Charleston,Public,15,Engineering technologies,Master's,342
+2024,144892,Eastern Illinois University,Charleston,Public,26,Biological & biomedical sciences,Bachelor's,56
+2024,144892,Eastern Illinois University,Charleston,Public,26,Biological & biomedical sciences,Master's,38
+2024,144892,Eastern Illinois University,Charleston,Public,27,Mathematics & statistics,Bachelor's,5
+2024,144892,Eastern Illinois University,Charleston,Public,27,Mathematics & statistics,Master's,0
+2024,144892,Eastern Illinois University,Charleston,Public,40,Physical sciences,Bachelor's,19
+2024,144892,Eastern Illinois University,Charleston,Public,40,Physical sciences,Master's,1
+2024,144944,Elgin Community College,Elgin,Public,11,Computer & information sciences,Associate,9
+2024,144944,Elgin Community College,Elgin,Public,14,Engineering,Associate,36
+2024,144944,Elgin Community College,Elgin,Public,15,Engineering technologies,Associate,17
+2024,144962,Elmhurst University,Elmhurst,Private nonprofit,11,Computer & information sciences,Bachelor's,29
+2024,144962,Elmhurst University,Elmhurst,Private nonprofit,11,Computer & information sciences,Master's,55
+2024,144962,Elmhurst University,Elmhurst,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,38
+2024,144962,Elmhurst University,Elmhurst,Private nonprofit,27,Mathematics & statistics,Bachelor's,5
+2024,144962,Elmhurst University,Elmhurst,Private nonprofit,40,Physical sciences,Bachelor's,5
+2024,144971,Eureka College,Eureka,Private nonprofit,11,Computer & information sciences,Bachelor's,0
+2024,144971,Eureka College,Eureka,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,6
+2024,144971,Eureka College,Eureka,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,144971,Eureka College,Eureka,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,145336,Governors State University,University Park,Public,11,Computer & information sciences,Bachelor's,61
+2024,145336,Governors State University,University Park,Public,11,Computer & information sciences,Master's,198
+2024,145336,Governors State University,University Park,Public,26,Biological & biomedical sciences,Bachelor's,20
+2024,145336,Governors State University,University Park,Public,26,Biological & biomedical sciences,Master's,2
+2024,145336,Governors State University,University Park,Public,27,Mathematics & statistics,Bachelor's,2
+2024,145336,Governors State University,University Park,Public,27,Mathematics & statistics,Master's,7
+2024,145336,Governors State University,University Park,Public,40,Physical sciences,Bachelor's,1
+2024,145336,Governors State University,University Park,Public,40,Physical sciences,Master's,6
+2024,145372,Greenville University,Greenville,Private nonprofit,14,Engineering,Bachelor's,2
+2024,145372,Greenville University,Greenville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,11
+2024,145372,Greenville University,Greenville,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2024,145372,Greenville University,Greenville,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,145497,Hebrew Theological College,Skokie,Private nonprofit,11,Computer & information sciences,Bachelor's,0
+2024,145521,Highland Community College,Freeport,Public,11,Computer & information sciences,Associate,0
+2024,145521,Highland Community College,Freeport,Public,14,Engineering,Associate,1
+2024,145521,Highland Community College,Freeport,Public,15,Engineering technologies,Associate,2
+2024,145558,Rosalind Franklin University of Medicine and Science,North Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,53
+2024,145600,University of Illinois Chicago,Chicago,Public,11,Computer & information sciences,Bachelor's,500
+2024,145600,University of Illinois Chicago,Chicago,Public,11,Computer & information sciences,Master's,220
+2024,145600,University of Illinois Chicago,Chicago,Public,14,Engineering,Bachelor's,531
+2024,145600,University of Illinois Chicago,Chicago,Public,14,Engineering,Master's,210
+2024,145600,University of Illinois Chicago,Chicago,Public,15,Engineering technologies,Bachelor's,4
+2024,145600,University of Illinois Chicago,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,537
+2024,145600,University of Illinois Chicago,Chicago,Public,26,Biological & biomedical sciences,Master's,47
+2024,145600,University of Illinois Chicago,Chicago,Public,27,Mathematics & statistics,Bachelor's,54
+2024,145600,University of Illinois Chicago,Chicago,Public,27,Mathematics & statistics,Master's,41
+2024,145600,University of Illinois Chicago,Chicago,Public,40,Physical sciences,Bachelor's,71
+2024,145600,University of Illinois Chicago,Chicago,Public,40,Physical sciences,Master's,20
+2024,145619,Benedictine University,Lisle,Private nonprofit,11,Computer & information sciences,Bachelor's,10
+2024,145619,Benedictine University,Lisle,Private nonprofit,14,Engineering,Bachelor's,7
+2024,145619,Benedictine University,Lisle,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,88
+2024,145619,Benedictine University,Lisle,Private nonprofit,26,Biological & biomedical sciences,Master's,27
+2024,145619,Benedictine University,Lisle,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,145619,Benedictine University,Lisle,Private nonprofit,40,Physical sciences,Bachelor's,3
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,11,Computer & information sciences,Bachelor's,669
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,11,Computer & information sciences,Master's,1462
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,14,Engineering,Bachelor's,1857
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,14,Engineering,Master's,654
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,15,Engineering technologies,Bachelor's,9
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,15,Engineering technologies,Master's,63
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,26,Biological & biomedical sciences,Bachelor's,514
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,26,Biological & biomedical sciences,Master's,70
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,27,Mathematics & statistics,Bachelor's,400
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,27,Mathematics & statistics,Master's,289
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,40,Physical sciences,Bachelor's,200
+2024,145637,University of Illinois Urbana-Champaign,Champaign,Public,40,Physical sciences,Master's,43
+2024,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,11,Computer & information sciences,Bachelor's,14
+2024,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,36
+2024,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,27,Mathematics & statistics,Bachelor's,5
+2024,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,40,Physical sciences,Bachelor's,18
+2024,145682,Illinois Central College,East Peoria,Public,11,Computer & information sciences,Associate,23
+2024,145682,Illinois Central College,East Peoria,Public,14,Engineering,Associate,12
+2024,145682,Illinois Central College,East Peoria,Public,15,Engineering technologies,Associate,17
+2024,145691,Illinois College,Jacksonville,Private nonprofit,11,Computer & information sciences,Bachelor's,6
+2024,145691,Illinois College,Jacksonville,Private nonprofit,14,Engineering,Bachelor's,0
+2024,145691,Illinois College,Jacksonville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,46
+2024,145691,Illinois College,Jacksonville,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,145691,Illinois College,Jacksonville,Private nonprofit,40,Physical sciences,Bachelor's,4
+2024,145707,Illinois Eastern Community Colleges,Olney,Public,11,Computer & information sciences,Associate,4
+2024,145707,Illinois Eastern Community Colleges,Olney,Public,14,Engineering,Associate,0
+2024,145707,Illinois Eastern Community Colleges,Olney,Public,15,Engineering technologies,Associate,4
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,163
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,11,Computer & information sciences,Master's,604
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,14,Engineering,Bachelor's,244
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,14,Engineering,Master's,313
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,15,Engineering technologies,Bachelor's,20
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,15,Engineering technologies,Master's,38
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,18
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,18
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,14
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,7
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,12
+2024,145725,Illinois Institute of Technology,Chicago,Private nonprofit,40,Physical sciences,Master's,16
+2024,145813,Illinois State University,Normal,Public,11,Computer & information sciences,Bachelor's,247
+2024,145813,Illinois State University,Normal,Public,11,Computer & information sciences,Master's,136
+2024,145813,Illinois State University,Normal,Public,15,Engineering technologies,Bachelor's,53
+2024,145813,Illinois State University,Normal,Public,15,Engineering technologies,Master's,51
+2024,145813,Illinois State University,Normal,Public,26,Biological & biomedical sciences,Bachelor's,135
+2024,145813,Illinois State University,Normal,Public,26,Biological & biomedical sciences,Master's,14
+2024,145813,Illinois State University,Normal,Public,27,Mathematics & statistics,Bachelor's,62
+2024,145813,Illinois State University,Normal,Public,27,Mathematics & statistics,Master's,20
+2024,145813,Illinois State University,Normal,Public,40,Physical sciences,Bachelor's,48
+2024,145813,Illinois State University,Normal,Public,40,Physical sciences,Master's,20
+2024,145831,Illinois Valley Community College,Oglesby,Public,11,Computer & information sciences,Associate,11
+2024,145831,Illinois Valley Community College,Oglesby,Public,14,Engineering,Associate,0
+2024,145831,Illinois Valley Community College,Oglesby,Public,15,Engineering technologies,Associate,16
+2024,146205,John A Logan College,Carterville,Public,11,Computer & information sciences,Associate,12
+2024,146205,John A Logan College,Carterville,Public,14,Engineering,Associate,2
+2024,146205,John A Logan College,Carterville,Public,15,Engineering technologies,Associate,7
+2024,146278,John Wood Community College,Quincy,Public,14,Engineering,Associate,5
+2024,146278,John Wood Community College,Quincy,Public,15,Engineering technologies,Associate,7
+2024,146296,Joliet Junior College,Joliet,Public,11,Computer & information sciences,Associate,89
+2024,146296,Joliet Junior College,Joliet,Public,15,Engineering technologies,Associate,13
+2024,146339,Judson University,Elgin,Private nonprofit,11,Computer & information sciences,Bachelor's,10
+2024,146339,Judson University,Elgin,Private nonprofit,11,Computer & information sciences,Master's,0
+2024,146339,Judson University,Elgin,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,5
+2024,146339,Judson University,Elgin,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2024,146339,Judson University,Elgin,Private nonprofit,40,Physical sciences,Bachelor's,1
+2024,146348,Kankakee Community College,Kankakee,Public,11,Computer & information sciences,Associate,4
+2024,146348,Kankakee Community College,Kankakee,Public,14,Engineering,Associate,2
+2024,146348,Kankakee Community College,Kankakee,Public,15,Engineering technologies,Associate,5
+2024,146366,Kaskaskia College,Centralia,Public,11,Computer & information sciences,Associate,17
+2024,146366,Kaskaskia College,Centralia,Public,14,Engineering,Associate,6
+2024,146366,Kaskaskia College,Centralia,Public,15,Engineering technologies,Associate,1
+2024,146418,Kishwaukee College,Malta,Public,11,Computer & information sciences,Associate,2
+2024,146418,Kishwaukee College,Malta,Public,14,Engineering,Associate,3
+2024,146418,Kishwaukee College,Malta,Public,15,Engineering technologies,Associate,5
+2024,146427,Knox College,Galesburg,Private nonprofit,11,Computer & information sciences,Bachelor's,25
+2024,146427,Knox College,Galesburg,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,24
+2024,146427,Knox College,Galesburg,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2024,146427,Knox College,Galesburg,Private nonprofit,40,Physical sciences,Bachelor's,8
+2024,146472,College of Lake County,Grayslake,Public,11,Computer & information sciences,Associate,33
+2024,146472,College of Lake County,Grayslake,Public,14,Engineering,Associate,31
+2024,146472,College of Lake County,Grayslake,Public,15,Engineering technologies,Associate,23
+2024,146481,Lake Forest College,Lake Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,17
+2024,146481,Lake Forest College,Lake Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,68
+2024,146481,Lake Forest College,Lake Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,6
+2024,146481,Lake Forest College,Lake Forest,Private nonprofit,40,Physical sciences,Bachelor's,16
+2024,146506,Lake Land College,Mattoon,Public,11,Computer & information sciences,Associate,27
+2024,146506,Lake Land College,Mattoon,Public,14,Engineering,Associate,7
+2024,146506,Lake Land College,Mattoon,Public,15,Engineering technologies,Associate,19
+2024,146603,Lewis and Clark Community College,Godfrey,Public,11,Computer & information sciences,Associate,19
+2024,146603,Lewis and Clark Community College,Godfrey,Public,14,Engineering,Associate,11
+2024,146603,Lewis and Clark Community College,Godfrey,Public,15,Engineering technologies,Associate,29
+2024,146603,Lewis and Clark Community College,Godfrey,Public,26,Biological & biomedical sciences,Associate,0
+2024,146612,Lewis University,Romeoville,Private nonprofit,11,Computer & information sciences,Bachelor's,138
+2024,146612,Lewis University,Romeoville,Private nonprofit,11,Computer & information sciences,Master's,249
+2024,146612,Lewis University,Romeoville,Private nonprofit,14,Engineering,Bachelor's,7
+2024,146612,Lewis University,Romeoville,Private nonprofit,14,Engineering,Master's,0
+2024,146612,Lewis University,Romeoville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,37
+2024,146612,Lewis University,Romeoville,Private nonprofit,27,Mathematics & statistics,Bachelor's,9
+2024,146612,Lewis University,Romeoville,Private nonprofit,40,Physical sciences,Bachelor's,21
+2024,146612,Lewis University,Romeoville,Private nonprofit,40,Physical sciences,Master's,7
+2024,146685,Lincoln Land Community College,Springfield,Public,11,Computer & information sciences,Associate,5
+2024,146685,Lincoln Land Community College,Springfield,Public,14,Engineering,Associate,4
+2024,146685,Lincoln Land Community College,Springfield,Public,15,Engineering technologies,Associate,0
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,57
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Master's,22
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,14,Engineering,Bachelor's,24
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,14,Engineering,Master's,12
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,413
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,52
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,14
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,13
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,22
+2024,146719,Loyola University Chicago,Chicago,Private nonprofit,40,Physical sciences,Master's,3
+2024,147004,McHenry County College,Crystal Lake,Public,11,Computer & information sciences,Associate,16
+2024,147004,McHenry County College,Crystal Lake,Public,14,Engineering,Associate,17
+2024,147004,McHenry County College,Crystal Lake,Public,15,Engineering technologies,Associate,9
+2024,147013,McKendree University,Lebanon,Private nonprofit,11,Computer & information sciences,Bachelor's,14
+2024,147013,McKendree University,Lebanon,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,11
+2024,147013,McKendree University,Lebanon,Private nonprofit,27,Mathematics & statistics,Bachelor's,5
+2024,147013,McKendree University,Lebanon,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,147244,Millikin University,Decatur,Private nonprofit,11,Computer & information sciences,Bachelor's,7
+2024,147244,Millikin University,Decatur,Private nonprofit,14,Engineering,Bachelor's,0
+2024,147244,Millikin University,Decatur,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,17
+2024,147244,Millikin University,Decatur,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,147244,Millikin University,Decatur,Private nonprofit,40,Physical sciences,Bachelor's,9
+2024,147341,Monmouth College,Monmouth,Private nonprofit,11,Computer & information sciences,Bachelor's,4
+2024,147341,Monmouth College,Monmouth,Private nonprofit,14,Engineering,Bachelor's,4
+2024,147341,Monmouth College,Monmouth,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,15
+2024,147341,Monmouth College,Monmouth,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,147341,Monmouth College,Monmouth,Private nonprofit,40,Physical sciences,Bachelor's,13
+2024,147378,Moraine Valley Community College,Palos Hills,Public,11,Computer & information sciences,Associate,27
+2024,147378,Moraine Valley Community College,Palos Hills,Public,14,Engineering,Associate,9
+2024,147378,Moraine Valley Community College,Palos Hills,Public,15,Engineering technologies,Associate,3
+2024,147396,Morrison Institute of Technology,Morrison,Private nonprofit,11,Computer & information sciences,Associate,7
+2024,147396,Morrison Institute of Technology,Morrison,Private nonprofit,15,Engineering technologies,Associate,21
+2024,147411,Morton College,Cicero,Public,11,Computer & information sciences,Associate,9
+2024,147411,Morton College,Cicero,Public,14,Engineering,Associate,1
+2024,147411,Morton College,Cicero,Public,15,Engineering technologies,Associate,4
+2024,147536,National Louis University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,52
+2024,147590,National University of Health Sciences,Lombard,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,16
+2024,147660,North Central College,Naperville,Private nonprofit,11,Computer & information sciences,Bachelor's,21
+2024,147660,North Central College,Naperville,Private nonprofit,11,Computer & information sciences,Master's,0
+2024,147660,North Central College,Naperville,Private nonprofit,14,Engineering,Bachelor's,28
+2024,147660,North Central College,Naperville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,38
+2024,147660,North Central College,Naperville,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2024,147660,North Central College,Naperville,Private nonprofit,40,Physical sciences,Bachelor's,9
+2024,147660,North Central College,Naperville,Private nonprofit,40,Physical sciences,Master's,0
+2024,147679,North Park University,Chicago,Private nonprofit,14,Engineering,Bachelor's,9
+2024,147679,North Park University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,40
+2024,147679,North Park University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,5
+2024,147679,North Park University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,0
+2024,147703,Northern Illinois University,Dekalb,Public,11,Computer & information sciences,Bachelor's,120
+2024,147703,Northern Illinois University,Dekalb,Public,11,Computer & information sciences,Master's,254
+2024,147703,Northern Illinois University,Dekalb,Public,14,Engineering,Bachelor's,195
+2024,147703,Northern Illinois University,Dekalb,Public,14,Engineering,Master's,108
+2024,147703,Northern Illinois University,Dekalb,Public,15,Engineering technologies,Bachelor's,43
+2024,147703,Northern Illinois University,Dekalb,Public,15,Engineering technologies,Master's,11
+2024,147703,Northern Illinois University,Dekalb,Public,26,Biological & biomedical sciences,Bachelor's,65
+2024,147703,Northern Illinois University,Dekalb,Public,26,Biological & biomedical sciences,Master's,6
+2024,147703,Northern Illinois University,Dekalb,Public,27,Mathematics & statistics,Bachelor's,22
+2024,147703,Northern Illinois University,Dekalb,Public,27,Mathematics & statistics,Master's,20
+2024,147703,Northern Illinois University,Dekalb,Public,40,Physical sciences,Bachelor's,50
+2024,147703,Northern Illinois University,Dekalb,Public,40,Physical sciences,Master's,13
+2024,147767,Northwestern University,Evanston,Private nonprofit,11,Computer & information sciences,Bachelor's,231
+2024,147767,Northwestern University,Evanston,Private nonprofit,11,Computer & information sciences,Master's,225
+2024,147767,Northwestern University,Evanston,Private nonprofit,14,Engineering,Bachelor's,347
+2024,147767,Northwestern University,Evanston,Private nonprofit,14,Engineering,Master's,364
+2024,147767,Northwestern University,Evanston,Private nonprofit,15,Engineering technologies,Master's,146
+2024,147767,Northwestern University,Evanston,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,247
+2024,147767,Northwestern University,Evanston,Private nonprofit,26,Biological & biomedical sciences,Master's,54
+2024,147767,Northwestern University,Evanston,Private nonprofit,27,Mathematics & statistics,Bachelor's,55
+2024,147767,Northwestern University,Evanston,Private nonprofit,27,Mathematics & statistics,Master's,42
+2024,147767,Northwestern University,Evanston,Private nonprofit,40,Physical sciences,Bachelor's,34
+2024,147767,Northwestern University,Evanston,Private nonprofit,40,Physical sciences,Master's,36
+2024,147776,Northeastern Illinois University,Chicago,Public,11,Computer & information sciences,Bachelor's,91
+2024,147776,Northeastern Illinois University,Chicago,Public,11,Computer & information sciences,Master's,38
+2024,147776,Northeastern Illinois University,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,51
+2024,147776,Northeastern Illinois University,Chicago,Public,26,Biological & biomedical sciences,Master's,6
+2024,147776,Northeastern Illinois University,Chicago,Public,27,Mathematics & statistics,Bachelor's,7
+2024,147776,Northeastern Illinois University,Chicago,Public,27,Mathematics & statistics,Master's,2
+2024,147776,Northeastern Illinois University,Chicago,Public,40,Physical sciences,Bachelor's,9
+2024,147776,Northeastern Illinois University,Chicago,Public,40,Physical sciences,Master's,5
+2024,147800,Oakton College,Des Plaines,Public,11,Computer & information sciences,Associate,13
+2024,147800,Oakton College,Des Plaines,Public,14,Engineering,Associate,11
+2024,147800,Oakton College,Des Plaines,Public,15,Engineering technologies,Associate,8
+2024,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,11,Computer & information sciences,Bachelor's,24
+2024,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,14,Engineering,Bachelor's,35
+2024,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,30
+2024,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2024,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,40,Physical sciences,Bachelor's,1
+2024,147916,Parkland College,Champaign,Public,11,Computer & information sciences,Associate,15
+2024,147916,Parkland College,Champaign,Public,14,Engineering,Associate,7
+2024,147916,Parkland College,Champaign,Public,15,Engineering technologies,Associate,7
+2024,148007,Prairie State College,Chicago Heights,Public,11,Computer & information sciences,Associate,13
+2024,148007,Prairie State College,Chicago Heights,Public,15,Engineering technologies,Associate,3
+2024,148016,Principia College,Elsah,Private nonprofit,11,Computer & information sciences,Bachelor's,2
+2024,148016,Principia College,Elsah,Private nonprofit,14,Engineering,Bachelor's,1
+2024,148016,Principia College,Elsah,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,5
+2024,148016,Principia College,Elsah,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,148016,Principia College,Elsah,Private nonprofit,40,Physical sciences,Bachelor's,3
+2024,148131,Quincy University,Quincy,Private nonprofit,11,Computer & information sciences,Bachelor's,4
+2024,148131,Quincy University,Quincy,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,21
+2024,148131,Quincy University,Quincy,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,148131,Quincy University,Quincy,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,148256,Rend Lake College,Ina,Public,11,Computer & information sciences,Associate,3
+2024,148256,Rend Lake College,Ina,Public,14,Engineering,Associate,3
+2024,148256,Rend Lake College,Ina,Public,15,Engineering technologies,Associate,0
+2024,148292,Richland Community College,Decatur,Public,11,Computer & information sciences,Associate,5
+2024,148292,Richland Community College,Decatur,Public,14,Engineering,Associate,2
+2024,148292,Richland Community College,Decatur,Public,15,Engineering technologies,Associate,4
+2024,148380,Rock Valley College,Rockford,Public,11,Computer & information sciences,Associate,18
+2024,148380,Rock Valley College,Rockford,Public,14,Engineering,Associate,29
+2024,148380,Rock Valley College,Rockford,Public,15,Engineering technologies,Associate,8
+2024,148405,Rockford University,Rockford,Private nonprofit,11,Computer & information sciences,Bachelor's,7
+2024,148405,Rockford University,Rockford,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,17
+2024,148405,Rockford University,Rockford,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2024,148405,Rockford University,Rockford,Private nonprofit,40,Physical sciences,Bachelor's,1
+2024,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Associate,0
+2024,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,24
+2024,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,16
+2024,148487,Roosevelt University,Chicago,Private nonprofit,15,Engineering technologies,Associate,0
+2024,148487,Roosevelt University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,39
+2024,148487,Roosevelt University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,48
+2024,148487,Roosevelt University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2024,148487,Roosevelt University,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,0
+2024,148487,Roosevelt University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,0
+2024,148496,Dominican University,River Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,21
+2024,148496,Dominican University,River Forest,Private nonprofit,11,Computer & information sciences,Master's,6
+2024,148496,Dominican University,River Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,27
+2024,148496,Dominican University,River Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,11
+2024,148496,Dominican University,River Forest,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,148511,Rush University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,35
+2024,148584,University of St Francis,Joliet,Private nonprofit,11,Computer & information sciences,Bachelor's,7
+2024,148584,University of St Francis,Joliet,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,17
+2024,148584,University of St Francis,Joliet,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,32
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,5
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,14,Engineering,Master's,0
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,68
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,11
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2024,148627,Saint Xavier University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,2
+2024,148654,University of Illinois Springfield,Springfield,Public,11,Computer & information sciences,Bachelor's,108
+2024,148654,University of Illinois Springfield,Springfield,Public,11,Computer & information sciences,Master's,458
+2024,148654,University of Illinois Springfield,Springfield,Public,26,Biological & biomedical sciences,Bachelor's,38
+2024,148654,University of Illinois Springfield,Springfield,Public,26,Biological & biomedical sciences,Master's,0
+2024,148654,University of Illinois Springfield,Springfield,Public,27,Mathematics & statistics,Bachelor's,10
+2024,148654,University of Illinois Springfield,Springfield,Public,27,Mathematics & statistics,Master's,17
+2024,148654,University of Illinois Springfield,Springfield,Public,40,Physical sciences,Bachelor's,1
+2024,148672,Sauk Valley Community College,Dixon,Public,11,Computer & information sciences,Associate,4
+2024,148672,Sauk Valley Community College,Dixon,Public,14,Engineering,Associate,1
+2024,148821,Shawnee Community College,Ullin,Public,11,Computer & information sciences,Associate,2
+2024,148876,St. Augustine College,Chicago,Private nonprofit,11,Computer & information sciences,Associate,3
+2024,148876,St. Augustine College,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,2
+2024,148937,Southeastern Illinois College,Harrisburg,Public,11,Computer & information sciences,Associate,17
+2024,148937,Southeastern Illinois College,Harrisburg,Public,14,Engineering,Associate,0
+2024,148991,Spoon River College,Canton,Public,11,Computer & information sciences,Associate,7
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,11,Computer & information sciences,Bachelor's,69
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,11,Computer & information sciences,Master's,39
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,14,Engineering,Bachelor's,54
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,14,Engineering,Master's,36
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,15,Engineering technologies,Bachelor's,132
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,15,Engineering technologies,Master's,20
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,26,Biological & biomedical sciences,Bachelor's,108
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,26,Biological & biomedical sciences,Master's,29
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,27,Mathematics & statistics,Bachelor's,6
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,27,Mathematics & statistics,Master's,2
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,40,Physical sciences,Bachelor's,15
+2024,149222,Southern Illinois University-Carbondale,Carbondale,Public,40,Physical sciences,Master's,8
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,11,Computer & information sciences,Bachelor's,76
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,11,Computer & information sciences,Master's,98
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,14,Engineering,Bachelor's,173
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,14,Engineering,Master's,146
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,26,Biological & biomedical sciences,Bachelor's,120
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,26,Biological & biomedical sciences,Master's,15
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,27,Mathematics & statistics,Bachelor's,12
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,27,Mathematics & statistics,Master's,7
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,40,Physical sciences,Bachelor's,29
+2024,149231,Southern Illinois University Edwardsville,Edwardsville,Public,40,Physical sciences,Master's,17
+2024,149310,Taylor Business Institute,Chicago,Private for-profit,15,Engineering technologies,Associate,4
+2024,149365,South Suburban College,South Holland,Public,11,Computer & information sciences,Associate,3
+2024,149365,South Suburban College,South Holland,Public,14,Engineering,Associate,0
+2024,149365,South Suburban College,South Holland,Public,15,Engineering technologies,Associate,2
+2024,149505,Trinity Christian College,Palos Heights,Private nonprofit,11,Computer & information sciences,Bachelor's,4
+2024,149505,Trinity Christian College,Palos Heights,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,2
+2024,149505,Trinity Christian College,Palos Heights,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,149505,Trinity Christian College,Palos Heights,Private nonprofit,40,Physical sciences,Bachelor's,1
+2024,149514,Trinity International University-Illinois,Deerfield,Private nonprofit,11,Computer & information sciences,Bachelor's,1
+2024,149514,Trinity International University-Illinois,Deerfield,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2024,149532,Triton College,River Grove,Public,11,Computer & information sciences,Associate,7
+2024,149532,Triton College,River Grove,Public,15,Engineering technologies,Associate,14
+2024,149727,Waubonsee Community College,Sugar Grove,Public,11,Computer & information sciences,Associate,14
+2024,149727,Waubonsee Community College,Sugar Grove,Public,14,Engineering,Associate,6
+2024,149727,Waubonsee Community College,Sugar Grove,Public,15,Engineering technologies,Associate,15
+2024,149772,Western Illinois University,Macomb,Public,11,Computer & information sciences,Bachelor's,37
+2024,149772,Western Illinois University,Macomb,Public,11,Computer & information sciences,Master's,214
+2024,149772,Western Illinois University,Macomb,Public,14,Engineering,Bachelor's,19
+2024,149772,Western Illinois University,Macomb,Public,15,Engineering technologies,Bachelor's,13
+2024,149772,Western Illinois University,Macomb,Public,15,Engineering technologies,Master's,14
+2024,149772,Western Illinois University,Macomb,Public,26,Biological & biomedical sciences,Bachelor's,36
+2024,149772,Western Illinois University,Macomb,Public,26,Biological & biomedical sciences,Master's,11
+2024,149772,Western Illinois University,Macomb,Public,27,Mathematics & statistics,Bachelor's,2
+2024,149772,Western Illinois University,Macomb,Public,27,Mathematics & statistics,Master's,76
+2024,149772,Western Illinois University,Macomb,Public,40,Physical sciences,Bachelor's,28
+2024,149772,Western Illinois University,Macomb,Public,40,Physical sciences,Master's,12
+2024,149781,Wheaton College,Wheaton,Private nonprofit,11,Computer & information sciences,Bachelor's,16
+2024,149781,Wheaton College,Wheaton,Private nonprofit,14,Engineering,Bachelor's,14
+2024,149781,Wheaton College,Wheaton,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,51
+2024,149781,Wheaton College,Wheaton,Private nonprofit,27,Mathematics & statistics,Bachelor's,17
+2024,149781,Wheaton College,Wheaton,Private nonprofit,40,Physical sciences,Bachelor's,15
+2024,149842,William Rainey Harper College,Palatine,Public,11,Computer & information sciences,Associate,28
+2024,149842,William Rainey Harper College,Palatine,Public,14,Engineering,Associate,52
+2024,149842,William Rainey Harper College,Palatine,Public,15,Engineering technologies,Associate,27
+2024,384342,Heartland Community College,Normal,Public,11,Computer & information sciences,Associate,14
+2024,384342,Heartland Community College,Normal,Public,14,Engineering,Associate,1
+2024,384342,Heartland Community College,Normal,Public,15,Engineering technologies,Associate,16
+2024,448673,Rasmussen University-Illinois,Rockford,Private for-profit,11,Computer & information sciences,Associate,4
+2024,448673,Rasmussen University-Illinois,Rockford,Private for-profit,14,Engineering,Associate,7
+2024,457536,Midwestern Career College,Chicago,Private for-profit,11,Computer & information sciences,Associate,0
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Associate,1214
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Bachelor's,386
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Master's,79
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,14,Engineering,Bachelor's,83
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,14,Engineering,Master's,0
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Associate,358
+2024,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Bachelor's,194
+2025,143084,Augustana College,Rock Island,Private nonprofit,11,Computer & information sciences,Bachelor's,33
+2025,143084,Augustana College,Rock Island,Private nonprofit,14,Engineering,Bachelor's,14
+2025,143084,Augustana College,Rock Island,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,118
+2025,143084,Augustana College,Rock Island,Private nonprofit,27,Mathematics & statistics,Bachelor's,7
+2025,143084,Augustana College,Rock Island,Private nonprofit,40,Physical sciences,Bachelor's,15
+2025,143118,Aurora University,Aurora,Private nonprofit,11,Computer & information sciences,Bachelor's,38
+2025,143118,Aurora University,Aurora,Private nonprofit,14,Engineering,Bachelor's,0
+2025,143118,Aurora University,Aurora,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,25
+2025,143118,Aurora University,Aurora,Private nonprofit,27,Mathematics & statistics,Bachelor's,14
+2025,143118,Aurora University,Aurora,Private nonprofit,40,Physical sciences,Bachelor's,2
+2025,143215,Southwestern Illinois College,Belleville,Public,11,Computer & information sciences,Associate,38
+2025,143215,Southwestern Illinois College,Belleville,Public,14,Engineering,Associate,1
+2025,143215,Southwestern Illinois College,Belleville,Public,15,Engineering technologies,Associate,2
+2025,143279,Black Hawk College,Moline,Public,11,Computer & information sciences,Associate,8
+2025,143279,Black Hawk College,Moline,Public,15,Engineering technologies,Associate,2
+2025,143288,Blackburn College,Carlinville,Private nonprofit,11,Computer & information sciences,Bachelor's,2
+2025,143288,Blackburn College,Carlinville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,7
+2025,143288,Blackburn College,Carlinville,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,143358,Bradley University,Peoria,Private nonprofit,11,Computer & information sciences,Bachelor's,115
+2025,143358,Bradley University,Peoria,Private nonprofit,11,Computer & information sciences,Master's,14
+2025,143358,Bradley University,Peoria,Private nonprofit,14,Engineering,Bachelor's,126
+2025,143358,Bradley University,Peoria,Private nonprofit,14,Engineering,Master's,69
+2025,143358,Bradley University,Peoria,Private nonprofit,15,Engineering technologies,Bachelor's,0
+2025,143358,Bradley University,Peoria,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,44
+2025,143358,Bradley University,Peoria,Private nonprofit,26,Biological & biomedical sciences,Master's,2
+2025,143358,Bradley University,Peoria,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,143358,Bradley University,Peoria,Private nonprofit,40,Physical sciences,Bachelor's,13
+2025,143358,Bradley University,Peoria,Private nonprofit,40,Physical sciences,Master's,0
+2025,143613,Carl Sandburg College,Galesburg,Public,11,Computer & information sciences,Associate,1
+2025,143853,Midwestern University-Downers Grove,Downers Grove,Private nonprofit,26,Biological & biomedical sciences,Master's,53
+2025,144005,Chicago State University,Chicago,Public,11,Computer & information sciences,Bachelor's,13
+2025,144005,Chicago State University,Chicago,Public,11,Computer & information sciences,Master's,62
+2025,144005,Chicago State University,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,21
+2025,144005,Chicago State University,Chicago,Public,26,Biological & biomedical sciences,Master's,2
+2025,144005,Chicago State University,Chicago,Public,27,Mathematics & statistics,Bachelor's,2
+2025,144005,Chicago State University,Chicago,Public,27,Mathematics & statistics,Master's,1
+2025,144005,Chicago State University,Chicago,Public,40,Physical sciences,Bachelor's,3
+2025,144050,University of Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,174
+2025,144050,University of Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Master's,349
+2025,144050,University of Chicago,Chicago,Private nonprofit,14,Engineering,Bachelor's,45
+2025,144050,University of Chicago,Chicago,Private nonprofit,14,Engineering,Master's,70
+2025,144050,University of Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,164
+2025,144050,University of Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,134
+2025,144050,University of Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,197
+2025,144050,University of Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,261
+2025,144050,University of Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,138
+2025,144050,University of Chicago,Chicago,Private nonprofit,40,Physical sciences,Master's,115
+2025,144157,City Colleges of Chicago-Kennedy-King College,Chicago,Public,11,Computer & information sciences,Associate,9
+2025,144166,City Colleges of Chicago-Malcolm X College,Chicago,Public,11,Computer & information sciences,Associate,0
+2025,144175,City Colleges of Chicago-Olive-Harvey College,Chicago,Public,11,Computer & information sciences,Associate,5
+2025,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,11,Computer & information sciences,Associate,4
+2025,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,14,Engineering,Associate,5
+2025,144184,City Colleges of Chicago-Harry S Truman College,Chicago,Public,15,Engineering technologies,Associate,1
+2025,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,11,Computer & information sciences,Associate,8
+2025,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,14,Engineering,Associate,21
+2025,144193,City Colleges of Chicago-Richard J Daley College,Chicago,Public,15,Engineering technologies,Associate,22
+2025,144209,City Colleges of Chicago-Harold Washington College,Chicago,Public,11,Computer & information sciences,Associate,3
+2025,144209,City Colleges of Chicago-Harold Washington College,Chicago,Public,14,Engineering,Associate,15
+2025,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,11,Computer & information sciences,Associate,25
+2025,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,14,Engineering,Associate,100
+2025,144218,City Colleges of Chicago-Wilbur Wright College,Chicago,Public,15,Engineering technologies,Associate,0
+2025,144281,Columbia College Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,4
+2025,144281,Columbia College Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,45
+2025,144351,Concordia University-Chicago,River Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,10
+2025,144351,Concordia University-Chicago,River Forest,Private nonprofit,11,Computer & information sciences,Master's,2
+2025,144351,Concordia University-Chicago,River Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,8
+2025,144351,Concordia University-Chicago,River Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2025,144564,Danville Area Community College,Danville,Public,11,Computer & information sciences,Associate,11
+2025,144564,Danville Area Community College,Danville,Public,14,Engineering,Associate,2
+2025,144564,Danville Area Community College,Danville,Public,15,Engineering technologies,Associate,2
+2025,144740,DePaul University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,362
+2025,144740,DePaul University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,498
+2025,144740,DePaul University,Chicago,Private nonprofit,14,Engineering,Bachelor's,2
+2025,144740,DePaul University,Chicago,Private nonprofit,14,Engineering,Master's,20
+2025,144740,DePaul University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,95
+2025,144740,DePaul University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,6
+2025,144740,DePaul University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,17
+2025,144740,DePaul University,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,92
+2025,144740,DePaul University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,13
+2025,144740,DePaul University,Chicago,Private nonprofit,40,Physical sciences,Master's,7
+2025,144865,College of DuPage,Glen Ellyn,Public,11,Computer & information sciences,Associate,110
+2025,144865,College of DuPage,Glen Ellyn,Public,14,Engineering,Associate,25
+2025,144865,College of DuPage,Glen Ellyn,Public,15,Engineering technologies,Associate,40
+2025,144883,East-West University,Chicago,Private nonprofit,11,Computer & information sciences,Associate,0
+2025,144883,East-West University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,12
+2025,144883,East-West University,Chicago,Private nonprofit,15,Engineering technologies,Associate,0
+2025,144883,East-West University,Chicago,Private nonprofit,15,Engineering technologies,Bachelor's,6
+2025,144883,East-West University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,14
+2025,144883,East-West University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,0
+2025,144892,Eastern Illinois University,Charleston,Public,11,Computer & information sciences,Bachelor's,43
+2025,144892,Eastern Illinois University,Charleston,Public,14,Engineering,Bachelor's,4
+2025,144892,Eastern Illinois University,Charleston,Public,15,Engineering technologies,Bachelor's,10
+2025,144892,Eastern Illinois University,Charleston,Public,15,Engineering technologies,Master's,326
+2025,144892,Eastern Illinois University,Charleston,Public,26,Biological & biomedical sciences,Bachelor's,59
+2025,144892,Eastern Illinois University,Charleston,Public,26,Biological & biomedical sciences,Master's,40
+2025,144892,Eastern Illinois University,Charleston,Public,27,Mathematics & statistics,Bachelor's,6
+2025,144892,Eastern Illinois University,Charleston,Public,27,Mathematics & statistics,Master's,0
+2025,144892,Eastern Illinois University,Charleston,Public,40,Physical sciences,Bachelor's,10
+2025,144892,Eastern Illinois University,Charleston,Public,40,Physical sciences,Master's,4
+2025,144944,Elgin Community College,Elgin,Public,11,Computer & information sciences,Associate,18
+2025,144944,Elgin Community College,Elgin,Public,14,Engineering,Associate,37
+2025,144944,Elgin Community College,Elgin,Public,15,Engineering technologies,Associate,10
+2025,144962,Elmhurst University,Elmhurst,Private nonprofit,11,Computer & information sciences,Bachelor's,45
+2025,144962,Elmhurst University,Elmhurst,Private nonprofit,11,Computer & information sciences,Master's,107
+2025,144962,Elmhurst University,Elmhurst,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,36
+2025,144962,Elmhurst University,Elmhurst,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2025,144962,Elmhurst University,Elmhurst,Private nonprofit,40,Physical sciences,Bachelor's,5
+2025,144971,Eureka College,Eureka,Private nonprofit,11,Computer & information sciences,Bachelor's,0
+2025,144971,Eureka College,Eureka,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,5
+2025,144971,Eureka College,Eureka,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,144971,Eureka College,Eureka,Private nonprofit,40,Physical sciences,Bachelor's,2
+2025,145336,Governors State University,University Park,Public,11,Computer & information sciences,Bachelor's,67
+2025,145336,Governors State University,University Park,Public,11,Computer & information sciences,Master's,182
+2025,145336,Governors State University,University Park,Public,26,Biological & biomedical sciences,Bachelor's,18
+2025,145336,Governors State University,University Park,Public,26,Biological & biomedical sciences,Master's,1
+2025,145336,Governors State University,University Park,Public,27,Mathematics & statistics,Bachelor's,9
+2025,145336,Governors State University,University Park,Public,27,Mathematics & statistics,Master's,3
+2025,145336,Governors State University,University Park,Public,40,Physical sciences,Bachelor's,2
+2025,145336,Governors State University,University Park,Public,40,Physical sciences,Master's,3
+2025,145372,Greenville University,Greenville,Private nonprofit,14,Engineering,Bachelor's,8
+2025,145372,Greenville University,Greenville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,20
+2025,145372,Greenville University,Greenville,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,145372,Greenville University,Greenville,Private nonprofit,40,Physical sciences,Bachelor's,0
+2025,145497,Hebrew Theological College,Skokie,Private nonprofit,11,Computer & information sciences,Bachelor's,0
+2025,145521,Highland Community College,Freeport,Public,11,Computer & information sciences,Associate,1
+2025,145521,Highland Community College,Freeport,Public,14,Engineering,Associate,5
+2025,145521,Highland Community College,Freeport,Public,15,Engineering technologies,Associate,2
+2025,145558,Rosalind Franklin University of Medicine and Science,North Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,49
+2025,145600,University of Illinois Chicago,Chicago,Public,11,Computer & information sciences,Bachelor's,601
+2025,145600,University of Illinois Chicago,Chicago,Public,11,Computer & information sciences,Master's,219
+2025,145600,University of Illinois Chicago,Chicago,Public,14,Engineering,Bachelor's,488
+2025,145600,University of Illinois Chicago,Chicago,Public,14,Engineering,Master's,216
+2025,145600,University of Illinois Chicago,Chicago,Public,15,Engineering technologies,Bachelor's,4
+2025,145600,University of Illinois Chicago,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,510
+2025,145600,University of Illinois Chicago,Chicago,Public,26,Biological & biomedical sciences,Master's,55
+2025,145600,University of Illinois Chicago,Chicago,Public,27,Mathematics & statistics,Bachelor's,61
+2025,145600,University of Illinois Chicago,Chicago,Public,27,Mathematics & statistics,Master's,48
+2025,145600,University of Illinois Chicago,Chicago,Public,40,Physical sciences,Bachelor's,73
+2025,145600,University of Illinois Chicago,Chicago,Public,40,Physical sciences,Master's,22
+2025,145619,Benedictine University,Lisle,Private nonprofit,11,Computer & information sciences,Bachelor's,10
+2025,145619,Benedictine University,Lisle,Private nonprofit,14,Engineering,Bachelor's,4
+2025,145619,Benedictine University,Lisle,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,92
+2025,145619,Benedictine University,Lisle,Private nonprofit,26,Biological & biomedical sciences,Master's,23
+2025,145619,Benedictine University,Lisle,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,145619,Benedictine University,Lisle,Private nonprofit,40,Physical sciences,Bachelor's,4
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,11,Computer & information sciences,Bachelor's,896
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,11,Computer & information sciences,Master's,1547
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,14,Engineering,Bachelor's,1906
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,14,Engineering,Master's,706
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,15,Engineering technologies,Bachelor's,9
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,15,Engineering technologies,Master's,141
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,26,Biological & biomedical sciences,Bachelor's,509
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,26,Biological & biomedical sciences,Master's,74
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,27,Mathematics & statistics,Bachelor's,495
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,27,Mathematics & statistics,Master's,282
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,40,Physical sciences,Bachelor's,201
+2025,145637,University of Illinois Urbana-Champaign,Champaign,Public,40,Physical sciences,Master's,66
+2025,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,11,Computer & information sciences,Bachelor's,11
+2025,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,51
+2025,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,27,Mathematics & statistics,Bachelor's,13
+2025,145646,Illinois Wesleyan University,Bloomington,Private nonprofit,40,Physical sciences,Bachelor's,8
+2025,145682,Illinois Central College,East Peoria,Public,11,Computer & information sciences,Associate,27
+2025,145682,Illinois Central College,East Peoria,Public,14,Engineering,Associate,26
+2025,145682,Illinois Central College,East Peoria,Public,15,Engineering technologies,Associate,22
+2025,145691,Illinois College,Jacksonville,Private nonprofit,11,Computer & information sciences,Bachelor's,5
+2025,145691,Illinois College,Jacksonville,Private nonprofit,14,Engineering,Bachelor's,1
+2025,145691,Illinois College,Jacksonville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,31
+2025,145691,Illinois College,Jacksonville,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,145691,Illinois College,Jacksonville,Private nonprofit,40,Physical sciences,Bachelor's,6
+2025,145707,Illinois Eastern Community Colleges,Olney,Public,11,Computer & information sciences,Associate,7
+2025,145707,Illinois Eastern Community Colleges,Olney,Public,15,Engineering technologies,Associate,2
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,176
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,11,Computer & information sciences,Master's,1131
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,14,Engineering,Bachelor's,216
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,14,Engineering,Master's,431
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,15,Engineering technologies,Bachelor's,25
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,15,Engineering technologies,Master's,58
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,20
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,20
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,6
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,3
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,21
+2025,145725,Illinois Institute of Technology,Chicago,Private nonprofit,40,Physical sciences,Master's,22
+2025,145813,Illinois State University,Normal,Public,11,Computer & information sciences,Bachelor's,212
+2025,145813,Illinois State University,Normal,Public,11,Computer & information sciences,Master's,44
+2025,145813,Illinois State University,Normal,Public,15,Engineering technologies,Bachelor's,39
+2025,145813,Illinois State University,Normal,Public,15,Engineering technologies,Master's,53
+2025,145813,Illinois State University,Normal,Public,26,Biological & biomedical sciences,Bachelor's,121
+2025,145813,Illinois State University,Normal,Public,26,Biological & biomedical sciences,Master's,6
+2025,145813,Illinois State University,Normal,Public,27,Mathematics & statistics,Bachelor's,60
+2025,145813,Illinois State University,Normal,Public,27,Mathematics & statistics,Master's,29
+2025,145813,Illinois State University,Normal,Public,40,Physical sciences,Bachelor's,40
+2025,145813,Illinois State University,Normal,Public,40,Physical sciences,Master's,11
+2025,145831,Illinois Valley Community College,Oglesby,Public,11,Computer & information sciences,Associate,12
+2025,145831,Illinois Valley Community College,Oglesby,Public,14,Engineering,Associate,0
+2025,145831,Illinois Valley Community College,Oglesby,Public,15,Engineering technologies,Associate,19
+2025,146205,John A Logan College,Carterville,Public,11,Computer & information sciences,Associate,13
+2025,146205,John A Logan College,Carterville,Public,14,Engineering,Associate,3
+2025,146205,John A Logan College,Carterville,Public,15,Engineering technologies,Associate,11
+2025,146278,John Wood Community College,Quincy,Public,14,Engineering,Associate,2
+2025,146278,John Wood Community College,Quincy,Public,15,Engineering technologies,Associate,6
+2025,146296,Joliet Junior College,Joliet,Public,11,Computer & information sciences,Associate,111
+2025,146296,Joliet Junior College,Joliet,Public,15,Engineering technologies,Associate,25
+2025,146339,Judson University,Elgin,Private nonprofit,11,Computer & information sciences,Bachelor's,2
+2025,146339,Judson University,Elgin,Private nonprofit,11,Computer & information sciences,Master's,90
+2025,146339,Judson University,Elgin,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,5
+2025,146339,Judson University,Elgin,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2025,146339,Judson University,Elgin,Private nonprofit,40,Physical sciences,Bachelor's,0
+2025,146348,Kankakee Community College,Kankakee,Public,11,Computer & information sciences,Associate,4
+2025,146348,Kankakee Community College,Kankakee,Public,14,Engineering,Associate,5
+2025,146348,Kankakee Community College,Kankakee,Public,15,Engineering technologies,Associate,6
+2025,146366,Kaskaskia College,Centralia,Public,11,Computer & information sciences,Associate,10
+2025,146366,Kaskaskia College,Centralia,Public,14,Engineering,Associate,3
+2025,146366,Kaskaskia College,Centralia,Public,15,Engineering technologies,Associate,5
+2025,146418,Kishwaukee College,Malta,Public,11,Computer & information sciences,Associate,3
+2025,146418,Kishwaukee College,Malta,Public,14,Engineering,Associate,5
+2025,146418,Kishwaukee College,Malta,Public,15,Engineering technologies,Associate,2
+2025,146427,Knox College,Galesburg,Private nonprofit,11,Computer & information sciences,Bachelor's,22
+2025,146427,Knox College,Galesburg,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,33
+2025,146427,Knox College,Galesburg,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,146427,Knox College,Galesburg,Private nonprofit,40,Physical sciences,Bachelor's,7
+2025,146472,College of Lake County,Grayslake,Public,11,Computer & information sciences,Associate,36
+2025,146472,College of Lake County,Grayslake,Public,14,Engineering,Associate,25
+2025,146472,College of Lake County,Grayslake,Public,15,Engineering technologies,Associate,29
+2025,146481,Lake Forest College,Lake Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,30
+2025,146481,Lake Forest College,Lake Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,62
+2025,146481,Lake Forest College,Lake Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,7
+2025,146481,Lake Forest College,Lake Forest,Private nonprofit,40,Physical sciences,Bachelor's,16
+2025,146506,Lake Land College,Mattoon,Public,11,Computer & information sciences,Associate,22
+2025,146506,Lake Land College,Mattoon,Public,14,Engineering,Associate,3
+2025,146506,Lake Land College,Mattoon,Public,15,Engineering technologies,Associate,29
+2025,146603,Lewis and Clark Community College,Godfrey,Public,11,Computer & information sciences,Associate,11
+2025,146603,Lewis and Clark Community College,Godfrey,Public,14,Engineering,Associate,9
+2025,146603,Lewis and Clark Community College,Godfrey,Public,15,Engineering technologies,Associate,34
+2025,146603,Lewis and Clark Community College,Godfrey,Public,26,Biological & biomedical sciences,Associate,0
+2025,146612,Lewis University,Romeoville,Private nonprofit,11,Computer & information sciences,Associate,4
+2025,146612,Lewis University,Romeoville,Private nonprofit,11,Computer & information sciences,Bachelor's,149
+2025,146612,Lewis University,Romeoville,Private nonprofit,11,Computer & information sciences,Master's,273
+2025,146612,Lewis University,Romeoville,Private nonprofit,14,Engineering,Bachelor's,3
+2025,146612,Lewis University,Romeoville,Private nonprofit,14,Engineering,Master's,7
+2025,146612,Lewis University,Romeoville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,37
+2025,146612,Lewis University,Romeoville,Private nonprofit,27,Mathematics & statistics,Bachelor's,14
+2025,146612,Lewis University,Romeoville,Private nonprofit,40,Physical sciences,Bachelor's,17
+2025,146612,Lewis University,Romeoville,Private nonprofit,40,Physical sciences,Master's,4
+2025,146685,Lincoln Land Community College,Springfield,Public,11,Computer & information sciences,Associate,4
+2025,146685,Lincoln Land Community College,Springfield,Public,14,Engineering,Associate,7
+2025,146685,Lincoln Land Community College,Springfield,Public,15,Engineering technologies,Associate,0
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,65
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,11,Computer & information sciences,Master's,49
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,14,Engineering,Bachelor's,37
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,14,Engineering,Master's,12
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,404
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,68
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,23
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,10
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,19
+2025,146719,Loyola University Chicago,Chicago,Private nonprofit,40,Physical sciences,Master's,7
+2025,147004,McHenry County College,Crystal Lake,Public,11,Computer & information sciences,Associate,17
+2025,147004,McHenry County College,Crystal Lake,Public,14,Engineering,Associate,18
+2025,147004,McHenry County College,Crystal Lake,Public,15,Engineering technologies,Associate,10
+2025,147013,McKendree University,Lebanon,Private nonprofit,11,Computer & information sciences,Bachelor's,6
+2025,147013,McKendree University,Lebanon,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,9
+2025,147013,McKendree University,Lebanon,Private nonprofit,27,Mathematics & statistics,Bachelor's,5
+2025,147013,McKendree University,Lebanon,Private nonprofit,40,Physical sciences,Bachelor's,2
+2025,147244,Millikin University,Decatur,Private nonprofit,11,Computer & information sciences,Bachelor's,8
+2025,147244,Millikin University,Decatur,Private nonprofit,14,Engineering,Bachelor's,1
+2025,147244,Millikin University,Decatur,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,21
+2025,147244,Millikin University,Decatur,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,147244,Millikin University,Decatur,Private nonprofit,40,Physical sciences,Bachelor's,8
+2025,147341,Monmouth College,Monmouth,Private nonprofit,11,Computer & information sciences,Bachelor's,3
+2025,147341,Monmouth College,Monmouth,Private nonprofit,14,Engineering,Bachelor's,2
+2025,147341,Monmouth College,Monmouth,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,9
+2025,147341,Monmouth College,Monmouth,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,147341,Monmouth College,Monmouth,Private nonprofit,40,Physical sciences,Bachelor's,7
+2025,147378,Moraine Valley Community College,Palos Hills,Public,11,Computer & information sciences,Associate,32
+2025,147378,Moraine Valley Community College,Palos Hills,Public,14,Engineering,Associate,39
+2025,147378,Moraine Valley Community College,Palos Hills,Public,15,Engineering technologies,Associate,13
+2025,147396,Morrison Institute of Technology,Morrison,Private nonprofit,11,Computer & information sciences,Associate,7
+2025,147396,Morrison Institute of Technology,Morrison,Private nonprofit,15,Engineering technologies,Associate,17
+2025,147411,Morton College,Cicero,Public,11,Computer & information sciences,Associate,13
+2025,147411,Morton College,Cicero,Public,14,Engineering,Associate,6
+2025,147411,Morton College,Cicero,Public,15,Engineering technologies,Associate,5
+2025,147536,National Louis University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,63
+2025,147590,National University of Health Sciences,Lombard,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,11
+2025,147660,North Central College,Naperville,Private nonprofit,11,Computer & information sciences,Bachelor's,29
+2025,147660,North Central College,Naperville,Private nonprofit,14,Engineering,Bachelor's,24
+2025,147660,North Central College,Naperville,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,34
+2025,147660,North Central College,Naperville,Private nonprofit,27,Mathematics & statistics,Bachelor's,7
+2025,147660,North Central College,Naperville,Private nonprofit,40,Physical sciences,Bachelor's,6
+2025,147679,North Park University,Chicago,Private nonprofit,14,Engineering,Bachelor's,12
+2025,147679,North Park University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,35
+2025,147679,North Park University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,147679,North Park University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,1
+2025,147703,Northern Illinois University,Dekalb,Public,11,Computer & information sciences,Bachelor's,139
+2025,147703,Northern Illinois University,Dekalb,Public,11,Computer & information sciences,Master's,218
+2025,147703,Northern Illinois University,Dekalb,Public,14,Engineering,Bachelor's,176
+2025,147703,Northern Illinois University,Dekalb,Public,14,Engineering,Master's,37
+2025,147703,Northern Illinois University,Dekalb,Public,15,Engineering technologies,Bachelor's,45
+2025,147703,Northern Illinois University,Dekalb,Public,15,Engineering technologies,Master's,17
+2025,147703,Northern Illinois University,Dekalb,Public,26,Biological & biomedical sciences,Bachelor's,63
+2025,147703,Northern Illinois University,Dekalb,Public,26,Biological & biomedical sciences,Master's,8
+2025,147703,Northern Illinois University,Dekalb,Public,27,Mathematics & statistics,Bachelor's,24
+2025,147703,Northern Illinois University,Dekalb,Public,27,Mathematics & statistics,Master's,31
+2025,147703,Northern Illinois University,Dekalb,Public,40,Physical sciences,Bachelor's,65
+2025,147703,Northern Illinois University,Dekalb,Public,40,Physical sciences,Master's,12
+2025,147767,Northwestern University,Evanston,Private nonprofit,11,Computer & information sciences,Bachelor's,263
+2025,147767,Northwestern University,Evanston,Private nonprofit,11,Computer & information sciences,Master's,268
+2025,147767,Northwestern University,Evanston,Private nonprofit,14,Engineering,Bachelor's,342
+2025,147767,Northwestern University,Evanston,Private nonprofit,14,Engineering,Master's,388
+2025,147767,Northwestern University,Evanston,Private nonprofit,15,Engineering technologies,Master's,167
+2025,147767,Northwestern University,Evanston,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,248
+2025,147767,Northwestern University,Evanston,Private nonprofit,26,Biological & biomedical sciences,Master's,71
+2025,147767,Northwestern University,Evanston,Private nonprofit,27,Mathematics & statistics,Bachelor's,67
+2025,147767,Northwestern University,Evanston,Private nonprofit,27,Mathematics & statistics,Master's,45
+2025,147767,Northwestern University,Evanston,Private nonprofit,40,Physical sciences,Bachelor's,38
+2025,147767,Northwestern University,Evanston,Private nonprofit,40,Physical sciences,Master's,33
+2025,147776,Northeastern Illinois University,Chicago,Public,11,Computer & information sciences,Bachelor's,112
+2025,147776,Northeastern Illinois University,Chicago,Public,11,Computer & information sciences,Master's,13
+2025,147776,Northeastern Illinois University,Chicago,Public,26,Biological & biomedical sciences,Bachelor's,36
+2025,147776,Northeastern Illinois University,Chicago,Public,26,Biological & biomedical sciences,Master's,8
+2025,147776,Northeastern Illinois University,Chicago,Public,27,Mathematics & statistics,Bachelor's,6
+2025,147776,Northeastern Illinois University,Chicago,Public,27,Mathematics & statistics,Master's,2
+2025,147776,Northeastern Illinois University,Chicago,Public,40,Physical sciences,Bachelor's,8
+2025,147776,Northeastern Illinois University,Chicago,Public,40,Physical sciences,Master's,6
+2025,147800,Oakton College,Des Plaines,Public,11,Computer & information sciences,Associate,12
+2025,147800,Oakton College,Des Plaines,Public,14,Engineering,Associate,9
+2025,147800,Oakton College,Des Plaines,Public,15,Engineering technologies,Associate,6
+2025,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,11,Computer & information sciences,Bachelor's,21
+2025,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,14,Engineering,Bachelor's,32
+2025,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,39
+2025,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,27,Mathematics & statistics,Bachelor's,2
+2025,147828,Olivet Nazarene University,Bourbonnais,Private nonprofit,40,Physical sciences,Bachelor's,4
+2025,147916,Parkland College,Champaign,Public,11,Computer & information sciences,Associate,7
+2025,147916,Parkland College,Champaign,Public,14,Engineering,Associate,12
+2025,147916,Parkland College,Champaign,Public,15,Engineering technologies,Associate,11
+2025,148007,Prairie State College,Chicago Heights,Public,11,Computer & information sciences,Associate,8
+2025,148007,Prairie State College,Chicago Heights,Public,15,Engineering technologies,Associate,1
+2025,148016,Principia College,Elsah,Private nonprofit,11,Computer & information sciences,Bachelor's,1
+2025,148016,Principia College,Elsah,Private nonprofit,14,Engineering,Bachelor's,1
+2025,148016,Principia College,Elsah,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,9
+2025,148016,Principia College,Elsah,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,148016,Principia College,Elsah,Private nonprofit,40,Physical sciences,Bachelor's,1
+2025,148131,Quincy University,Quincy,Private nonprofit,11,Computer & information sciences,Bachelor's,8
+2025,148131,Quincy University,Quincy,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,13
+2025,148131,Quincy University,Quincy,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,148131,Quincy University,Quincy,Private nonprofit,40,Physical sciences,Bachelor's,1
+2025,148256,Rend Lake College,Ina,Public,11,Computer & information sciences,Associate,10
+2025,148256,Rend Lake College,Ina,Public,14,Engineering,Associate,3
+2025,148256,Rend Lake College,Ina,Public,15,Engineering technologies,Associate,0
+2025,148292,Richland Community College,Decatur,Public,11,Computer & information sciences,Associate,1
+2025,148292,Richland Community College,Decatur,Public,14,Engineering,Associate,0
+2025,148292,Richland Community College,Decatur,Public,15,Engineering technologies,Associate,2
+2025,148380,Rock Valley College,Rockford,Public,11,Computer & information sciences,Associate,22
+2025,148380,Rock Valley College,Rockford,Public,14,Engineering,Associate,22
+2025,148380,Rock Valley College,Rockford,Public,15,Engineering technologies,Associate,7
+2025,148405,Rockford University,Rockford,Private nonprofit,11,Computer & information sciences,Bachelor's,24
+2025,148405,Rockford University,Rockford,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,9
+2025,148405,Rockford University,Rockford,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2025,148405,Rockford University,Rockford,Private nonprofit,40,Physical sciences,Bachelor's,0
+2025,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Associate,0
+2025,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,22
+2025,148487,Roosevelt University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,109
+2025,148487,Roosevelt University,Chicago,Private nonprofit,15,Engineering technologies,Associate,0
+2025,148487,Roosevelt University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,44
+2025,148487,Roosevelt University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,65
+2025,148487,Roosevelt University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,148487,Roosevelt University,Chicago,Private nonprofit,27,Mathematics & statistics,Master's,1
+2025,148487,Roosevelt University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,0
+2025,148496,Dominican University,River Forest,Private nonprofit,11,Computer & information sciences,Bachelor's,26
+2025,148496,Dominican University,River Forest,Private nonprofit,11,Computer & information sciences,Master's,3
+2025,148496,Dominican University,River Forest,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,34
+2025,148496,Dominican University,River Forest,Private nonprofit,27,Mathematics & statistics,Bachelor's,11
+2025,148496,Dominican University,River Forest,Private nonprofit,40,Physical sciences,Bachelor's,1
+2025,148511,Rush University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,28
+2025,148584,University of St Francis,Joliet,Private nonprofit,11,Computer & information sciences,Bachelor's,5
+2025,148584,University of St Francis,Joliet,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,17
+2025,148584,University of St Francis,Joliet,Private nonprofit,27,Mathematics & statistics,Bachelor's,4
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,11,Computer & information sciences,Bachelor's,38
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,11,Computer & information sciences,Master's,5
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,14,Engineering,Master's,2
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,61
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,26,Biological & biomedical sciences,Master's,0
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,27,Mathematics & statistics,Bachelor's,3
+2025,148627,Saint Xavier University,Chicago,Private nonprofit,40,Physical sciences,Bachelor's,5
+2025,148654,University of Illinois Springfield,Springfield,Public,11,Computer & information sciences,Bachelor's,128
+2025,148654,University of Illinois Springfield,Springfield,Public,11,Computer & information sciences,Master's,436
+2025,148654,University of Illinois Springfield,Springfield,Public,26,Biological & biomedical sciences,Bachelor's,27
+2025,148654,University of Illinois Springfield,Springfield,Public,26,Biological & biomedical sciences,Master's,0
+2025,148654,University of Illinois Springfield,Springfield,Public,27,Mathematics & statistics,Bachelor's,9
+2025,148654,University of Illinois Springfield,Springfield,Public,27,Mathematics & statistics,Master's,19
+2025,148654,University of Illinois Springfield,Springfield,Public,40,Physical sciences,Bachelor's,5
+2025,148672,Sauk Valley Community College,Dixon,Public,11,Computer & information sciences,Associate,2
+2025,148672,Sauk Valley Community College,Dixon,Public,14,Engineering,Associate,1
+2025,148821,Shawnee Community College,Ullin,Public,11,Computer & information sciences,Associate,5
+2025,148937,Southeastern Illinois College,Harrisburg,Public,11,Computer & information sciences,Associate,4
+2025,148937,Southeastern Illinois College,Harrisburg,Public,14,Engineering,Associate,0
+2025,148991,Spoon River College,Canton,Public,11,Computer & information sciences,Associate,4
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,11,Computer & information sciences,Bachelor's,60
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,11,Computer & information sciences,Master's,65
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,14,Engineering,Bachelor's,82
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,14,Engineering,Master's,39
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,15,Engineering technologies,Bachelor's,148
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,15,Engineering technologies,Master's,11
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,26,Biological & biomedical sciences,Bachelor's,115
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,26,Biological & biomedical sciences,Master's,27
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,27,Mathematics & statistics,Bachelor's,4
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,27,Mathematics & statistics,Master's,8
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,40,Physical sciences,Bachelor's,19
+2025,149222,Southern Illinois University-Carbondale,Carbondale,Public,40,Physical sciences,Master's,10
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,11,Computer & information sciences,Bachelor's,61
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,11,Computer & information sciences,Master's,48
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,14,Engineering,Bachelor's,165
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,14,Engineering,Master's,135
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,26,Biological & biomedical sciences,Bachelor's,97
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,26,Biological & biomedical sciences,Master's,16
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,27,Mathematics & statistics,Bachelor's,10
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,27,Mathematics & statistics,Master's,8
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,40,Physical sciences,Bachelor's,35
+2025,149231,Southern Illinois University Edwardsville,Edwardsville,Public,40,Physical sciences,Master's,15
+2025,149310,Taylor Business Institute,Chicago,Private for-profit,15,Engineering technologies,Associate,2
+2025,149365,South Suburban College,South Holland,Public,11,Computer & information sciences,Associate,2
+2025,149365,South Suburban College,South Holland,Public,14,Engineering,Associate,0
+2025,149365,South Suburban College,South Holland,Public,15,Engineering technologies,Associate,4
+2025,149505,Trinity Christian College,Palos Heights,Private nonprofit,11,Computer & information sciences,Bachelor's,8
+2025,149505,Trinity Christian College,Palos Heights,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,14
+2025,149505,Trinity Christian College,Palos Heights,Private nonprofit,27,Mathematics & statistics,Bachelor's,0
+2025,149505,Trinity Christian College,Palos Heights,Private nonprofit,40,Physical sciences,Bachelor's,2
+2025,149514,Trinity International University-Illinois,Deerfield,Private nonprofit,11,Computer & information sciences,Bachelor's,1
+2025,149514,Trinity International University-Illinois,Deerfield,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,1
+2025,149514,Trinity International University-Illinois,Deerfield,Private nonprofit,27,Mathematics & statistics,Bachelor's,1
+2025,149532,Triton College,River Grove,Public,11,Computer & information sciences,Associate,10
+2025,149532,Triton College,River Grove,Public,15,Engineering technologies,Associate,27
+2025,149727,Waubonsee Community College,Sugar Grove,Public,11,Computer & information sciences,Associate,30
+2025,149727,Waubonsee Community College,Sugar Grove,Public,14,Engineering,Associate,3
+2025,149727,Waubonsee Community College,Sugar Grove,Public,15,Engineering technologies,Associate,16
+2025,149772,Western Illinois University,Macomb,Public,11,Computer & information sciences,Bachelor's,22
+2025,149772,Western Illinois University,Macomb,Public,11,Computer & information sciences,Master's,87
+2025,149772,Western Illinois University,Macomb,Public,14,Engineering,Bachelor's,16
+2025,149772,Western Illinois University,Macomb,Public,15,Engineering technologies,Bachelor's,15
+2025,149772,Western Illinois University,Macomb,Public,15,Engineering technologies,Master's,21
+2025,149772,Western Illinois University,Macomb,Public,26,Biological & biomedical sciences,Bachelor's,32
+2025,149772,Western Illinois University,Macomb,Public,26,Biological & biomedical sciences,Master's,16
+2025,149772,Western Illinois University,Macomb,Public,27,Mathematics & statistics,Bachelor's,6
+2025,149772,Western Illinois University,Macomb,Public,27,Mathematics & statistics,Master's,33
+2025,149772,Western Illinois University,Macomb,Public,40,Physical sciences,Bachelor's,35
+2025,149772,Western Illinois University,Macomb,Public,40,Physical sciences,Master's,22
+2025,149781,Wheaton College,Wheaton,Private nonprofit,11,Computer & information sciences,Bachelor's,17
+2025,149781,Wheaton College,Wheaton,Private nonprofit,14,Engineering,Bachelor's,10
+2025,149781,Wheaton College,Wheaton,Private nonprofit,26,Biological & biomedical sciences,Bachelor's,60
+2025,149781,Wheaton College,Wheaton,Private nonprofit,27,Mathematics & statistics,Bachelor's,14
+2025,149781,Wheaton College,Wheaton,Private nonprofit,40,Physical sciences,Bachelor's,21
+2025,149842,William Rainey Harper College,Palatine,Public,11,Computer & information sciences,Associate,27
+2025,149842,William Rainey Harper College,Palatine,Public,14,Engineering,Associate,90
+2025,149842,William Rainey Harper College,Palatine,Public,15,Engineering technologies,Associate,13
+2025,384342,Heartland Community College,Normal,Public,11,Computer & information sciences,Associate,7
+2025,384342,Heartland Community College,Normal,Public,14,Engineering,Associate,2
+2025,384342,Heartland Community College,Normal,Public,15,Engineering technologies,Associate,20
+2025,448673,Rasmussen University-Illinois,Rockford,Private for-profit,11,Computer & information sciences,Associate,0
+2025,448673,Rasmussen University-Illinois,Rockford,Private for-profit,14,Engineering,Associate,0
+2025,457536,Midwestern Career College,Chicago,Private for-profit,11,Computer & information sciences,Associate,16
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Associate,1449
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Bachelor's,461
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,11,Computer & information sciences,Master's,116
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,14,Engineering,Bachelor's,101
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,14,Engineering,Master's,0
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Associate,429
+2025,482477,DeVry University-Illinois,Lisle,Private for-profit,15,Engineering technologies,Bachelor's,248
