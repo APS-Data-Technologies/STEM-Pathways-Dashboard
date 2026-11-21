@@ -2,22 +2,22 @@
 
 An Illinois STEM degree explorer for counselors, college advisors and education leaders. It turns public NCES IPEDS completions into field trends, institution profiles and comparisons. The app uses React, Vite and Recharts with a reproducible Python pipeline. It has no accounts, student records or database.
 
-**Stage: Validation and Handover.** The release candidate is deployed. The code and deliverables are published on the integration branch `feature/stem-dashboard`. Teammate approval, sponsor scope acceptance and final ownership handover are tracked separately in the [acceptance ledger](docs/progress.md). A release candidate is not a claim that the team has held its demo or approved the release.
+**Version 2 · Advising charts and current data.** Start with the most recent five award years, change the chart scale or open a college directly from its share of awards. The [version 2 release notes](docs/advising-charts.md) cover the feedback, data refresh and checks. The existing team reports, original five answers, screenshots and demo materials document version 1.
 
-- [Open the dashboard](https://stem-pathways-dashboard.vercel.app/)
+- [Version 1 production dashboard](https://stem-pathways-dashboard.vercel.app/)
 - [User guide](docs/user-guide.md) · [Five questions and checked answers](docs/demo-answers.md)
 - [Team and role reports](docs/reports/README.md) · [Deliverables index](docs/deliverables.md)
 - [Validation evidence](docs/qa/results.md) · [Data contract](docs/data-plan-and-contract.md)
-- [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/stem-dashboard/notebooks/clean_ipeds.ipynb)
+- [Cleaning notebook](notebooks/clean_ipeds.ipynb) · [Open in Colab](https://colab.research.google.com/github/APS-Data-Technologies/STEM-Pathways-Dashboard/blob/feature/advising-charts/notebooks/clean_ipeds.ipynb)
 - [Existing Figma wireframes](https://www.figma.com/design/Rxr9Zc3exDhzLhv19xAPYd) · [Design and interaction notes](docs/design.md)
 
-![Dashboard overview](docs/qa/stem-overview.jpg)
+![Version 1 dashboard overview](docs/qa/stem-overview.jpg)
 
 ## What people can do
 
 Use **Overview** for annual awards, field and degree-level totals, leading institutions and a short summary of the current selection. **STEM fields** ranks endpoint growth and lets users sort by growth, total or name. **Institutions** searches the historical directory and shows one college's profile. **Compare** puts up to three institutions beside one another. **Map** plots institutions with matching awards using their directory coordinates. **About the data** explains the counting rules and limits.
 
-Field, degree level, start/end award years, city and institution control work together. Quick-start buttons show the latest computer science bachelor's awards or a period beginning with CIP 2020. Users can share the current selection, download its CSV, print an advising brief and open exact-value chart tables. Missing records remain distinct from reported zero counts.
+Field, degree level, start/end award years, city and institution control work together. Quick-start buttons show the latest computer science bachelor's awards or the full historical period. Users can share the current selection, download its CSV, print an advising brief and open exact-value chart tables. Missing records remain distinct from reported zero counts.
 
 City and control use each award year's directory. Map coordinates use the latest directory record in the snapshot. Institution comparisons describe award volume, not program quality or admission chances.
 
@@ -26,15 +26,15 @@ City and control use each award year's directory. Map coordinates use the latest
 | Item | Coverage |
 |---|---|
 | Region | Illinois |
-| Award years | 2016–2023, eight verified revised Completions members |
+| Award years | 2016–2025. The default view is 2021–2025 |
 | STEM families | 11, 14, 15, 26, 27, 40 |
 | Degrees | Associate, bachelor's, master's |
-| Aggregate records | 3,808 |
-| Degrees awarded | 187,386 |
-| Directory institutions | 328 historical institutions; 123 with positive scoped awards |
+| Aggregate records | 4,746 |
+| Degrees awarded | 243,002 |
+| Directory institutions | 332 historical institutions; 124 with positive scoped awards |
 | Counting | First majors, six-digit CIP detail, CTOTALT; no subtotal double counting |
 
-All six JSON/CSV exports are below 2 MB each. The official CIP crosswalk review found two moves within family 15 and none across the selected family boundaries. The app retains a classification-change warning. Region, STEM definition and final-release window still need the sponsor's acceptance. The current 2024 download contains no revised member; its absence alone does not prove provisional status. See the [release review](docs/data-release-review.md).
+All six JSON/CSV exports are below 2 MB each. The official CIP crosswalk review found two moves within family 15 and none across the selected family boundaries. The app retains a classification-change warning. Award years through 2024 use revised files. NCES released provisional 2025 awards in July 2026. The source manifest identifies the exact archive member used for each year.
 
 ## Local setup
 
@@ -43,7 +43,7 @@ Node 24 and npm are recommended. Python 3.11 or newer is needed only to rebuild 
 ```bash
 git clone https://github.com/APS-Data-Technologies/STEM-Pathways-Dashboard.git
 cd STEM-Pathways-Dashboard
-git switch feature/stem-dashboard
+git switch feature/advising-charts
 npm ci
 npm run dev
 ```
@@ -73,7 +73,7 @@ python scripts/run_notebook.py
 
 The notebook verifies the source checksums and then reproduces the six committed exports byte for byte. The in-process IPython runner executes all seven code cells and saves real outputs. A teammate should also run the shared Colab link for acceptance. Raw ZIPs stay in ignored `data/raw/`; use `--offline` on the build command to reuse them. An upstream checksum change requires an explained snapshot update and new checks, not a silent override.
 
-Validation includes 15 automated tests, 1,008 core filter combinations, city/control reconciliation, all 3,808 source cells, 12 source-to-live number checks and 78 live core-view filter checks. These are recorded checks, not a substitute for a counselor user test or teammate review. The build passes with a non-blocking bundle-size warning.
+Version 2 reconciles all 4,746 exported award records to the source and checks 1,540 field, degree and year-range combinations. The historical QA and reports folder also contains the original version 1 review evidence.
 
 ## Team and ownership
 
